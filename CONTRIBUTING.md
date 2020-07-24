@@ -151,5 +151,6 @@ Both UI Engineers and the Frontend team have permission to release OUI via `yarn
      - If you notice that your yarn commands are removing the integrity shas inside the yarn.lock file, your yarn version needs an upgrade
      - Make sure to run `yarn-deduplicate yarn.lock` after the upgrade. [yarn-deduplicate](https://github.com/atlassian/yarn-deduplicate)
    - You'll also need to bump the OUI version in the SCS at `src/www/frontend/self_contained_systems/datafile_access_tokens/frontend/package.json`
+     - Within the Optimizely SCS folder at `src/www/frontend/self_contained_systems/datafile_access_tokens/frontend` run `yarn upgrade optimizely-oui@99.xx.xx` (note to include the major version number e.g. `99.`, leaving the minor and patch numbers as `xx.xx`) which updates `yarn.lock` and `package.json`
    - Make a PR that links to the OUI release and includes the new release contributions from the `CHANGELOG.md` release notes section
 10. You're done :sunglasses:
