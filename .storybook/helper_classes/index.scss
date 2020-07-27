@@ -82,6 +82,12 @@
     top: 30%;
   }
 
+  &--floating-top {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 20px;
+  }
+
   &--width-350 {
     width: 350px;
   }
@@ -94,4 +100,10 @@
 .demo-only-spacing-soft-background {
   background: $magenta-dark;
   border: 3px solid $blue-base;
+}
+
+.demo-only-floating-container {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 20px;
 }
