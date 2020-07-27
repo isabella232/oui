@@ -107,18 +107,17 @@ stories
             onClick={ action('I have been clicked') }
             leftIcon='add'>
             Left icon
-          </Button>] }
-        centerGroup={ [
+          </Button>,
           <Button
-            key="1"
+            key="2"
             style="highlight"
             onClick={ action('I have been clicked') }
             rightIcon='external'>
           Right icon
           </Button>] }
-        rightGroup={ [
+        centerGroup={ [
           <Button
-            key="2"
+            key="3"
             style={ select('style', {
               'highlight': 'highlight',
               'danger': 'danger',
@@ -162,6 +161,20 @@ stories
               }, 'calendar') }>
             { text('customize me!', 'customize me!') }
           </Button>] }
+        rightGroup={
+          [
+            <Link
+              key="4"
+              newWindow={ true }
+              href={ text('href', 'http://google.com') }>
+              <Button
+                style="outline"
+                width='default'
+                isLink={ boolean('isLink', true) }
+                leftIcon="save"
+                rightIcon='external'>This is a link</Button>
+            </Link>]
+        }
       />
     );
   })
