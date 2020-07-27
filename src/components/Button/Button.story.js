@@ -100,9 +100,10 @@ stories
   .add('With icon', () => {
     return (
       <ButtonRow
-        leftGroup={ [
+        centerGroup={ [
           <Button
             key="1"
+            width="default"
             style="highlight"
             onClick={ action('I have been clicked') }
             leftIcon='add'>
@@ -110,12 +111,12 @@ stories
           </Button>,
           <Button
             key="2"
+            width="default"
             style="highlight"
             onClick={ action('I have been clicked') }
             rightIcon='external'>
           Right icon
-          </Button>] }
-        centerGroup={ [
+          </Button>,
           <Button
             key="3"
             style={ select('style', {
@@ -160,20 +161,7 @@ stories
                 save: 'save',
               }, 'calendar') }>
             { text('customize me!', 'customize me!') }
-          </Button>] }
-        rightGroup={
-          [
-            <Link
-              key="4"
-              newWindow={ true }
-              href={ text('href', 'http://google.com') }>
-              <Button
-                style="outline"
-                width='default'
-                isLink={ boolean('isLink', true) }
-                leftIcon="save"
-                rightIcon='external'>This is a link</Button>
-            </Link>]
+          </Button>]
         }
       />
     );

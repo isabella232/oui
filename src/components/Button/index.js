@@ -38,7 +38,7 @@ const Button = ({
       [`oui-button--${width}`]: width,
       'is-active': isActive,
       'oui-button--loading': isLoading,
-      'flex flex--dead-center': leftIcon || rightIcon,
+      'flex--inline flex-justified--center flex-align--center': leftIcon || rightIcon,
     });
 
   const type = isSubmit ? 'submit' : 'button';
