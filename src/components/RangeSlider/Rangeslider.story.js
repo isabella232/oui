@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, number, select, boolean } from '@storybook/addon-knobs';
 
-import RangeSlider from './index.js';
+import RangeSlider from './index';
 import { FILL_COLOR_MAP } from '../../utils/accessibility';
 
 // build fillColorName options for a select/dropdown knob
@@ -23,9 +23,16 @@ stories
 
 stories.add('Default', (() => {
   return (
-    <RangeSlider
-      value={ number('value', 50) }
-    />
+    <div>
+      <RangeSlider
+        value={ number('value', 50) }
+      />
+      <div className="background--light push-quad--top">
+        <RangeSlider
+          value={ 30 }
+        />
+      </div>
+    </div>
   );
 }))
   .add('Disabled', (() => {
