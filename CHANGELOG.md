@@ -7,6 +7,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 
 ## Unreleased
 - [Feature] Add `leftIcon` and `rightIcon` to **Button** when acting as a link ([#1386](https://github.com/optimizely/oui/pull/1386))
+- [Feature] Add `onRowClick` to **Table.TR** to handle row click actions ([#1388](https://github.com/optimizely/oui/pull/1388))
 
 ## 46.11.0 - 2020-07-23
 

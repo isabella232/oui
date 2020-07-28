@@ -7,6 +7,7 @@ const TR = React.forwardRef(({
   isHighlighted,
   noBorder,
   noHover,
+  onRowClick,
   borderStyle,
   backgroundColor,
   testSection,
@@ -24,6 +25,7 @@ const TR = React.forwardRef(({
     <tr
       className={ classes }
       data-test-section={ testSection }
+      onClick={ onRowClick }
       ref={ ref }>
       { children }
     </tr>
@@ -45,6 +47,8 @@ TR.propTypes = {
   noBorder: PropTypes.bool,
   /** If true, remove hover on inner TDs */
   noHover: PropTypes.bool,
+  /** Function to handle row click action */
+  onRowClick: PropTypes.func,
   /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,
 };

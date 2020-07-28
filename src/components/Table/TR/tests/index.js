@@ -27,4 +27,11 @@ describe('components/Table/TR', () => {
     const component = shallow(<TR isHighlighted={ true } testSection="goose"></TR>);
     expect(component.hasClass('oui-table-row--highlighted')).toBe(true);
   });
+
+  it('should trigger function when row is clicked', () => {
+    const mockFunction = jest.fn();
+    const component = shallow(<TR onRowClick={ mockFunction } testSection="goose"></TR>);
+    component.find('[data-test-section="goose"]').simulate('click');
+    expect(mockFunction).toHaveBeenCalled();
+  });
 });
