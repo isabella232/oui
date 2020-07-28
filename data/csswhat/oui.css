@@ -4030,6 +4030,9 @@ div[class*="fitContent"] {
 .flex {
   display: flex; }
 
+.flex--inline {
+  display: inline-flex; }
+
 .flex--row {
   flex-direction: row; }
 

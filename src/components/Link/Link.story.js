@@ -98,6 +98,11 @@ stories
           href={ text('href', 'http://google.com') }>
           <Button isLink={ boolean('isLink', true) }>Go To Google</Button>
         </Link>
+        <Link
+          newWindow={ true }
+          href={ text('href', 'http://google.com') }>
+          <Button style="outline" isLink={ true } leftIcon="save" rightIcon="external">With an icon</Button>
+        </Link>
       </div>
     );
   });

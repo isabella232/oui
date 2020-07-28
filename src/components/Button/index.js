@@ -38,7 +38,7 @@ const Button = ({
       [`oui-button--${width}`]: width,
       'is-active': isActive,
       'oui-button--loading': isLoading,
-      'flex flex--dead-center': leftIcon || rightIcon,
+      'flex--inline flex-justified--center flex-align--center': leftIcon || rightIcon,
     });
 
   const type = isSubmit ? 'submit' : 'button';
@@ -50,20 +50,6 @@ const Button = ({
     onClick(event);
   }
 
-  if (isLink) {
-    return (
-      <div
-        data-oui-component={ true }
-        className={ buttonClassNames }
-        disabled={ isDisabled }
-        onBlur={ onBlur }
-        data-test-section={ testSection }
-        ref={ buttonRef }>
-        { children }
-      </div>
-    );
-  }
-
   const leftIconComp = leftIcon ?
     (<div className={ 'flex flex-self--center push--right' }>
       <Icon name={ leftIcon } size={ size === 'large' ? 'medium' : 'small' }/>
@@ -73,6 +59,22 @@ const Button = ({
     (<div className={ 'flex flex-self--center push--left' }>
       <Icon name={ rightIcon } size={ size === 'large' ? 'medium' : 'small' }/>
     </div>) : '';
+
+  if (isLink) {
+    return (
+      <div
+        data-oui-component={ true }
+        className={ buttonClassNames }
+        disabled={ isDisabled }
+        onBlur={ onBlur }
+        data-test-section={ testSection }
+        ref={ buttonRef }>
+        {leftIcon && leftIconComp }
+        { children }
+        { rightIcon && rightIconComp}
+      </div>
+    );
+  }
 
   return (
     <button
