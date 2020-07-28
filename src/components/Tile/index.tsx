@@ -1,14 +1,14 @@
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
 
-import Button from "../Button";
-import OverlayWrapper from "../OverlayWrapper";
-import Popover from "../Popover";
-import Dropdown from "../Dropdown";
-import ButtonIcon from "../ButtonIcon";
-import Icon from "react-oui-icons";
+import Button from '../Button';
+import OverlayWrapper from '../OverlayWrapper';
+import Popover from '../Popover';
+import Dropdown from '../Dropdown';
+import ButtonIcon from '../ButtonIcon';
+import Icon from 'react-oui-icons';
 
-import { greyDark } from "../../tokens/forimport/index.es";
+import { greyDark } from '../../tokens/forimport/index.es';
 
 const renderDropdownActivator = (
   { onClick, buttonRef } // eslint-disable-line
@@ -107,7 +107,7 @@ export type TileProps = {
   /**
    * Title of the Tile, required
    */
-  name: string;
+  name: string | React.ReactNode;
 
   /**
    * Whether or not the title of this Tile displays in monospace font
@@ -142,13 +142,13 @@ const Tile = ({
   status,
   testSection,
   usesMonospaceName = false,
-  warningContent = "",
+  warningContent = '',
   warningTitle,
 }: TileProps) => {
   const tileContent = (
     <>
       <p
-        className={classNames("text--left flush", {
+        className={classNames('oui-tile__name text--left flush', {
           monospace: usesMonospaceName,
         })}
       >
@@ -159,11 +159,13 @@ const Tile = ({
       </p>
     </>
   );
+  const hasExtraContent =
+    status || onCopy || onEdit || onDismiss || dropdownItems;
   return (
     <div
-      className={classNames("oui-tile flex flex-align--center soft", {
-        "oui-tile--selected": isSelected,
-        "push-half--ends": hasSpacing,
+      className={classNames('oui-tile flex flex-align--center soft--sides', {
+        'oui-tile--selected': isSelected,
+        'push-half--ends': hasSpacing,
       })}
       data-test-section={testSection}
     >
@@ -198,58 +200,65 @@ const Tile = ({
         </div>
       )}
       {onTileClick ? (
-        <Button testSection={`${testSection}-main-tile-button`} style="unstyled" width="full" onClick={onTileClick}>
+        <Button
+          testSection={`${testSection}-main-tile-button`}
+          style="unstyled"
+          width="full"
+          onClick={onTileClick}
+        >
           {tileContent}
         </Button>
       ) : (
-        <div className="width--1-1 line--1">{tileContent}</div>
+        <div className="width--1-1 line--1 soft--ends">{tileContent}</div>
       )}
-      <div className="flex flex-justified--between flex-align--center push--left">
-        {status && (
-          <p className="muted micro flush--bottom weight--bold push-half--sides">
-            {status}
-          </p>
-        )}
-        {onCopy && (
-          <ButtonIcon
-            iconName="clipboard"
-            size="medium"
-            style="plain"
-            iconFill="default"
-            onClick={onCopy}
-          />
-        )}
-        {onEdit && (
-          <ButtonIcon
-            iconName="pencil"
-            size="medium"
-            style="plain"
-            iconFill="default"
-            onClick={onEdit}
-          />
-        )}
-        {onDismiss && (
-          <ButtonIcon
-            iconName="trash"
-            size="medium"
-            style="plain"
-            iconFill="default"
-            onClick={onDismiss}
-          />
-        )}
-        {dropdownItems && (
-          <Dropdown
-            renderActivator={renderDropdownActivator}
-            placement={"bottom-end"}
-            key="dropdown"
-            testSection={`${testSection}-action-overflow-button`}
-          >
-            <Dropdown.Contents direction={"right"}>
-              {dropdownItems}
-            </Dropdown.Contents>
-          </Dropdown>
-        )}
-      </div>
+      {hasExtraContent && (
+        <div className="flex flex-justified--between flex-align--center push--left">
+          {status && (
+            <p className="muted micro flush--bottom weight--bold push-half--sides">
+              {status}
+            </p>
+          )}
+          {onCopy && (
+            <ButtonIcon
+              iconName="clipboard"
+              size="medium"
+              style="plain"
+              iconFill="default"
+              onClick={onCopy}
+            />
+          )}
+          {onEdit && (
+            <ButtonIcon
+              iconName="pencil"
+              size="medium"
+              style="plain"
+              iconFill="default"
+              onClick={onEdit}
+            />
+          )}
+          {onDismiss && (
+            <ButtonIcon
+              iconName="trash"
+              size="medium"
+              style="plain"
+              iconFill="default"
+              onClick={onDismiss}
+            />
+          )}
+          {dropdownItems && (
+            <Dropdown
+              renderActivator={renderDropdownActivator}
+              placement={'bottom-end'}
+              key="dropdown"
+              testSection={`${testSection}-action-overflow-button`}
+            >
+              <Dropdown.Contents direction={'right'}>
+                {dropdownItems}
+              </Dropdown.Contents>
+            </Dropdown>
+          )}
+        </div>
+      )}
     </div>
   );
 };

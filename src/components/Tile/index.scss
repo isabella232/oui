@@ -20,7 +20,16 @@
   .oui-button--unstyled:focus {
     border: none !important;
     box-shadow: none !important;
+    padding: spacer(1);
   }
+  .oui-button--unstyled {
+    padding-top: spacer(1) !important;
+    padding-bottom: spacer(1) !important;
+  }
+}
+
+.oui-tile__name {
+  min-height: map-fetch($font, size, base);
 }
 
 .oui-tile__order-number {

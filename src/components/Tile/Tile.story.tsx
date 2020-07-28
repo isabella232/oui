@@ -221,7 +221,7 @@ stories
         <Row>
           <Col small={6}>
             <Tile
-              name="Foxtrot"
+              name={<em>Foxtrot</em>}
               testSection="foxtrot-tile"
               description="All possibilities, as an example. Don't actually do this, please"
               onTileClick={action("onTileClick")}
@@ -318,8 +318,26 @@ stories
         <Row>
           <Col small={6}>
             <Tile
-              name="Zeta"
+              name={<em>Zeta</em>}
               testSection="zeta-tile"
+              description="Increase in unique conversions per visitor for Recurring deposit complete event"
+              order={98}
+              onTileClick={action("onTileClick")}
+              isSelected={boolean("isSelected", false)}
+              isDraggable={boolean("isDraggable", true)}
+              hasWarning={boolean("hasWarning", false)}
+              warningTitle={text("warningText", "This is a warning")}
+              warningContent={<p>Warning details</p>}
+              onCopy={action("onCopy called")}
+              dropdownItems={dropdownItems}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col small={6}>
+            <Tile
+              name=""
+              testSection="empty-name-tile"
               description="Increase in unique conversions per visitor for Recurring deposit complete event"
               order={99}
               onTileClick={action("onTileClick")}
