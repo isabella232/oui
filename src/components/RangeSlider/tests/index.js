@@ -37,11 +37,6 @@ describe('components/RangeSlider', () => {
       expect(input.prop('value')).toBe(50);
     });
 
-    it('should set the position of the overlay from the value prop', () => {
-      const overlay = component.find('.range-display-overlay');
-      expect(overlay.prop('style').left).toBe('50%');
-    });
-
     it('should call the onChange prop when the input onChange is called', () => {
       component.find('input').prop('onChange')();
       expect(handlerObj.onChange).toHaveBeenCalled();
@@ -71,7 +66,7 @@ describe('components/RangeSlider', () => {
     });
 
     it('should render the SVG with the fill color that corresponds to the provided fill color name', () => {
-      const svgPath = component.find('path');
+      const svgPath = component.find('path').first();
       expect(svgPath.prop('fill')).toBe(`${FILL_COLOR_MAP['red']}`);
     });
 
