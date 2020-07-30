@@ -2036,7 +2036,7 @@ declare module "components/DragAndDrop/index" {
     import PropTypes from "prop-types";
 }
 declare module "components/Tile/index" {
-    import React from "react";
+    import React from 'react';
     export type TileProps = {
         /**
          * Description of the item for this reference Tile
@@ -2108,7 +2108,7 @@ declare module "components/Tile/index" {
         /**
          * Title of the Tile, required
          */
-        name: string;
+        name: string | React.ReactNode;
         /**
          * Whether or not the title of this Tile displays in monospace font
          */
@@ -5603,33 +5603,24 @@ declare module "components/Radio/example/index" {
     export default _default;
 }
 declare module "components/RangeSlider/index" {
-    export default RangeSlider;
-    function RangeSlider(props: any): JSX.Element;
-    namespace RangeSlider {
-        export namespace propTypes {
-            export const fillColorName: PropTypes.Requireable<string>;
-            export const isDisabled: PropTypes.Requireable<boolean>;
-            export const onChange: PropTypes.Requireable<(...args: any[]) => any>;
-            export const testSection: PropTypes.Requireable<string>;
-            export const useOffForLabel: PropTypes.Requireable<boolean>;
-            export const value: PropTypes.Requireable<number>;
-        }
-        export namespace defaultProps {
-            export { DEFAULT_FILL_COLOR_NAME as fillColorName };
-            const isDisabled_1: boolean;
-            export { isDisabled_1 as isDisabled };
-            const onChange_1: undefined;
-            export { onChange_1 as onChange };
-            const testSection_1: undefined;
-            export { testSection_1 as testSection };
-            const useOffForLabel_1: boolean;
-            export { useOffForLabel_1 as useOffForLabel };
-            const value_1: undefined;
-            export { value_1 as value };
-        }
+    import React, { ChangeEvent } from 'react';
+    import { FILL_COLOR_MAP } from "utils/accessibility";
+    interface RangeSliderProps {
+        /** Custom color for slider **/
+        fillColorName?: keyof typeof FILL_COLOR_MAP;
+        /** Whether it is disabled, will render as greyscale if so **/
+        isDisabled?: boolean;
+        /** onChange function */
+        onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+        /** Hook for automated JavaScript tests */
+        testSection?: string;
+        /** When true, uses 'Off' instead of '0%' */
+        useOffForLabel?: boolean;
+        /** The value */
+        value: number;
     }
-    import PropTypes from "prop-types";
-    const DEFAULT_FILL_COLOR_NAME: "default";
+    const RangeSlider: React.FC<RangeSliderProps>;
+    export default RangeSlider;
 }
 declare module "components/RangeSlider/Rangeslider.story" {
     export {};

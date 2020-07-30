@@ -29,25 +29,39 @@ exports[`components/RangeSlider default fill color should render component same 
         className="range-display"
       >
         <svg
-          height="256"
+          height="100"
           preserveAspectRatio="none"
-          viewBox="0 0 256 256"
-          width="256"
+          viewBox="0 0 100 100"
+          width="100"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M0 256h256V0z"
+            d="M0 100h100V0z"
             fill="hsla(227, 100%, 50%, 1)"
+            shapeRendering="geometricPrecision"
           />
         </svg>
-        <div
-          className="range-display range-display-overlay"
+        <svg
+          height="100"
+          preserveAspectRatio="none"
           style={
             Object {
-              "left": "50%",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
             }
           }
-        />
+          viewBox="0 0 100 100"
+          width="100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50 100H100V0L50 49z"
+            fill="white"
+            opacity="0.9"
+            shapeRendering="geometricPrecision"
+          />
+        </svg>
       </div>
       <div
         className="range-grid"
