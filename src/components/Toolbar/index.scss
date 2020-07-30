@@ -32,10 +32,13 @@
     min-height: 0;
     display: flex;
     align-items: center;
-    padding: spacer(0.5) spacer(1);
     border-bottom: 1px solid var(--grey-50);
     position: relative;
     background: var(--white);
+
+    &:not(.toolbar__content--tight) {
+      padding: spacer(0.5) spacer(1);
+    }
 
    &:not(.toolbar__content--bare):after {
       content: '';

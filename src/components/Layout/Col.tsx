@@ -43,7 +43,7 @@ type ColPropTypes = {
   overflow?: 'overflow-y--scroll' | 'overflow-x--auto' | 'overflow-y--auto';
 
   /** Add default amount of padding. */
-  paddedContent?: 'around' | 'sides' | 'ends' | 'none';
+  paddedContent?: 'around' | 'sides' | 'ends' | 'none' | 'remove';
   /** Optional pass through ref. */
   ref?: Ref<HTMLElement>;
   /**

@@ -46,9 +46,25 @@ stories
       </Toolbar>
     </div>
   ))
-  .add('Without bottom border and shadow', () => (
+  .add('Without style options (no border, shadow, and/or padding)', () => (
     <div>
-      <Toolbar toolbarStyle="bare">
+      <p className="style--italic">With style set to "bare" = no box-shadow or bottom border</p>
+      <Toolbar toolbarStyle={ ['bare'] }>
+        <Toolbar.Left>
+          <Toolbar.Link href={ 'www.google.com' } label="Link" />
+        </Toolbar.Left>
+        <Toolbar.Right>
+          <Toolbar.Link
+            isDisabled={ true }
+            href={ 'www.google.com' }
+            label="Disabled Link"
+          />
+          <Toolbar.Link href={ 'www.google.com' } label="Enabled Link" />
+          <Toolbar.Button onClick={ action('Saying hi!') } label="Button" />
+        </Toolbar.Right>
+      </Toolbar>
+      <p className="push-double--top style--italic">With style set to "bare" and "tight" = no extra padding around the toolbar</p>
+      <Toolbar toolbarStyle={ ['bare', 'tight'] }>
         <Toolbar.Left>
           <Toolbar.Link href={ 'www.google.com' } label="Link" />
         </Toolbar.Left>
@@ -66,7 +82,7 @@ stories
   ))
   .add('With Dropdowns and styled Buttons', () => (
     <div>
-      <Toolbar toolbarStyle="bare">
+      <Toolbar toolbarStyle={ ['bare'] }>
         <Toolbar.Left>
           <Dropdown
             buttonContent={{

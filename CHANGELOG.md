@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add ability to remove padding with `toolbarStyle` in **Toolbar** ([#1366](https://github.com/optimizely/oui/pull/1366))
 - [Feature] Add `leftIcon` and `rightIcon` to **Button** when acting as a link ([#1386](https://github.com/optimizely/oui/pull/1386))
 - [Feature] Add `onRowClick` to **Table.TR** to handle row click actions ([#1388](https://github.com/optimizely/oui/pull/1388))
 - [Patch] Allow **Tile** `name` to be a node or string ([#1387](https://github.com/optimizely/oui/pull/1387))
