@@ -2134,7 +2134,8 @@ blockquote {
     line-height: 1 !important;
     margin: 0 !important;
     padding: 0 !important;
-    text-shadow: inherit !important; }
+    text-shadow: inherit !important;
+    transition: none; }
     
     .button--unstyled:hover,
     .button--unstyled:focus,
@@ -6678,7 +6679,14 @@ code {
     border: solid 1px #4069FF; }
   .oui-tile .oui-button--unstyled:focus {
     border: none !important;
-    box-shadow: none !important; }
+    box-shadow: none !important;
+    padding: 10px; }
+  .oui-tile .oui-button--unstyled {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important; }
+
+.oui-tile__name {
+  min-height: 14px; }
 
 .oui-tile__order-number {
   min-width: 16px; }
@@ -6805,10 +6813,11 @@ code {
     min-height: 0;
     display: flex;
     align-items: center;
-    padding: 5px 10px;
     border-bottom: 1px solid var(--grey-50);
     position: relative;
     background: var(--white); }
+    .toolbar__content:not(.toolbar__content--tight) {
+      padding: 5px 10px; }
     .toolbar__content:not(.toolbar__content--bare):after {
       content: '';
       display: block;
