@@ -116,7 +116,7 @@ export class DivStyling extends React.Component<{}, DivStylingState> {
     constructor(props) {
         super(props);
         this.state = {
-            stylingTab: 'sizing',
+            stylingTab: 'color',
             stylingColorRow: 'white',
             borderAddition: 'add',
             borderSide: 'all',
