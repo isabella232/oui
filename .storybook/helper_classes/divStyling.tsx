@@ -271,7 +271,7 @@ export class DivStyling extends React.Component<{}, DivStylingState> {
     switchTab = tab => {
         this.setState({stylingTab: tab, 
             borderFeature: 'none', 
-            borderAddition: 'all', 
+            borderAddition: 'add', 
             stylingColorRow: 'white', 
             borderSide: 'all',
             minHeightExample: '300',
