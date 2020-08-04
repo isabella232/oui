@@ -9,6 +9,8 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Update react-oui-icons version to 2.10.0 ([#1392](https://github.com/optimizely/oui/pull/1392))
   - Update `icons.json` to use latest set of icons from v2.10.0
 
+- [Feature] Add `filterAvailableEntities` to **SearchPicker** for custom search-results filtering ([#1390](https://github.com/optimizely/oui/pull/1390)))
+
 ## 46.12.0 - 2020-07-31
 
 - [Feature] Add ability to remove padding with `toolbarStyle` in **Toolbar** ([#1366](https://github.com/optimizely/oui/pull/1366))

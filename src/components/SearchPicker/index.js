@@ -36,6 +36,16 @@ class SearchPicker extends React.Component {
     currentFauxFocusIndex: PropTypes.number.isRequired,
 
     /**
+     * This function can be set when custom search results filtering is required
+     * It will override the internal search results filtering
+     *
+     * @param {Array} searchResults
+     * @param {Array} selectedEntityIds
+     * @param {Array} filteredSearchResults
+     */
+    filterAvailableEntities: PropTypes.func,
+
+    /**
      * A handler for the input element event onKeyDown
      * via @keyboardTracker
      */
@@ -232,8 +242,13 @@ class SearchPicker extends React.Component {
    * @returns {Array<Object>}
    */
   getAvailableEntities = () => {
-    const { selectedEntityIds } = this.props;
-    return this.getResultSet().filter(result => !selectedEntityIds.includes(result.id));
+    const { selectedEntityIds, filterAvailableEntities } = this.props;
+    if (typeof filterAvailableEntities === 'function') {
+      return filterAvailableEntities(this.getResultSet(), selectedEntityIds);
+    }
+    return this.getResultSet().filter(
+      (result) => !selectedEntityIds.includes(result.id)
+    );
   };
 
   /**

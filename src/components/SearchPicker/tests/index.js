@@ -72,7 +72,7 @@ describe('components/SearchPicker', () => {
 
     it('should pass isLoading, searchQuery, and availableEntities correctly', () => {
       expect(renderedData.isLoading).toBe(true);
-      return getDelayedPromise(MOCK_API_DELAY).then(() => {
+      return getDelayedPromise(MOCK_API_DELAY + 10).then(() => {
         expect(renderedData.searchQuery).toBe('');
         expect(renderedData.isLoading).toBe(false);
         component.find('input').simulate('mouseenter');
@@ -95,7 +95,7 @@ describe('components/SearchPicker', () => {
     });
     it('should wait to show results until all queries are completed', function() {
       expect(renderedData.isLoading).toBe(true);
-      return getDelayedPromise(MOCK_API_DELAY).then(() => {
+      return getDelayedPromise(MOCK_API_DELAY + 10).then(() => {
         expect(renderedData.resultsText).toEqual({summary: 'Recently created features'});
         component.find('input').simulate('mouseenter');
         component.find('input').simulate('click');
@@ -135,6 +135,42 @@ describe('components/SearchPicker', () => {
       return getDelayedPromise(MOCK_API_DELAY + 10).then(() => {
         component.update();
         expect(renderedData.resultsText).toEqual({summary: 'Found 4 features matching "audience 20"'});
+      });
+    });
+  });
+
+  describe('Custom search result filtering with filterAvailableEntities', function() {
+    beforeEach(() => {
+      function customSearchResultsFilter(searchResults) {
+        return searchResults.filter(result => result.id === 123);
+      }
+      component = mount(
+        <SearchPicker
+          filterAvailableEntities={ customSearchResultsFilter }
+          onItemSelected={ jest.fn() }
+          searchFunction={ searchFunction }
+          supportedTypes={ ['feature'] }>
+          {(data) => {
+            renderedData = data;
+            return (
+              <div>
+                {data.renderInput()}
+                <p>A list of entities</p>
+              </div>
+            );
+          }}
+        </SearchPicker>
+      );
+    });
+    it('should filter based on the criteria defined in the filterAvailableEntities function', function() {
+      component.find('input').simulate('mouseenter');
+      component.find('input').simulate('click');
+      component.find('input').simulate('change', { target: { value: '' }});
+      return getDelayedPromise(MOCK_API_DELAY + 10).then(() => {
+        component.update();
+        const { availableEntities } = renderedData;
+        expect(availableEntities).toHaveLength(1);
+        expect(availableEntities[0].id).toEqual(123);
       });
     });
   });
