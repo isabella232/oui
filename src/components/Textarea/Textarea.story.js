@@ -6,7 +6,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import Textarea from './index.js';
 
-const stories = storiesOf('Textarea', module);
+const stories = storiesOf('Forms|Textarea', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

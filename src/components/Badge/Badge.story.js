@@ -5,7 +5,7 @@ import { withKnobs, text, number } from '@storybook/addon-knobs';
 
 import Badge from './index.js';
 
-const stories = storiesOf('Badge', module);
+const stories = storiesOf('Informational|Badge', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

@@ -7,7 +7,7 @@ import { JSON_DIFF, STRING_DIFF } from './data.json';
 import CodeDiff from './';
 import { StoryStateWrapper } from '../../utils/storybook-utils';
 
-const stories = storiesOf('CodeDiff', module);
+const stories = storiesOf('Informational|CodeDiff', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

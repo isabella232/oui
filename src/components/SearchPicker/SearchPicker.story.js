@@ -14,7 +14,7 @@ import Row from '../Layout/Row';
 
 const searchFunction = getSearchFunction();
 
-const stories = storiesOf('SearchPicker', module);
+const stories = storiesOf('Forms|SearchPicker', module);
 stories.addDecorator(withKnobs).addDecorator((story) => (
   <div
     id="root-preview"

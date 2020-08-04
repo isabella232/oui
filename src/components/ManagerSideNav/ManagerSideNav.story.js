@@ -8,7 +8,7 @@ import ManagerSideNav from './index.js';
 import Switch from '../Switch/index.js';
 import Link from '../Link/index.js';
 
-const stories = storiesOf('Navigation/ManagerSideNav', module);
+const stories = storiesOf('Navigation|ManagerSideNav', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);

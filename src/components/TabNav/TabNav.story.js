@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import TabNav from './index.js';
 
-const stories = storiesOf('TabNav', module);
+const stories = storiesOf('Navigation|TabNav', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

@@ -5,7 +5,7 @@ import { withKnobs, text, select } from '@storybook/addon-knobs';
 
 import Radio from './index.js';
 
-const stories = storiesOf('Radio', module);
+const stories = storiesOf('Forms|Radio', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

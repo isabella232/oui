@@ -10,7 +10,7 @@ import Icon from 'react-oui-icons';
 import Button from '../components/Button';
 import Table from '../components/Table';
 
-const stories = storiesOf('Icons', module);
+const stories = storiesOf('Icons|Icon Examples', module);
 
 // this add some decorators for making addons available
 stories

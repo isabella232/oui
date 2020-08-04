@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 import SelectDropdown from './index.js';
 
-const stories = storiesOf('SelectDropdown', module);
+const stories = storiesOf('Forms|SelectDropdown', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

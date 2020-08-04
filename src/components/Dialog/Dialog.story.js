@@ -45,7 +45,7 @@ const LanguageDropdown = (
   </Dropdown>
 );
 
-const stories = storiesOf('Dialog', module);
+const stories = storiesOf('Layout|Dialog', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => <div id="root-preview">{story()}</div>);

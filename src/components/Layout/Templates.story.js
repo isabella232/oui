@@ -78,7 +78,7 @@ class ConfigPanelExample extends React.Component {
   }
 }
 
-const storiesForTemplates = storiesOf('LayoutKit/Templates', module);
+const storiesForTemplates = storiesOf('Layout|Templates', module);
 storiesForTemplates
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);

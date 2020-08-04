@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 import Steps from './index.js';
 
-const stories = storiesOf('Steps', module);
+const stories = storiesOf('Status Indicators|Steps', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

@@ -5,7 +5,7 @@ import { withKnobs, text, number, boolean } from '@storybook/addon-knobs';
 
 import ProgressBar from '../ProgressBar';
 
-const stories = storiesOf('ProgressBar', module);
+const stories = storiesOf('Status Indicators|ProgressBar', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

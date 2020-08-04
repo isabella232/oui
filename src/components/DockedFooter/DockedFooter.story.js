@@ -69,7 +69,7 @@ ScrollContainer.propTypes = {
   hasCenterGroup: PropTypes.bool,
 };
 
-const stories = storiesOf('DockedFooter', module);
+const stories = storiesOf('Forms|DockedFooter', module);
 stories
   .addDecorator(story => <div className="soft-quad--sides">{story()}</div>);
 

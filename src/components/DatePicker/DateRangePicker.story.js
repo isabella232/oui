@@ -34,7 +34,7 @@ const presetPanelOptions = [
   },
 ];
 
-const stories = storiesOf('DateRangePicker', module);
+const stories = storiesOf('Forms|DateRangePicker', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => <div id="root-preview">{story()}</div>);

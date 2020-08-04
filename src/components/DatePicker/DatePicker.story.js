@@ -11,7 +11,7 @@ import Input from '../Input';
 
 const mockDateForTesting = moment('2020-01-15');
 
-const stories = storiesOf('DatePicker', module);
+const stories = storiesOf('Forms|DatePicker', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => <div id="root-preview">{story()}</div>);

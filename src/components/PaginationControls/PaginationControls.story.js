@@ -8,7 +8,7 @@ import PaginationControls from './index.js';
 
 const totalPages = 43;
 
-const buttonStories = storiesOf('PaginationControls/Using Buttons (no href)', module);
+const buttonStories = storiesOf('Navigation|PaginationControls/Using Buttons (no href)', module);
 buttonStories
   .addDecorator(withKnobs)
   .addDecorator(story => (
@@ -52,7 +52,7 @@ buttonStories
     );
   });
 
-const linkStories = storiesOf('PaginationControls/Using Links (with href)', module);
+const linkStories = storiesOf('Navigation|PaginationControls/Using Links (with href)', module);
 linkStories
   .addDecorator(withKnobs)
   .addDecorator(story => (

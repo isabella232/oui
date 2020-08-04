@@ -8,7 +8,7 @@ import Input from '../Input';
 import DatePicker from '../DatePicker/DatePicker.js';
 import Col from '../Layout/Col';
 
-const stories = storiesOf('Fieldset', module);
+const stories = storiesOf('Forms|Fieldset', module);
 stories
   .addDecorator(story => <div className="soft-quad--sides">{story()}</div>);
 
@@ -51,9 +51,9 @@ stories
                   id='input-03'
                 />
               </Form.Item>
-              <Fieldset 
-                titleSize='small' 
-                title="Location" 
+              <Fieldset
+                titleSize='small'
+                title="Location"
                 bottomSpacing={false}
                 description="We're using a small title because this fieldset belongs in this section.">
                 <Fieldset.Item>
@@ -85,7 +85,7 @@ stories
     'Standalone', (() => (
       <div className="push-double--top">
         <Col small={8} large={5}>
-          <Fieldset isRequired={true} title="Fieldset section" 
+          <Fieldset isRequired={true} title="Fieldset section"
             description="Fieldsets can also be used separately from Forms. However do consider using them in Forms for good practice.">
             <Fieldset.Item>
               <Input

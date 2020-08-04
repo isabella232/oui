@@ -20,7 +20,7 @@ const code = `const CopyButton = ({ testSection, onClick, text }) => {
   );
 }`;
 
-const stories = storiesOf('CopyButton', module);
+const stories = storiesOf('Forms|Buttons/CopyButton', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

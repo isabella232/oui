@@ -5,7 +5,7 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 import Label from './index.js';
 
-const stories = storiesOf('Label', module);
+const stories = storiesOf('Forms|Label', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

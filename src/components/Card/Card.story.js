@@ -7,7 +7,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import Button from '../Button';
 import Card from '../Card';
 
-const stories = storiesOf('Card', module);
+const stories = storiesOf('Informational|Card', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

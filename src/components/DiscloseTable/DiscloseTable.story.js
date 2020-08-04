@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import DiscloseTable from './index.js';
 import Table from '../Table';
 
-const stories = storiesOf('DiscloseTable', module);
+const stories = storiesOf('Data Organization|DiscloseTable', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

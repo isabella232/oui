@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import ProgressDots from './index.js';
 
-const stories = storiesOf('ProgressDots', module);
+const stories = storiesOf('Status Indicators|ProgressDots', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

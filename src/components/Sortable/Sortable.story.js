@@ -52,7 +52,7 @@ const DNDContextContainer = DragDropContext(HTML5Backend)(({ children }) => (
   <div>{ children }</div>
 ));
 
-const stories = storiesOf('Sortable', module);
+const stories = storiesOf('Sorting and Ordering|Sortable', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

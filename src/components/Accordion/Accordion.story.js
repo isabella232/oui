@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { Accordion, AccordionSection } from '../Accordion';
 import Attention from '../Attention';
 
-const stories = storiesOf('Accordion', module);
+const stories = storiesOf('Accordion (deprecated)', module);
 stories.addDecorator(withKnobs).addDecorator(story => (
   <div id="root-preview">
     <div className="push-double--bottom">

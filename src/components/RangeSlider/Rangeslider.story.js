@@ -12,7 +12,7 @@ Object.keys(FILL_COLOR_MAP).forEach(color => {
   fillColorOptions[color] = color;
 });
 
-const stories = storiesOf('RangeSlider', module);
+const stories = storiesOf('Forms|RangeSlider', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

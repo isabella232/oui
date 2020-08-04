@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import Switch from './index.js';
 
-const stories = storiesOf('Switch', module);
+const stories = storiesOf('Forms|Switch', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

@@ -6,7 +6,7 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 import ArrowsInline from '../ArrowsInline';
 import Attention from '../Attention';
 
-const stories = storiesOf('ArrowsInline', module);
+const stories = storiesOf('ArrowsInline (deprecated)', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

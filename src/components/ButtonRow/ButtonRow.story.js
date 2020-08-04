@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import ButtonRow from './index.js';
 import Button from '../Button';
 
-const stories = storiesOf('ButtonRow', module);
+const stories = storiesOf('Forms|Buttons/ButtonRow', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

@@ -88,7 +88,7 @@ SortedTable.propTypes = {
   })),
 };
 
-const stories = storiesOf('Table', module);
+const stories = storiesOf('Data Organization|Table', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);

@@ -84,7 +84,7 @@ class DragAndDrop extends React.Component {
 DragAndDrop.propTypes = DragAndDropStateless.propTypes;
 DragAndDrop.defaultProps = DragAndDropStateless.defaultProps;
 
-const stories = storiesOf('DragAndDrop', module);
+const stories = storiesOf('Sorting and Ordering|DragAndDrop', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => <div id="root-preview">{story()}</div>);

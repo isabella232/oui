@@ -22,7 +22,7 @@ const langOptions = {
   'scss': 'scss',
   'swift': 'swift'};
 
-const stories = storiesOf('Code', module);
+const stories = storiesOf('Informational|Code', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

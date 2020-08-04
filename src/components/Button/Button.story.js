@@ -9,7 +9,7 @@ import Button from './index.js';
 import Link from '../Link';
 import ArrowsInline from '../ArrowsInline';
 
-const stories = storiesOf('Button', module);
+const stories = storiesOf('Forms|Buttons/Default Button', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

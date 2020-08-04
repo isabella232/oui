@@ -28,7 +28,7 @@ Use one <ListGroup.Item> per single setting or a logical grouping of a few relat
 };
 /* eslint-enable max-len */
 
-const stories = storiesOf('ListGroup', module);
+const stories = storiesOf('Data Organization|ListGroup', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(withInfo(infoAddonConfig))

@@ -7,7 +7,7 @@ import Poptip from './index.js';
 import Button from '../Button';
 import Icon from 'react-oui-icons';
 
-const stories = storiesOf('Poptip', module);
+const stories = storiesOf('Popups|Poptip', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

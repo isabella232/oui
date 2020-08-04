@@ -17,7 +17,7 @@ Object.keys(FILL_COLOR_MAP).forEach(color => {
   fillColorOptions[color] = color;
 });
 
-const stories = storiesOf('ButtonIcon', module);
+const stories = storiesOf('Forms|Buttons/ButtonIcon', module);
 stories.addDecorator(withKnobs).addDecorator(story => (
   <div id="root-preview">
     <Container paddedContent="around">{story()}</Container>

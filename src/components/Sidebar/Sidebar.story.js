@@ -5,7 +5,7 @@ import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs
 
 import Sidebar from './Sidebar';
 
-const stories = storiesOf('Sidebar', module);
+const stories = storiesOf('Layout|Sidebar', module);
 
 stories
   .addDecorator(withKnobs)

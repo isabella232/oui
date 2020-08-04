@@ -7,7 +7,7 @@ import Popover from './index.js';
 import OverlayWrapper from '../OverlayWrapper';
 import Button from '../Button';
 
-const stories = storiesOf('Popover', module);
+const stories = storiesOf('Popups|Popover', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

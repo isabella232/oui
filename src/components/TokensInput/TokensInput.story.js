@@ -41,7 +41,7 @@ class TokensInput extends React.Component {
 TokensInput.propTypes = TokensInputCore.propTypes;
 TokensInput.defaultProps = TokensInputCore.defaultProps;
 
-storiesOf('TokensInput', module)
+storiesOf('Forms|TokensInput', module)
   .addDecorator(withKnobs)
   .addDecorator(story => (
     <div id="root-preview">

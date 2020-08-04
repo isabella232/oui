@@ -6,7 +6,7 @@ import "./index.scss";
 
 import { Typography } from "./typography";
 
-const stories = storiesOf("Helper Classes/Typography", module);
+const stories = storiesOf("Overview|Helper Classes/Typography", module);
 stories
   .addDecorator(withKnobs)
   .addDecorator((story) => <div className="soft-quad--sides soft-quad--ends">{story()}</div>);

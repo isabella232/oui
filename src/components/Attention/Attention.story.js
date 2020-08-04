@@ -12,7 +12,7 @@ const typeOptions = {
   'warning': 'warning',
 };
 
-const stories = storiesOf('Attention', module);
+const stories = storiesOf('Informational|Attention', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

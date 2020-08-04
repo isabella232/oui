@@ -7,7 +7,7 @@ import Button from '../Button/';
 import Link from '../Link/';
 import EmptyDashboard from './index.js';
 
-const stories = storiesOf('Empty Dashboard', module);
+const stories = storiesOf('Layout|Empty Dashboard', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

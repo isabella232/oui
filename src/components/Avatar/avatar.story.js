@@ -8,7 +8,7 @@ import Container from '../Layout/Container';
 import Row from '../Layout/Row';
 
 
-const stories = storiesOf('Avatar', module);
+const stories = storiesOf('Informational|Avatar', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

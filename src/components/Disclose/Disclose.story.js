@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import Disclose from './index.js';
 import Checkbox from '../Checkbox';
 
-const stories = storiesOf('Disclose', module);
+const stories = storiesOf('Data Organization|Disclose', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

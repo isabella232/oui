@@ -7,7 +7,7 @@ import Icon from 'react-oui-icons';
 import Link from './index.js';
 import Button from '../Button';
 
-const stories = storiesOf('Link', module);
+const stories = storiesOf('Navigation|Link', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (
@@ -107,23 +107,23 @@ stories
     );
   });
 
-storiesOf('Link (Fake)', module)
-  .addDecorator(withKnobs)
-  .addDecorator(story => (
-    <div id="root-preview">
-      {story()}
-    </div>
-  ))
-  .add('Enabled', () => {
-    return (
-      <Link>Faux Link</Link>
-    );
-  })
-  .add('Disabled', () => {
-    return (
-      <Link
-        isDisabled={ true }>
-        Faux Link
-      </Link>
-    );
-  });
+// storiesOf('Link (Fake)', module)
+//   .addDecorator(withKnobs)
+//   .addDecorator(story => (
+//     <div id="root-preview">
+//       {story()}
+//     </div>
+//   ))
+//   .add('Enabled', () => {
+//     return (
+//       <Link>Faux Link</Link>
+//     );
+//   })
+//   .add('Disabled', () => {
+//     return (
+//       <Link
+//         isDisabled={ true }>
+//         Faux Link
+//       </Link>
+//     );
+//   });

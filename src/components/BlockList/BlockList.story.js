@@ -9,7 +9,7 @@ import Button from '../Button';
 import Token from '../Token';
 import OverlayWrapper from '../OverlayWrapper';
 
-const stories = storiesOf('BlockList', module);
+const stories = storiesOf('Forms|BlockList', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

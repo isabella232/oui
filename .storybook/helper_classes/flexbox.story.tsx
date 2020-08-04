@@ -6,13 +6,13 @@ import "./index.scss";
 import TabNav from "../../src/components/TabNav/index";
 import Code from "../../src/components/Code/index";
 
-import { FlexAligning, 
-  FlexDirection, 
-  Flex1, 
+import { FlexAligning,
+  FlexDirection,
+  Flex1,
   FlexNone,
   FlexWrap } from "./flexboxInteractive";
 
-const stories = storiesOf("Helper Classes/Layout/Flexbox", module);
+const stories = storiesOf("Overview|Helper Classes/Layout/Flexbox", module);
 stories
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);
@@ -26,7 +26,7 @@ stories.add("Default", () => {
         <TabNav activeTab="flex" style={['sub']}>
           <TabNav.Tab tabId="flex">
             flex
-          </TabNav.Tab> 
+          </TabNav.Tab>
         </TabNav>
         <div className="flex flex--row push--top">
           <div className="flex--1">

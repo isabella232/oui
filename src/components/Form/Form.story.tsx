@@ -7,7 +7,7 @@ import Input from '../Input';
 import DatePicker from '../DatePicker/DatePicker.js';
 import Col from '../Layout/Col';
 
-const stories = storiesOf('Form', module);
+const stories = storiesOf('Forms|Form Layout', module);
 stories
   .addDecorator(story => <div className="soft-quad--sides">{story()}</div>);
 

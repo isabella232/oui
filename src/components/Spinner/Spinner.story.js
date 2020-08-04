@@ -5,7 +5,7 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Spinner from './index.js';
 
-const stories = storiesOf('Spinner', module);
+const stories = storiesOf('Status Indicators|Spinner', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

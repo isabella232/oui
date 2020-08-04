@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 import Select from './index.js';
 import Attention from '../Attention/index.tsx';
 
-const stories = storiesOf('Select', module);
+const stories = storiesOf('Forms|Select', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => <div id="root-preview">{story()}</div>);

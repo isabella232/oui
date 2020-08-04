@@ -74,7 +74,7 @@ const borderOptions = {
   none: 'none',
 };
 
-const storiesForContainer = storiesOf('LayoutKit/Container', module);
+const storiesForContainer = storiesOf('Layout|LayoutKit/Container', module);
 storiesForContainer
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);
@@ -300,7 +300,7 @@ storiesForContainer
     );
   });
 
-const storiesForRow = storiesOf('LayoutKit/Row', module);
+const storiesForRow = storiesOf('Layout|LayoutKit/Row', module);
 storiesForRow
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);
@@ -432,7 +432,7 @@ storiesForRow
     );
   });
 
-const storiesForCol = storiesOf('LayoutKit/Col', module);
+const storiesForCol = storiesOf('Layout|LayoutKit/Col', module);
 storiesForCol
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);
@@ -706,7 +706,7 @@ storiesForCol
     );
   });
 
-const storiesForExamples = storiesOf('LayoutKit/Usage Examples', module);
+const storiesForExamples = storiesOf('Layout|LayoutKit/Usage Examples', module);
 storiesForExamples
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);

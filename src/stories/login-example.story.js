@@ -36,7 +36,7 @@ const Or = styled.div`
   }
 `;
 
-const stories = storiesOf('Login', module);
+const stories = storiesOf('Layout|Login', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

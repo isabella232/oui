@@ -10,7 +10,7 @@ import Button from '../Button';
 import Fieldset from '../Fieldset';
 import Input from '../Input';
 
-const stories = storiesOf('Sheet', module);
+const stories = storiesOf('Layout|Sheet', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => <div id="root-preview">{story()}</div>);

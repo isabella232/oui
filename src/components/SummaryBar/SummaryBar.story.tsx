@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import SummaryBar from './index';
 
-const stories = storiesOf('SummaryBar', module);
+const stories = storiesOf('Data Organization|SummaryBar', module);
 stories.addDecorator(withKnobs).addDecorator(story => <div id="root-preview">{story()}</div>);
 
 stories.add('Bar with mixed content', () => {

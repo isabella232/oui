@@ -23,7 +23,7 @@ const ClosePopoverButton = (props, context) => {
   return <Button onClick={ context.hideOverlay }>Close Popopver</Button>;
 };
 
-const stories = storiesOf('OverlayWrapper', module);
+const stories = storiesOf('Popups|OverlayWrapper', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

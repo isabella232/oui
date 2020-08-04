@@ -20,7 +20,7 @@ const statusData = [
   { title: 'Paused' },
 ];
 
-const stories = storiesOf('Toolbar', module);
+const stories = storiesOf('Layout|Toolbar', module);
 stories.addDecorator(withKnobs).addDecorator((story) => (
   <div id="root-preview" style={{ height: '300px' }}>
     {story()}

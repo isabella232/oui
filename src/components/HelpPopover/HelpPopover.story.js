@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import HelpPopover from './index.js';
 import Row from '../Layout/Row';
 
-const stories = storiesOf('HelpPopover', module);
+const stories = storiesOf('Popups|HelpPopover', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

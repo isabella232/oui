@@ -10,7 +10,7 @@ import Row from "../Layout/Row";
 import Container from "../Layout/Container";
 import Dropdown from "../Dropdown";
 
-const stories = storiesOf("Tile", module);
+const stories = storiesOf("Informational|Tile", module);
 
 const dropdownItems = [
   <Dropdown.ListItem key={0} role="separator">

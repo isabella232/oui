@@ -12,7 +12,7 @@ import {
 
 import Input from './index';
 
-const stories = storiesOf('Input', module);
+const stories = storiesOf('Forms|Input', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);

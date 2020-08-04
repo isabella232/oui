@@ -36,7 +36,7 @@ const dataLarge = [
   { title: 'Faster Results', description: 'Cauliflower cheese stilton paneer hard cheese fondue.' },
 ];
 
-const stories = storiesOf('Dropdown', module);
+const stories = storiesOf('Forms|Dropdown', module);
 stories.addDecorator(withKnobs).addDecorator(story => <div id="root-preview">{story()}</div>);
 
 stories.add('Default', () => {

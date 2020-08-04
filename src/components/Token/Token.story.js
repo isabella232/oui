@@ -12,7 +12,7 @@ const styleOptions = {
   Tertiary: 'tertiary',
   Error: 'error',
 };
-const stories = storiesOf('Token', module);
+const stories = storiesOf('Informational|Token', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

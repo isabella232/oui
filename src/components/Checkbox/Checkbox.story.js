@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import Checkbox from '../Checkbox';
 
-const stories = storiesOf('Checkbox', module);
+const stories = storiesOf('Forms|Checkbox', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (
