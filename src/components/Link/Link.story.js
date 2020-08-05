@@ -105,6 +105,14 @@ stories
         </Link>
       </div>
     );
+  })
+  .add('Link with icon', () => {
+    return (
+      <ul>
+        <li><Link href="http://google.com" leftIcon="calendar" isDisabled={ boolean('isDisabled', false) } onClick={ action('click blocklist item home') }>{ text('default', 'Link') }</Link></li>
+        <li><Link href="http://google.com" rightIcon="external">External link</Link></li>
+      </ul>
+    );
   });
 
 // storiesOf('Link (Fake)', module)

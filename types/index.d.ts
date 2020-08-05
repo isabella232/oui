@@ -749,7 +749,7 @@ declare module "components/Layout/Col" {
          */
         overflow?: 'overflow-y--scroll' | 'overflow-x--auto' | 'overflow-y--auto';
         /** Add default amount of padding. */
-        paddedContent?: 'around' | 'sides' | 'ends' | 'none';
+        paddedContent?: 'around' | 'sides' | 'ends' | 'none' | 'remove';
         /** Optional pass through ref. */
         ref?: Ref<HTMLElement>;
         /**
@@ -5651,6 +5651,15 @@ declare module "components/SearchPicker/index" {
              */
             currentFauxFocusIndex: PropTypes.Validator<number>;
             /**
+             * This function can be set when custom search results filtering is required
+             * It will override the internal search results filtering
+             *
+             * @param {Array} searchResults
+             * @param {Array} selectedEntityIds
+             * @param {Array} filteredSearchResults
+             */
+            filterAvailableEntities: PropTypes.Requireable<(...args: any[]) => any>;
+            /**
              * A handler for the input element event onKeyDown
              * via @keyboardTracker
              */
@@ -6409,13 +6418,15 @@ declare module "components/Toolbar/index" {
     namespace Toolbar {
         export namespace defaultProps {
             export const isBottomToolbar: boolean;
+            export const toolbarStyle: never[];
         }
         export namespace propTypes {
             export const children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             const isBottomToolbar_1: PropTypes.Requireable<boolean>;
             export { isBottomToolbar_1 as isBottomToolbar };
             export const testSection: PropTypes.Requireable<string>;
-            export const toolbarStyle: PropTypes.Requireable<string>;
+            const toolbarStyle_1: PropTypes.Requireable<(string | null | undefined)[]>;
+            export { toolbarStyle_1 as toolbarStyle };
         }
         export { ToolbarButton as Button };
         export { ToolbarLink as Link };

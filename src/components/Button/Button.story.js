@@ -161,7 +161,16 @@ stories
                 save: 'save',
               }, 'calendar') }>
             { text('customize me!', 'customize me!') }
-          </Button>]
+          </Button>,
+          <Button
+            key="1"
+            width="default"
+            style="outline"
+            size='small'
+            onClick={ action('I have been clicked') }
+            rightIcon='calendar'>
+            Small icon
+          </Button>,]
         }
       />
     );
