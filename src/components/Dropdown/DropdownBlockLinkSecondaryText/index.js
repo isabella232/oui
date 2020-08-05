@@ -27,7 +27,7 @@ DropdownBlockLinkSecondaryText.propTypes = {
   /** should show info icon */
   isWarning: PropTypes.bool,
   /** description text, if provided */
-  secondaryText: PropTypes.string,
+  secondaryText: PropTypes.node,
   /** test section from parent */
   testSection: PropTypes.string,
 };

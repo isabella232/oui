@@ -34,5 +34,5 @@ DropdownBlockLinkText.propTypes = {
   /** test section from parent */
   testSection: PropTypes.string,
   /** text, if provided */
-  text: PropTypes.string,
+  text: PropTypes.node,
 };

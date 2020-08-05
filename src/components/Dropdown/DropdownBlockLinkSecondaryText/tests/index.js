@@ -9,6 +9,11 @@ describe('components/Dropdown/DropdownBlockLinkSecondaryText', () => {
   });
 
   it('should render secondary text', () => {
+    const component = shallow(<DropdownBlockLinkSecondaryText secondaryText={ <span>foo</span> } />);
+    expect(component.text()).toBe('foo');
+  });
+
+  it('should render secondary text when passed a span', () => {
     const component = shallow(<DropdownBlockLinkSecondaryText secondaryText={ 'foo' } />);
     expect(component.text()).toBe('foo');
   });
