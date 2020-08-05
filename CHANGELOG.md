@@ -7,6 +7,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 
 ## Unreleased
 
+## 46.13.0 - 2020-08-05
 - [Feature] Update Storybook to organize components ([#1381](https://github.com/optimizely/oui/pull/1381))
 - [Patch] Update react-oui-icons version to 2.10.0 ([#1392](https://github.com/optimizely/oui/pull/1392))
   - Update `icons.json` to use latest set of icons from v2.10.0
