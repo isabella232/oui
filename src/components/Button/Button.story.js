@@ -170,7 +170,7 @@ stories
             onClick={ action('I have been clicked') }
             rightIcon='calendar'>
             Small icon
-          </Button>,]
+          </Button>]
         }
       />
     );
