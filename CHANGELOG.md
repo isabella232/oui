@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Release] Remove `word-break` utility class ([#1394](https://github.com/optimizely/oui/pull/1394))
 
 ## 46.13.0 - 2020-08-05
 - [Feature] Update Storybook to organize components ([#1381](https://github.com/optimizely/oui/pull/1381))
