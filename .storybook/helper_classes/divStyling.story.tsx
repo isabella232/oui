@@ -5,7 +5,7 @@ import "./index.scss";
 
 import { Sizing, BackgroundColor, Border } from "./divStyling";
 
-const stories = storiesOf("Helper Classes/Div Styling", module);
+const stories = storiesOf("Overview|Helper Classes/Div Styling", module);
 stories
   .addDecorator((story) => <div className="soft-quad--sides soft-quad--ends">{story()}</div>);
 
