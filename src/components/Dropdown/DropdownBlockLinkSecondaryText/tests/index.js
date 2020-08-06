@@ -13,6 +13,11 @@ describe('components/Dropdown/DropdownBlockLinkSecondaryText', () => {
     expect(component.text()).toBe('foo');
   });
 
+  it('should render secondary text when passed a span', () => {
+    const component = shallow(<DropdownBlockLinkSecondaryText secondaryText={ <span>foo</span> } />);
+    expect(component.text()).toBe('foo');
+  });
+
   it('should render with test section', () => {
     const component = shallow(<DropdownBlockLinkSecondaryText testSection="goose" />);
     expect(component.findWhere((n) => n.is('[data-test-section="block-link-description-goose"]')).exists()).toBe(true);

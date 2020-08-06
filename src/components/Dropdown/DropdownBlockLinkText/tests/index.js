@@ -13,6 +13,11 @@ describe('components/Dropdown/DropdownBlockLinkText', () => {
     expect(component.text()).toBe('foo');
   });
 
+  it('should render text when passed a span', () => {
+    const component = shallow(<DropdownBlockLinkText text={ <span>foo</span> } />);
+    expect(component.text()).toBe('foo');
+  });
+
   it('should render with test section', () => {
     const component = shallow(<DropdownBlockLinkText testSection="goose"></DropdownBlockLinkText>);
     expect(component.is('[data-test-section="block-link-text-goose"]')).toBe(true);
