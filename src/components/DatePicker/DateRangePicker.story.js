@@ -140,7 +140,7 @@ stories
   .add('With an initial starting month', (() => (
     <Container>
       <p>Adjust the left hand month using a function like:
-        <code>  () => moment().subtract(1, 'months')</code> with the
+        <code>  () ={'>'} moment().subtract(1, 'months')</code> with the
         <code>  initialVisibleMonth  </code> prop.
       </p>
       <DateRangePicker
@@ -356,6 +356,20 @@ stories
         presetPanelOptions={ presetPanelOptions }
         startDateInputId='start-date-id-0'
         startTimeInputId='startTimeInputId'
+      />
+    </Container>
+  )))
+  .add('With clear buttons', (() => (
+    <Container>
+      <DateRangePicker
+        endDateInputId='end-date-id-0'
+        focusedInput='endDate'
+        hasClearButton={ true }
+        initialStartDate={ mockDateForTesting }
+        isFutureDateSelectable={ boolean('isFutureDateSelectable', true) }
+        isPastDateSelectable={ boolean('isPastDateSelectable', true) }
+        onDatesChange={ action('onDatesChange') }
+        startDateInputId='start-date-id-0'
       />
     </Container>
   )));

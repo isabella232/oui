@@ -135,6 +135,25 @@ describe('components/DatePicker', function() {
     expect(component.find('.oui-date-picker__input-row').containsMatchingElement(<label>{customLabel}</label>)).toBe(true);
     expect(component.find(`[placeholder='${customPlaceholder}']`).exists()).toBe(true);
   });
+
+  it('should add a Clear Button when hasClearButton is true', () => {
+    const testDate = moment('2019-01-01');
+    const component = mount(<DatePicker inputId="date-picker-01" initialDate={ testDate } hasClearButton={ true }/>);
+    expect(component.find('.oui-text-input__clear-button').length).toBe(1);
+    expect(component.find('.oui-icon').length).toBe(1);
+  });
+
+  it('should call the onClearButtonClick event handler when the clear button is clicked', () => {
+    const testDate = moment('2019-01-01');
+
+    const component = mount(
+      <DatePicker inputId="date-picker-01" initialDate={ testDate } hasClearButton={ true }/>
+    );
+
+    component.find('.oui-button-icon').simulate('click');
+
+    expect(component.find('.oui-date-picker__input-row').containsMatchingElement(<input value=''/>)).toBe(true);
+  });
 });
 
 describe('components/DateRangePicker', function() {
@@ -683,5 +702,38 @@ describe('components/DateRangePicker', function() {
       .find('.CalendarMonthGrid_month__horizontal:not(.CalendarMonthGrid_month__hidden) .CalendarMonth_caption_1 .oui-date-picker__month-title')
       .first()
       .text()).toContain(previousMonthText);
+  });
+
+  it('should add a Clear Button when hasClearButton is true', () => {
+    const testDate = moment('2019-01-01');
+    const component = mount(
+      <DateRangePicker
+        startDateInputId="start-date-picker-01"
+        endDateInputId="end-date-picker-01"
+        focusedInput="startDate"
+        initialStartDate={ testDate }
+        hasClearButton={ true }
+      />);
+    expect(component.find('[data-test-section="date-range-picker-start-date-input"]').length).toBe(1);
+    expect(component.find('.oui-date-picker__input-row')
+      .find('.oui-button-icon').length).toBe(2);
+  });
+
+  it('should call the onClearButtonClick event handler when the clear button is clicked', () => {
+    const testDate = moment('2019-01-01');
+
+    const component = mount(
+      <DateRangePicker
+        startDateInputId="start-date-picker-01"
+        endDateInputId="end-date-picker-01"
+        focusedInput="startDate"
+        initialStartDate={ testDate }
+        hasClearButton={ true }
+      />);
+
+    component.find('.oui-button-icon').first().simulate('click');
+
+    expect(component.find('[data-test-section="date-range-picker-start-date-input"]')
+      .containsMatchingElement(<input value=''/>)).toBe(true);
   });
 });

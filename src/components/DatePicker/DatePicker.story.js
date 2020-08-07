@@ -121,7 +121,7 @@ stories.add('Default single date picker', (() => (
   .add('With a custom initial starting month', (() => (
     <Container>
       <p>Adjust the left hand month using a function like:
-        <code>  () => moment().subtract(1, 'months')</code> with the
+        <code>  () ={'>'} moment().subtract(1, 'months')</code> with the
         <code>  initialVisibleMonth  </code> prop.
       </p>
       <DatePicker
@@ -152,6 +152,19 @@ stories.add('Default single date picker', (() => (
         keepOpenAlways={ boolean('keepOpenAlways', true) }
         isFocused={ boolean('isFocused', false) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
+        onDateChange={ action('onDateChange') }
+      />
+    </Container>
+  )))
+  .add('With a clear button', (() => (
+    <Container>
+      <DatePicker
+        hasClearButton={ true }
+        initialDate={ mockDateForTesting }
+        inputId="date-picker-id"
+        inputLabel={ text('inputLabel', 'Start Time') }
+        inputPlaceholder={ text('inputPlaceholder', 'Select Date') }
+        isFocused={ boolean('isFocused', false) }
         onDateChange={ action('onDateChange') }
       />
     </Container>

@@ -204,6 +204,20 @@ class DateRangePicker extends React.Component {
     </div>);
   };
 
+  onClearButtonClick = (rangeSide) => {
+    if (rangeSide === 'start') {
+      this.setState({
+        startDateString: '',
+        startDate: null,
+      });
+    } else {
+      this.setState({
+        endDateString: '',
+        endDate: null,
+      });
+    }
+  }
+
   render() {
     const {
       endDateInputId,
@@ -211,6 +225,7 @@ class DateRangePicker extends React.Component {
       endDateInputPlaceholder,
       endTimeInputId,
       endTimeInputLabel,
+      hasClearButton,
       hasTimeInputs,
       isAbsolutelyPositioned,
       initialVisibleMonth,
@@ -250,10 +265,12 @@ class DateRangePicker extends React.Component {
           <div className="oui-date-picker__input-row">
             <div className={ classNames('push--right', isBorderless && 'flex--1') }>
               <Input
+                hasClearButton={ hasClearButton }
                 id={ startDateInputId }
                 isReadOnly={ true }
                 label={ startDateInputLabel }
                 name="startDate"
+                onClearButtonClick={ () => this.onClearButtonClick('start') }
                 onFocus={ () => this.onFocusChange('startDate') }
                 placeholder={ startDateInputPlaceholder }
                 testSection="date-range-picker-start-date-input"
@@ -275,10 +292,12 @@ class DateRangePicker extends React.Component {
             </div>}
             <div className={ classNames(isBorderless && 'flex--1', hasTimeInputs && 'push--right') }>
               <Input
+                hasClearButton={ hasClearButton }
                 id={ endDateInputId }
                 isReadOnly={ true }
                 label={ endDateInputLabel }
                 name="endDate"
+                onClearButtonClick={ () => this.onClearButtonClick('end') }
                 onFocus={ () => this.onFocusChange('endDate') }
                 placeholder={ endDateInputPlaceholder }
                 testSection="date-range-picker-end-date-input"
@@ -358,6 +377,8 @@ DateRangePicker.propTypes = {
    * or null if neither is active
    */
   focusedInput: PropTypes.oneOf(['startDate', 'endDate', null]),
+  /** Whether or not to add a clear button to right of both inputs */
+  hasClearButton: PropTypes.bool,
   /** When true, adds time inputs next to date inputs */
   hasTimeInputs: PropTypes.bool,
   /** An initial end date to populate the end date input with,

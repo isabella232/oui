@@ -58,8 +58,16 @@ class DatePicker extends React.Component {
     return isOutsideAcceptableDateRange(day, isOutsideRange, isFutureDateSelectable, isPastDateSelectable);
   };
 
+  onClearButtonClick = () => {
+    this.setState({
+      currentDateString: '',
+      currentDate: null,
+    });
+  }
+
   render() {
     const {
+      hasClearButton,
       initialVisibleMonth,
       isDisabledInput,
       inputId,
@@ -73,12 +81,14 @@ class DatePicker extends React.Component {
         <div className={ classNames('oui-date-picker', isAbsolutelyPositioned && 'oui-date-picker--absolute') }>
           <div className="oui-date-picker__input-row">
             <Input
+              hasClearButton={ hasClearButton }
               isDisabled={ isDisabledInput }
               id={ inputId }
               isReadOnly={ true }
               label={ inputLabel }
               name="date-picker"
               onBlur={ this.onBlur }
+              onClearButtonClick={ this.onClearButtonClick }
               onFocus={ this.onFocusChange.bind(this, { focused: true }) }
               placeholder={ inputPlaceholder }
               type="text"
@@ -111,6 +121,8 @@ class DatePicker extends React.Component {
 }
 
 DatePicker.propTypes = {
+  /** Whether or not to add a clear button to right of input */
+  hasClearButton: PropTypes.bool,
   /** An initial date to populate the input with, must be a moment() */
   initialDate: momentPropTypes.momentObj,
   /** Function to determine what month the date picker
