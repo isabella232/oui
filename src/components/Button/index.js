@@ -50,13 +50,25 @@ const Button = ({
     onClick(event);
   }
 
+  const leftIconClasses = classNames(
+    'flex', 'flex-self--center', {
+      'push--right': size !== 'small',
+      'push-half--right': size === 'small',
+    }
+  );
   const leftIconComp = leftIcon ?
-    (<div className={ 'flex flex-self--center push--right' }>
+    (<div className={ leftIconClasses }>
       <Icon name={ leftIcon } size={ size === 'large' ? 'medium' : 'small' }/>
     </div>) : '';
 
+  const rightIconClasses = classNames(
+    'flex', 'flex-self--center', {
+      'push--left': size !== 'small',
+      'push-half--left': size === 'small',
+    }
+  );
   const rightIconComp = rightIcon ?
-    (<div className={ 'flex flex-self--center push--left' }>
+    (<div className={ rightIconClasses }>
       <Icon name={ rightIcon } size={ size === 'large' ? 'medium' : 'small' }/>
     </div>) : '';
 

@@ -8,6 +8,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## Unreleased
 - [Release] Remove `word-break` helper class in favor of `word-break--all` ([#1394](https://github.com/optimizely/oui/pull/1394))
 - [Feature] Add `hasClearButton` to **DatePicker** and **DateRangePicker** ([#1396](https://github.com/optimizely/oui/pull/1396))
+- [Feature] Add `leftIcon` and `rightIcon` to **Link** ([#1393](https://github.com/optimizely/oui/pull/1393)) 
 - [Patch] Replaced `name` and `secondaryText`'s string requirement to node for **Dropdown** ([#1395](https://github.com/optimizely/oui/pull/1395))
 
 ## 46.13.0 - 2020-08-05
