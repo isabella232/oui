@@ -4,7 +4,7 @@
   "tokens": [
     {
       "friendlyName": "Brand Blue (Extra Light)",
-      "id": "brand-blue-xlight",
+      "id": "brand-blue-x-light",
       "value": "hsla(226, 100%, 97%, 1)",
       "hex": "#F2F5FF",
       "type": "color",
@@ -36,7 +36,7 @@
     },
     {
       "friendlyName": "Brand Purple (Extra Light)",
-      "id": "brand-purple-xlight",
+      "id": "brand-purple-x-light",
       "value": "hsla(240, 9%, 96%, 1)",
       "hex": "#F3F3F5",
       "type": "color",
@@ -68,7 +68,7 @@
     },
     {
       "friendlyName": "Smoke (Extra Light)",
-      "id": "smoke-xlight",
+      "id": "smoke-x-light",
       "value": "hsla(0, 0%, 98%, 1)",
       "hex": "#FAFAFA",
       "type": "color",
@@ -100,7 +100,7 @@
     },
     {
       "friendlyName": "Grey (Extra Light)",
-      "id": "grey-xlight",
+      "id": "grey-x-light",
       "value": "hsla(0, 0%, 96%, 1)",
       "hex": "#F5F5F5",
       "type": "color",
@@ -131,7 +131,7 @@
     },
     {
       "friendlyName": "Purple (Extra Light)",
-      "id": "purple-xlight",
+      "id": "purple-x-light",
       "value": "hsla(263, 48%, 95%, 1)",
       "hex": "#F0EBF8",
       "type": "color",
@@ -163,7 +163,7 @@
     },
     {
       "friendlyName": "Magenta (Extra Light)",
-      "id": "magenta-xlight",
+      "id": "magenta-x-light",
       "value": "hsla(310, 56%, 94%, 1)",
       "hex": "#F8E6F5",
       "type": "color",
@@ -195,7 +195,7 @@
     },
     {
       "friendlyName": "Pink (Extra Light)",
-      "id": "pink-xlight",
+      "id": "pink-x-light",
       "value": "hsla(340, 86%, 95%, 1)",
       "hex": "#FDE5ED",
       "type": "color",
@@ -227,7 +227,7 @@
     },
     {
       "friendlyName": "Red (Extra Light)",
-      "id": "red-xlight",
+      "id": "red-x-light",
       "value": "hsla(0, 91%, 96%, 1)",
       "hex": "#FEEAEA",
       "type": "color",
@@ -259,7 +259,7 @@
     },
     {
       "friendlyName": "Orange (Extra Light)",
-      "id": "orange-xlight",
+      "id": "orange-x-light",
       "value": "hsla(36, 100%, 95%, 1)",
       "hex": "#FFF5E6",
       "type": "color",
@@ -291,7 +291,7 @@
     },
     {
       "friendlyName": "Yellow (Extra Light)",
-      "id": "yellow-xlight",
+      "id": "yellow-x-light",
       "value": "hsla(46, 100%, 95%, 1)",
       "hex": "#FFF9E6",
       "type": "color",
@@ -323,7 +323,7 @@
     },
     {
       "friendlyName": "Green (Extra Light)",
-      "id": "green-xlight",
+      "id": "green-x-light",
       "value": "hsla(120, 38%, 95%, 1)",
       "hex": "#EDF7ED",
       "type": "color",
@@ -355,7 +355,7 @@
     },
     {
       "friendlyName": "Aqua Blue (Extra Light)",
-      "id": "aqua-xlight",
+      "id": "aqua-x-light",
       "value": "hsla(189, 72%, 94%, 1)",
       "hex": "#E6F8FB",
       "type": "color",
@@ -387,7 +387,7 @@
     },
     {
       "friendlyName": "Blue (Extra Light)",
-      "id": "blue-xlight",
+      "id": "blue-x-light",
       "value": "hsla(209, 91%, 95%, 1)",
       "hex": "#E9F4FE",
       "type": "color",
