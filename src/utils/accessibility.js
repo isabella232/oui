@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { noop } from 'lodash';
 
 import {
-  amberDark,
+  yellowDark,
   aquaDark,
   brandBlueDark,
   greenDark,
@@ -117,7 +117,7 @@ export const keyboardTracker = Component => {
 // map fillColorName prop values to OUI color tokens
 export const FILL_COLOR_MAP = {
   aqua: aquaDark,
-  amber: amberDark,
+  amber: yellowDark,
   default: brandBlueDark,
   green: greenDark,
   orange: orangeDark,
