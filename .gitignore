@@ -36,6 +36,3 @@ vendors~react-syntax-highlighter_languages_highlight_*.*.bundle.js.map
 !react-syntax-highlighter_languages_highlight_html.*.bundle.js.map
 !react-syntax-highlighter_languages_highlight_tsx.*.bundle.js.map
 !react-syntax-highlighter_languages_highlight_typescript.*.bundle.js.map
-
-# Add node_modules of github actions
-!/.github_actions/node_modules
