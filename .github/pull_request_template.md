@@ -8,7 +8,7 @@ What did you change and why?
 
 ## Test Plan
 
-Please remember to add tests for all new functionality
+Please remember to add tests for all new functionality.
 
 ## Jira
 
