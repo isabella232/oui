@@ -1,10 +1,11 @@
 on: 
   pull_request:
   issue_comment:
-    types: [edited]
+    types: edited
 
 jobs:
   update_changelog_job:
+    if: contains(github.event.comment.html_url, '/pull/')
     runs-on: ubuntu-latest
     name: Update CHANGELOG.md
     steps:
