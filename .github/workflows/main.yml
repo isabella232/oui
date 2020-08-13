@@ -15,7 +15,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
       - name: Update changelog
-        uses: ./.actions/ # Uses an action in the root directory
+        uses: ./github_actions/ # Uses an action in the root directory
         id: update
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
