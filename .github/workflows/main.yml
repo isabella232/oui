@@ -1,7 +1,7 @@
-on: 
+on: [issue_comment]
   # pull_request:
-  issue_comment:
-    types: edited
+  
+    # types: edited
 
 jobs:
   update_changelog_job:
