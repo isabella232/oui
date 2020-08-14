@@ -68,3 +68,5 @@ Thanks to [Chromatic](https://www.chromaticqa.com/), OUI runs visual regression 
 ## 💅 Sass
 
 To use OUI Sass variables and mixins in your project read [how to use OUI sass](readme-sass.md).
+
+## Just for the demo
