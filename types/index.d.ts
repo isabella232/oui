@@ -190,45 +190,60 @@ declare module "components/Button/index" {
     import PropTypes from "prop-types";
 }
 declare module "tokens/forimport/index.es" {
+    export var brandBlueXLight: string;
     export var brandBlueLight: string;
     export var brandBlueBase: string;
     export var brandBlueDark: string;
+    export var brandPurpleXLight: string;
     export var brandPurpleLight: string;
     export var brandPurpleBase: string;
     export var brandPurpleDark: string;
+    export var smokeXLight: string;
     export var smokeLight: string;
     export var smokeBase: string;
     export var smokeDark: string;
+    export var greyXLight: string;
     export var greyLight: string;
     export var greyBase: string;
     export var greyDark: string;
+    export var purpleXLight: string;
     export var purpleLight: string;
     export var purpleBase: string;
     export var purpleDark: string;
+    export var magentaXLight: string;
     export var magentaLight: string;
     export var magentaBase: string;
     export var magentaDark: string;
-    export var redLight: string;
-    export var redBase: string;
-    export var redDark: string;
+    export var pinkXLight: string;
     export var pinkLight: string;
     export var pinkBase: string;
     export var pinkDark: string;
+    export var redXLight: string;
+    export var redLight: string;
+    export var redBase: string;
+    export var redDark: string;
+    export var orangeXLight: string;
     export var orangeLight: string;
     export var orangeBase: string;
     export var orangeDark: string;
-    export var amberLight: string;
-    export var amberBase: string;
-    export var amberDark: string;
+    export var yellowXLight: string;
+    export var yellowLight: string;
+    export var yellowBase: string;
+    export var yellowDark: string;
+    export var greenXLight: string;
     export var greenLight: string;
     export var greenBase: string;
     export var greenDark: string;
+    export var aquaXLight: string;
     export var aquaLight: string;
     export var aquaBase: string;
     export var aquaDark: string;
+    export var blueXLight: string;
     export var blueLight: string;
     export var blueBase: string;
     export var blueDark: string;
+    export var white: string;
+    export var black: string;
     export var iconSmall: string;
     export var iconLarge: string;
     export var nubbinSize: string;
@@ -238,7 +253,7 @@ declare module "utils/accessibility" {
     export function keyboardTracker(Component: React.Component<any, any, any>): React.Component<any, any, any>;
     export const FILL_COLOR_MAP: {
         aqua: string;
-        amber: string;
+        yellow: string;
         default: string;
         green: string;
         orange: string;
@@ -640,7 +655,7 @@ declare module "components/ButtonRow/index" {
 }
 declare module "components/Link/index" {
     export default Link;
-    function Link({ ariaLabel, children, href, onClick, isDisabled, isFullWidth, newWindow, style, testSection, }: any): any;
+    function Link({ ariaLabel, children, href, leftIcon, onClick, isDisabled, isFullWidth, newWindow, rightIcon, style, testSection, }: any): any;
     namespace Link {
         export namespace propTypes {
             export const ariaLabel: PropTypes.Requireable<string>;
@@ -648,8 +663,10 @@ declare module "components/Link/index" {
             export const href: PropTypes.Requireable<string>;
             export const isDisabled: PropTypes.Requireable<boolean>;
             export const isFullWidth: PropTypes.Requireable<boolean>;
+            export const leftIcon: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export const newWindow: PropTypes.Requireable<boolean>;
             export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
+            export const rightIcon: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export const style: PropTypes.Requireable<string>;
             export const testSection: PropTypes.Requireable<string>;
         }
@@ -1137,10 +1154,12 @@ declare module "components/DatePicker/DatePicker" {
         onOutsideClick: () => void;
         onClose: () => void;
         isOutsideAcceptableDateRange: (day: any) => any;
+        onClearButtonClick: () => void;
         render(): JSX.Element;
     }
     namespace DatePicker {
         export namespace propTypes {
+            export const hasClearButton: PropTypes.Requireable<boolean>;
             export const initialDate: any;
             export const initialVisibleMonth: PropTypes.Requireable<(...args: any[]) => any>;
             export const inputId: PropTypes.Validator<string>;
@@ -1230,6 +1249,7 @@ declare module "components/DatePicker/DateRangePicker" {
         isOutsideAcceptableDateRange: (day: any) => any;
         renderPresetButtons: (presetPanelOptions: any) => any;
         renderSidePanel: () => JSX.Element;
+        onClearButtonClick: (rangeSide: any) => void;
         render(): JSX.Element;
     }
     namespace DateRangePicker {
@@ -1240,6 +1260,7 @@ declare module "components/DatePicker/DateRangePicker" {
             export { timeInputValidator as endTimeInputId };
             export const endTimeInputLabel: PropTypes.Requireable<string>;
             export const focusedInput: PropTypes.Requireable<string | null>;
+            export const hasClearButton: PropTypes.Requireable<boolean>;
             export const hasTimeInputs: PropTypes.Requireable<boolean>;
             export const initialEndDate: any;
             export const initialStartDate: any;
@@ -1578,7 +1599,7 @@ declare module "components/Dropdown/DropdownBlockLinkText/index" {
             export const hasExternalIcon: PropTypes.Requireable<boolean>;
             export const isDestructive: PropTypes.Requireable<boolean>;
             export const testSection: PropTypes.Requireable<string>;
-            const text_1: PropTypes.Requireable<string>;
+            const text_1: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export { text_1 as text };
         }
     }
@@ -1595,7 +1616,7 @@ declare module "components/Dropdown/DropdownBlockLinkSecondaryText/index" {
         export namespace propTypes {
             const isWarning_1: PropTypes.Requireable<boolean>;
             export { isWarning_1 as isWarning };
-            const secondaryText_1: PropTypes.Requireable<string>;
+            const secondaryText_1: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export { secondaryText_1 as secondaryText };
             export const testSection: PropTypes.Requireable<string>;
         }

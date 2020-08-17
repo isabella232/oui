@@ -16,11 +16,17 @@ stories.add("Overview", () => {
       </h1>
       <div className="push-quad--bottom">
         <p className="delta">
-          Think of design tokens as <strong>global design variables for a given context</strong>.
+          Think of design tokens as{' '}
+          <strong>global design variables for a given context</strong>.
         </p>
         <p>
-          Design tokens represent the fundamental visual attributes of our design system. We use these tokens in place of hard-coded values such as hex colors or pixel sizes in order to maintain a scalable and consistent user interface.
-          <span className="push-half--left micro muted">(Available in JavaScript and Sass)</span>
+          Design tokens represent the fundamental visual attributes of our
+          design system. We use these tokens in place of hard-coded values such
+          as hex colors or pixel sizes in order to maintain a scalable and
+          consistent user interface.
+          <span className="push-half--left micro muted">
+            (Available in JavaScript and Sass)
+          </span>
         </p>
         <div className="push-double--top">
           <Code
@@ -30,7 +36,8 @@ stories.add("Overview", () => {
             language="js"
           >
             import &#123;brandBlueDark&#125; from
-            "@optimizely-oui/src/tokens/forimport/index.es";<br/>
+            "@optimizely-oui/src/tokens/forimport/index.es";
+            <br />
             ... &lt;YourComponent backgroundColor=&#123;brandBlueDark&#125;/&gt;
           </Code>
         </div>
@@ -40,7 +47,7 @@ stories.add("Overview", () => {
         Colors <span className="muted">({designTokens.tokens.length})</span>
       </h3>
       <ul className="oui-list push--ends">
-        {designTokens.tokens.map(item => (
+        {designTokens.tokens.map((item) => (
           <CopyToClipboard text={_.camelCase(item.id)} key={item.id}>
             <li className="border--bottom soft--bottom soft--sides push--bottom flex flex-align--center">
               <span className="flex flex--1">
@@ -52,7 +59,11 @@ stories.add("Overview", () => {
                 <span
                   key={item.id}
                   className="cursor--pointer width--100 flex flex--dead-center"
-                  style={{ backgroundColor: item.hex, height: "20px" }}
+                  style={{
+                    backgroundColor: item.hex,
+                    height: '20px',
+                    border: item.id === 'white' ? '1px grey solid' : 'none',
+                  }}
                 />
               </span>
             </li>
