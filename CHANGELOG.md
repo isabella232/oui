@@ -6,8 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
-- [Feature] Add Github action to automatically update CHANGELOG.md based on PR comment ([#1399](https://github.com/optimizely/oui/pull/1399))
+
+## 48.0.0 - 2020-08-17
 - [Release] Update Color design tokens and rename amber to yellow ([#1398](https://github.com/optimizely/oui/pull/1398))
+- [Feature] Add Github action to automatically update CHANGELOG.md based on PR comment ([#1399](https://github.com/optimizely/oui/pull/1399))
 
 ## 47.0.0 - 2020-08-07
 - [Release] Remove `word-break` helper class in favor of `word-break--all` ([#1394](https://github.com/optimizely/oui/pull/1394))

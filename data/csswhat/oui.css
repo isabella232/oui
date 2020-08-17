@@ -4462,7 +4462,7 @@ div[class*="fitContent"] {
   background: #FF5B5B; }
 
 .oui-badge--purple {
-  background: #673ab6; }
+  background: #693ab6; }
 
 .oui-button-icon {
   padding: 4px;
@@ -4655,7 +4655,7 @@ code {
   border: 1px solid #d6d6d6; }
 
 .CalendarDay__selected_span {
-  background: #bdcbff;
+  background: #b3c3ff;
   border: 1px solid #d6d6d6;
   color: black; }
   .CalendarDay__selected_span:hover {
@@ -4974,7 +4974,7 @@ code {
     
     .dropdown__item--separator,
     .oui-dropdown__item--separator {
-      background: #f7f7f7;
+      background: whitesmoke;
       color: #707070;
       font-size: 11px;
       font-weight: 500; }
@@ -6986,7 +6986,7 @@ body:target *[data-oui-component],
   --orange: #FF9C33;
   --dark-blue-100: #080736;
   --dark-blue-50: #83839B;
-  --dark-blue-25: #c1c1cd;
+  --dark-blue-25: #9c9cb0;
   --grey-50: #E8E8E8;
   --grey-25: #F9F9F9;
   --paper: #FDFDFD;
@@ -7057,7 +7057,7 @@ body:target *[data-oui-component],
   color: white; }
 
 .background--dark-blue-25 {
-  background-color: #c1c1cd;
+  background-color: #9c9cb0;
   color: white; }
 
 .background--grey-50 {
@@ -7125,7 +7125,7 @@ body:target *[data-oui-component],
   color: #83839B; }
 
 .color--dark-blue-25 {
-  color: #c1c1cd; }
+  color: #9c9cb0; }
 
 .color--grey-50 {
   color: #E8E8E8; }
@@ -7601,15 +7601,15 @@ body:target *[data-oui-component],
 
 
 .color--good-news {
-  color: #087d23 !important; }
+  color: #357937 !important; }
 
 
 .color--warning {
-  color: #c97b1d !important; }
+  color: #a36200 !important; }
 
 
 .color--bad-news {
-  color: #b8000c !important; }
+  color: #c02626 !important; }
 
 
 .color--charcoal {
