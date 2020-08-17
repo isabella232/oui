@@ -90,3 +90,9 @@ a,
     cursor: default;
   }
 }
+
+.background--white {
+  .link {
+    color: $brand-blue-dark !important;
+  }
+}

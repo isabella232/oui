@@ -25,6 +25,7 @@ $spacer-unit                 : 10px;
 
 $base-black                  : #000000;
 $base-white                  : #FFFFFF;
+$base-brand-tint             : tint($brand-purple-dark, 15%);
 
 
 /// TODO: @dave.rau Combine brand, root and new tokens into 1 map
@@ -79,7 +80,7 @@ $root-color: (
   draft                      : map-fetch($brand-color, orange),
   live                       : map-fetch($brand-color, green),
   admin                      : map-fetch($brand-color, indigo),
-  highlight                  : map-fetch($brand-color, light-blue-6)
+  highlight                  : var(--light-blue-10)
 );
 
 /// Base Colors
@@ -108,7 +109,7 @@ $color: (
   ),
 
   link: (
-    base                     : map-fetch($brand-color, light-blue-75),
+    base                     : var(--color-text--link),
     hover                    : map-fetch($brand-color, light-blue-100),
     brand-light              : map-fetch($root-color, brand-light),
     bad-news                 : map-fetch($root-color, bad-news),
@@ -116,9 +117,9 @@ $color: (
   ),
 
   background: (
-    base                     : $base-white,
-    white                    : $base-white,
-    faint                    : $base-white,
+    base                     : var(--color-background),
+    white                    : var(--color-background),
+    faint                    : var(--color-background),
     light                    : map-fetch($root-color, grey-06),
     muted                    : map-fetch($root-color, grey-35),
     medium                   : map-fetch($root-color, grey-50),
@@ -129,15 +130,15 @@ $color: (
     brand-light              : tint(map-fetch($root-color, brand), 80%),
     warning                  : tint(map-fetch($root-color, warning), 80%),
     bad-news                 : tint(map-fetch($root-color, bad-news), 80%),
-    good-news                : tint(map-fetch($root-color, good-news), 80%)
+    good-news                : tint(map-fetch($root-color, good-news), 80%),
   ),
 
   text: (
-    base                     : map-fetch($brand-color, dark-blue-100),
+    base                     : $brand-purple-dark,
     white                    : $base-white,
     faint                    : map-fetch($root-color, grey-12),
     light                    : map-fetch($root-color, grey-25),
-    muted                    : $grey-dark,
+    muted                    : var(--color-text--muted),
     medium                   : map-fetch($root-color, grey-50),
     charcoal                 : map-fetch($root-color, grey-78),
     dark                     : map-fetch($root-color, grey-85),
@@ -319,7 +320,7 @@ $button: (
       )
     ),
     plain: (
-      color                  : map-fetch($brand-color, dark-blue-75),
+      color                  : var(--color-text),
       hover: (
         color                : map-fetch($brand-color, light-blue-75),
       ),
@@ -330,7 +331,7 @@ $button: (
     disabled: (
       background             : map-fetch($brand-color, grey-25),
       border                 : shade(map-fetch($brand-color, grey-50), 10%),
-      color                  : map-fetch($color, text, muted)
+      color                  : var(--color-text--grey)
     )
   )
 );
@@ -441,7 +442,7 @@ $dropdown: (
 
 $border: (
   color: (
-    base                     : map-fetch($color, ui, base)
+    base                     : var(--color-background--grey)
   ),
   radius: (
     base                     : 5px,
@@ -474,7 +475,7 @@ $dialog: (
     wide                     : 900px
   ),
   footer: (
-    color                    : #f7f7f7,
+    color                    : var(--color-background--grey),
   )
 );
 
@@ -564,3 +565,4 @@ $z-index: (
   toolbar                    : 1,
   toolbar-shadow             : -1,
 );
+

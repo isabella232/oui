@@ -111,7 +111,7 @@
 .oui-dropdown {
   $box-shadow-offset: 2px;
   @extend %#{$namespace}block-list-group;
-  background: map-fetch($color, background, white);
+  background: var(--color-background--light);
   min-width: 100%;
   position: absolute;
   top: 100%;
@@ -132,6 +132,10 @@
     color: map-fetch($color, text, base);
     padding: spacer(0.5);
     border-top: 1px solid map-fetch($color, ui, light);
+
+    a, .link {
+      color: $brand-blue-dark !important;
+    }
 
     & > div.isSelected,
     & > div.micro {
@@ -163,7 +167,7 @@
     &__content {
       font-size: map-fetch($font, size, micro);
       line-height: map-fetch($font, line-height, tight);
-      color: map-fetch($color, text, muted);
+      color: var(--color-text--grey);
       margin-bottom: spacer(0.5);
     }
   }

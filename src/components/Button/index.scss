@@ -40,7 +40,7 @@
   transition: color map-fetch($transition-duration, base), background-color map-fetch($transition-duration, base), box-shadow map-fetch($transition-duration, base), border-color map-fetch($transition-duration, base);
 
   // Unique styles for the base, button start here.
-  background-color: map-fetch($button, type, base, background);
+  background-color: var(--color-background--accent);
   border-color: map-fetch($button, type, base, border);
   color: map-fetch($button, type, base, color);
 
@@ -97,7 +97,7 @@
   }
 
   &--outline {
-    background-color: map-fetch($button, type, outline, background);
+    background-color: var(--color-background--accent);
     border-color: map-fetch($button, type, outline, border);
     color: map-fetch($button, type, outline, color);
 
@@ -110,14 +110,14 @@
     }
 
     &:hover {
-      background-color: map-fetch($button, type, outline, background);
+      background-color: var(--color-background--accent);
       border-color: map-fetch($button, type, outline, hover, border);
       color: map-fetch($button, type, outline, hover, color);
       box-shadow: none;
     }
 
     &:active {
-      background-color: map-fetch($button, type, outline, background);
+      background-color: var(--color-background--accent);
       border-color: map-fetch($button, type, outline, active, border);
       color: map-fetch($button, type, outline, active, color);
       box-shadow: none;

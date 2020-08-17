@@ -14,7 +14,7 @@
     border: 1px solid map-fetch($border, color, base);
     border-right: 0;
     border-bottom: 0;
-    color: var(--dark-blue-75);
+    color: var(--color-text);
     font-weight: 400;
     background-color: map-fetch($color, background, faint);
     cursor: pointer;
@@ -33,7 +33,7 @@
     }
 
     &:hover {
-      color: var(--light-blue-75);
+      color: var(--color-text--link);
     }
 
     &.is-active {
@@ -44,7 +44,7 @@
         content: '';
         display: block;
         height: 3px;
-        background: var(--light-blue-75);
+        background: var(--color-text--link);
         position: absolute;
         left: 0;
         right: 0;

@@ -7,8 +7,15 @@ $sheet-horizontal-padding: spacer(6);
   height: 95%;
   box-shadow: 0 0 map-fetch($shadow, big);
   width: $sheet-width;
-  background: map-fetch($color, background, white);
+  background: $base-white;
   padding-top: spacer(6);
+}
+
+html[data-theme="dark"] {
+  .oui-sheet {
+    background: tint($brand-purple-dark, 15%);
+  }
+
 }
 
 .oui-sheet__wrapper {

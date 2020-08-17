@@ -116,7 +116,6 @@ class IconLink extends React.PureComponent {
     const { testSection, href } = this.props;
     return (
       <Link
-        style="reverse"
         href={ href }
         onClick={ this.onAppRouteLinkClick }
         testSection={ `${testSection}-internal-link` }>

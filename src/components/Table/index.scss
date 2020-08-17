@@ -34,7 +34,7 @@
   }
 
   tbody tr {
-    border-top: 1px solid map-fetch($color, ui, light);
+    border-top: 1px solid map-fetch($border, color, base);
   }
 
   tbody td {
@@ -81,12 +81,12 @@
 
     & > tbody > tr {
       // scss-lint:disable UnnecessaryParentReference
-      border-bottom: 1px solid map-fetch($color, ui, light);
+      border-bottom: 1px solid map-fetch($border, color, base);
 
       // If no `thead` is present we'll have a border top.
 
       &:first-child {
-        border-bottom: 1px solid map-fetch($color, ui, light);
+        border-bottom: 1px solid map-fetch($border, color, base);
       }
     }
   }
@@ -100,7 +100,7 @@
     & > thead > tr > th, // scss-lint:disable UnnecessaryParentReference
     & > tbody > tr > td {
       // scss-lint:disable UnnecessaryParentReference
-      border-left: 1px solid map-fetch($color, ui, light);
+      border-left: 1px solid map-fetch($border, color, base);
       padding-right: spacer(1);
 
       &:first-child {
@@ -114,7 +114,7 @@
       // scss-lint:disable UnnecessaryParentReference
 
       &:hover {
-        background-color: map-fetch($color, background, brand-light);
+        background-color: var(--color-background--grey);
         cursor: pointer;
       }
     }
@@ -256,8 +256,9 @@
 .oui-table > tbody tr:hover td a:hover {
   color: var(--light-blue-75);
 }
+
 .oui-table > tbody > tr:hover > td:not(.CalendarDay) {
-  background-color: var(--grey-25);
+  background-color: var(--color-foreground);
 }
 
 // p13n table spread for taller table rows

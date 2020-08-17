@@ -3,12 +3,54 @@
 /// @description High level defaults establishing `font` and `color`.
 ////
 
+
+
+:root {
+  --color-background: #{$base-white};
+  --color-background--light: #{$base-white};
+  --color-background--grey: #{$smoke-dark};
+  --color-background--accent: #{$base-white};
+  --color-background--highlight: var(--light-blue-10);
+  --color-shadow: rgba(0,0,0, 0.1);
+  --color-foreground: #{$smoke-light};
+  --color-text: #{$brand-purple-dark};
+  --color-text--dark: #{$brand-purple-dark};
+  --color-text--link: #{$brand-blue-dark};
+  --color-text--muted: #{$grey-base};
+  --color-text--grey: #{$grey-dark};
+  --color-text--highlight: #{$brand-blue-dark};
+}
+
+[data-theme="dark"] {
+  --color-background: #{$brand-purple-dark};
+  --color-background--highlight: #{$brand-purple-base};
+  --color-background--grey: #{$brand-purple-base};
+  --color-background--accent: #{$smoke-base};
+  --color-foreground: #{$base-brand-tint};
+  --color-shadow: rgba(0,0,0, 0.4);
+  --color-text: #{$base-white};
+  --color-text--link: #{$brand-blue-base};
+  --color-text--highlight: #{$base-black};
+}
+
 html {
-  color: map-fetch($color, text, base);
-  background-color: map-fetch($color, background, base);
+  color: var(--color-text);
+  background-color: var(--color-background);
   font-family: map-fetch($font, family, base);
   font-size: map-fetch($font, size, base);
   line-height: map-fetch($font, line-height, base);
+}
+
+body {
+  color: var(--color-text);
+
+  #staged_release {
+    display: none !important;
+  }
+
+  .root-wrap {
+    height: 100% !important;
+  }
 }
 
 p {

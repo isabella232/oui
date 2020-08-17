@@ -39,10 +39,15 @@
 .#{$namespace}attention,
 .oui-attention {
   @extend %kill-last-child-margin;
+  color: var(--color-text--dark);
   padding: spacer(1);
   border-radius: map-fetch($border, radius, base);
   border: 1px solid map-fetch($border, color, base);
   background: map-fetch($color, background, faint);
+
+  a {
+    color: var(--light-blue-75);
+  }
 
   &--brand {
     border-color: map-fetch($color, ui, brand-light);

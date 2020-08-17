@@ -4,7 +4,7 @@ $icon-dimensions--large: 24px;
 $icon-dimensions--small: 16px;
 $animation-speed: 150ms;
 $avatar-size: 29px;
-$root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
+$root-shadow: inset -1px 0 3px 0 var(--color-shadow);
 
 .root-nav {
   display: flex;
@@ -14,8 +14,8 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
   min-height: 100%;
   z-index: 2001;
   padding: spacer(2.5) 0;
-  color: var(--dark-blue-100);
-  background: var(--grey-25);
+  color: var(--color-text);
+  background: var(--color-foreground);
   width: 76px;
   transition: width $animation-speed ease-in;
   &:after {
@@ -39,7 +39,7 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
 
 .root-nav__link {
   display: flex;
-  color: var(--dark-blue-100);
+  color: var(--color-text);
   padding-top: $block-link-padding / 3;
   padding-bottom: $block-link-padding / 3;
   @media (min-height: 1600px) {
@@ -62,7 +62,7 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
 // Link--reverse text is white on white
 // TODO(dave) remove link--reverse from these <a>s
 .root-nav__link .link--reverse {
-  color: var(--dark-blue-100) !important;
+  color: var(--color-text) !important;
   &:hover, &:active {
     color: var(--light-blue-75) !important;
   }
@@ -142,8 +142,8 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
 
 .root-nav__link--primary {
   &:hover {
-    background: var(--light-blue-10);
-    color: var(--light-blue-75);
+    background: var(--color-background--highlight);
+    color: var(--color-text--highlight);
     .root-nav__link-external-icon {
       visibility: visible;
     }
@@ -151,7 +151,8 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
 
   &.is-active,
   &.is-active:hover {
-    background: var(--light-blue-10);
+    color: var(--color-text--highlight);
+    background: var(--color-background--highlight);
   }
 
   &.has-external-icon {
@@ -162,10 +163,10 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
 .root-nav__link--secondary,
 .root-nav__link--tertiary {
   &, &:visited {
-    color: var(--dark-blue-100);
+    color: var(--color-text);
   }
   &:hover {
-    color: var(--light-blue-75);
+    color: var(--color-text--link);
     .root-nav__link-external-icon {
       visibility: visible;
     }

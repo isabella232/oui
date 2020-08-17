@@ -64,7 +64,6 @@ class CurrentUserMenu extends React.Component {
         data-test-section="account-switcher-dropdown-activator"
         title={ userName }
         className={ classNames(
-          'link--reverse',
           'micro',
           'flex',
           'flex-align--center',

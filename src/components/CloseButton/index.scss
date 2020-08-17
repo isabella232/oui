@@ -9,9 +9,10 @@
   right: spacer(0.5);
   box-shadow: none;
   padding: spacer(1);
+  color: var(--color-text);
 
   .oui-icon {
-    fill: var(--dark-blue-75);
+    fill: var(--color-text);
   }
 
   &:hover {

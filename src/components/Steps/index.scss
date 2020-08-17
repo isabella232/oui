@@ -23,7 +23,7 @@
 ///   </ul>
 ////
 
-$hover-color: lighten(map-fetch($color, link, base), 10%);
+$hover-color: lighten(map-fetch($brand-color, light-blue-75), 10%);
 
 %#{$namespace}steps,
 .#{$namespace}steps,
@@ -105,7 +105,7 @@ $hover-color: lighten(map-fetch($color, link, base), 10%);
         .oui-steps__dot {
           border-color: $hover-color;
         }
-        
+
         .#{$namespace}steps__label,
         .oui-steps__label {
           color: $hover-color;
