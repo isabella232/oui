@@ -33,7 +33,7 @@ const Token = ({
   testSection,
   usesDragHandle,
 }) => {
-  const classes = classNames('flex', {
+  const classes = classNames({
     'oui-token-wrap': hasWrap && !hasSnugWrap,
     'oui-token-wrap--snug': hasSnugWrap,
     'oui-token-wrap--well': showWell,
