@@ -30,6 +30,7 @@ async function main() {
     const {
       payload
     } = github.context;
+
     // Get PR information
     let prBody = payload.pull_request.body;
     const prLink = payload.pull_request.html_url;
@@ -45,7 +46,7 @@ async function main() {
 
     const repoToken = process.env['GITHUB_TOKEN'];
     const octokit = github.getOctokit(repoToken);
-  
+
     // Parse out the explanation comment if necessary
     if (prBody.indexOf('-->') !== -1) {
       prBody = prBody.split("-->")[1];
@@ -58,9 +59,13 @@ async function main() {
     const changelogLocation = feature !== -1 ? feature :
       (patch !== -1 ? patch : release)
 
+    // output variable defining whether action should add/commit changelog.md
+    // don't want to commit if no files are edited bc will cause an error
     let foundline = true;
+
+    // will we add a comment to the PR thread?
     let pushComment = true;
-    let commentMessage = ":warning: No Changelog line provided, please update the `Changelog Entry` section of the PR comment. Describe in one line your changes, like so: [Feature] Updated **ComponentName** with new `propName` to fix alignment ";
+    let commentMessage = ":warning: No Changelog line provided. To add to the Changelog, please comment on this PR, and describe in one line your changes, like so: [Feature] Updated **ComponentName** with new `propName` to fix alignment ";
     
     // Get past prComments to check if this latest one will be a duplicate of the last one
     const prComments = await octokit.issues.listComments({
@@ -80,6 +85,7 @@ async function main() {
         pushComment = false;
       }
       foundline = false;
+      updatePrBody = false;
     } else {
       // Get the changelog line
       const changelogKey = feature !== -1 ? '[Feature]' :
@@ -101,7 +107,7 @@ async function main() {
 
       await writeToFile(changelogLine);
 
-      commentMessage= ":tada:  Updated the Unreleased section of the Changelog with: \n```\n".concat(changelogLine, "\n```");
+      commentMessage= ":tada:  Updated the Unreleased section of the Changelog with: \n```\n".concat(changelogLine, "\n```\nTo update this entry, please comment on this PR, and describe in one line your changes, like so: [Feature] Updated **ComponentName** with new `propName` to fix alignment ");
     }
     // if we do want to write a new comment
     if (pushComment) {

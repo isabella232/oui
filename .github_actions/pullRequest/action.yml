@@ -1,4 +1,4 @@
-name: 'Update changelog'
+name: 'Update changelog on pr change'
 description: 'Update changelog with correct update line'
 outputs:
   success: # boolean
