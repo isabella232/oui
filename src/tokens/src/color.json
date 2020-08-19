@@ -127,6 +127,7 @@
       "id": "grey-dark",
       "value": "hsla(0, 0%, 44%, 1)",
       "hex": "#6F6F6F",
+      "type": "color",
       "name": "greyDark"
     },
     {
