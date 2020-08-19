@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 48.0.2 - 2020-08-19
 - [Patch] Update `flex--1` helper class ([#1405](https://github.com/optimizely/oui/pull/1405))
 - [Patch] Fix trigger for Github Action ([#1401](https://github.com/optimizely/oui/pull/1401))
 
