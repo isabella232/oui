@@ -7,288 +7,6 @@ import TabNav from "../../src/components/TabNav/index";
 import Table from "../../src/components/Table/index";
 import Link from '../../src/components/Link/index';
 
-const backgroundColorInformation = {
-    'white' : {
-        'source': 'variable',
-        'color': '$color > background, white',
-        'root': '$base-white',
-        'note': 'This class is identical to background--faint',
-    },
-    'faint' : {
-        'source': 'variable',
-        'color': '$color > background, faint',
-        'root': '$base-white',
-        'note': 'This class is identical to background--white',
-    },
-    'light' : {
-        'source': 'variable',
-        'color': '$root-color, grey-06',
-        'root': '$base-black, 94%',
-    },
-    'muted' : {
-        'source': 'variable',
-        'color': '$root-color, grey-35',
-        'root': '$base-black, 65%',
-    },
-    'medium' : {
-        'source': 'variable',
-        'color': '$root-color, grey-50',
-        'root': '$base-black, 50%',
-    },
-    'charcoal' : {
-        'source': 'variable',
-        'color': '$root-color, grey-78',
-        'root': '$base-black, 22%',
-    },
-    'brand' : {
-        'source': 'variable',
-        'color': '$root-color, light-blue-75',
-        'root': '#4069FF',
-    },
-    'brand-dark' : {
-        'source': 'variable',
-        'color': '$root-color, dark-blue-75',
-        'root': '#46456A',
-    },
-    'warning' : {
-        'source': 'variable',
-        'color': '$brand-color, gold, 20% white',
-        'root': '#FFD233, 20% white',
-    },
-    'bad-news' : {
-        'source': 'variable',
-        'color': '$brand-color, red, 20% white',
-        'root': '#FF5B5B, 20% white',
-    },
-    'good-news' : {
-        'source': 'variable',
-        'color': '$brand-color, green, 20% white',
-        'root': '#33CF76, 20% white',
-    },
-    'live' : {
-        'source': 'variable',
-        'color': '$brand-color, green',
-        'root': '#33CF76',
-    },
-    'draft' : {
-        'source': 'variable',
-        'color': '$brand-color, orange',
-        'root': '#FF9C33',
-    },
-    'current-color': {
-        'note': 'This class takes on the value of the current font color',
-    },
-    'none' : {
-        'note': 'This class removes all background color',
-    }
-}
-
-interface BackgroundColorState {
-    stylingColorRow: string,
-}
-
-export class BackgroundColor extends React.Component<{}, BackgroundColorState> {
-    constructor(props) {
-        super(props);
-        this.state = {
-            stylingColorRow: 'white',
-        }
-    }
-
-    switchColorRow = row => {
-        this.setState({stylingColorRow: row});
-    }
-
-    render() {
-        const {stylingColorRow} = this.state;
-        const currentColor = backgroundColorInformation[stylingColorRow];
-                    
-        return (
-            <section className="demo-only-section hard--top flex flex--column">
-                <h1>Background color</h1>
-                <p>The following examples illustrate the background color helper classes to style divs that are available through OUI's CSS.</p>
-                <div className="flex flex-align--start push-double--sides"> 
-                <div className="flex--1">
-                    <Table style="rule">
-                        <Table.THead>
-                            <Table.TR>
-                                <Table.TH>
-                                    Helper Class
-                                </Table.TH>
-                                <Table.TH>
-                                    Example
-                                </Table.TH>
-                            </Table.TR>
-                        </Table.THead>
-                        <Table.TBody>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('white')} isSelected={stylingColorRow === 'white'} helperClass='background--white'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('faint')} isSelected={stylingColorRow === 'faint'} helperClass='background--faint'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('light')} isSelected={stylingColorRow === 'light'} helperClass='background--light'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('muted')} isSelected={stylingColorRow === 'muted'} helperClass='background--muted'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('medium')} isSelected={stylingColorRow === 'medium'} helperClass='background--medium' darkBackground={true}/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('charcoal')} isSelected={stylingColorRow === 'charcoal'} helperClass='background--charcoal' darkBackground={true}/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('brand')} isSelected={stylingColorRow === 'brand'} helperClass='background--brand' darkBackground={true}/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('brand-dark')} isSelected={stylingColorRow === 'brand-dark'} helperClass='background--brand-dark' darkBackground={true}/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('warning')} isSelected={stylingColorRow === 'warning'} helperClass='background--warning'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('bad-news')} isSelected={stylingColorRow === 'bad-news'} helperClass='background--bad-news'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('good-news')} isSelected={stylingColorRow === 'good-news'} helperClass='background--good-news'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('live')} isSelected={stylingColorRow === 'live'} helperClass='background--live'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('draft')} isSelected={stylingColorRow === 'draft'} helperClass='background--draft'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('current-color')} isSelected={stylingColorRow === 'current-color'} helperClass='background--current-color'/>
-                            <BackgroundColorRow onRowClick={() => this.switchColorRow('none')} isSelected={stylingColorRow === 'none'} helperClass='background--none'/>
-                        </Table.TBody>
-                    </Table>
-                    </div>
-                <div className="demo-only-typography-container demo-only-typography-container--width-350 demo-only-typography-container--floating-top color--base soft-double--ends soft-double--sides push-double--top push-double--left">
-                    {currentColor.source &&<div className="flex">
-                        <div className="weight--bold push-double--right">Source</div>
-                        <div className="anchor--right">{currentColor.source}</div>
-                    </div>}
-                    {currentColor.color &&<div className="flex">
-                        <div className="weight--bold push-double--right">Referencing</div>
-                        <div className="anchor--right">{currentColor.color}</div>
-                    </div>}
-                    {currentColor.root && 
-                        <div className="flex push--bottom">
-                            <div className="weight--bold push-double--right">Root color</div>
-                            <div className="anchor--right">{currentColor.root}</div>
-                        </div>}
-                    {currentColor.note && 
-                        <div>{currentColor.note}</div>}
-                </div>
-            </div>
-        </section>
-        );
-    }
-}
-
-interface BorderState {
-    borderAddition: string,
-    borderSide: string,
-    borderFeature: string,
-}
-
-export class Border extends React.Component<{}, BorderState> {
-    constructor(props) {
-        super(props);
-        this.state = {
-            borderAddition: 'add',
-            borderSide: 'all',
-            borderFeature: 'none',
-        }
-    }
-
-    switchBorderAddition = option => {
-        this.setState({borderAddition: option});
-    }
-
-    switchBorderFeature = feature => {
-        this.setState({borderFeature: feature});
-    }
-
-    switchBorderSide = side => {
-        this.setState({borderSide: side});
-    }
-
-    render() {
-        const {borderAddition, borderFeature, borderSide} = this.state;
-        let borderClass = 'border--' + borderSide;
-        if (borderAddition === 'remove') {
-            borderClass = 'border--all ';
-            borderClass += borderSide === 'all'? 'no-border' : 'no-border--' + borderSide;
-        } 
-        if (borderFeature === 'radius') {
-            borderClass += ' border-radius';
-        }
-        if (borderFeature === 'dashed') {
-            borderClass = 'border-dashed--all';
-        }
-        let externalBoxHelperClasses = classNames(
-            'border-radius',
-            'min-height--50',
-            'demo-only-spacing-push-background',
-            'soft',
-        )
-        let internalBoxHelperClasses = classNames(
-            'flex',
-            'flex--dead-center',
-            'soft',
-            'reverse',
-            'demo-only-spacing-push-background',
-            borderClass,
-        )
-                    
-        return (
-            <section className="demo-only-section hard--top flex flex--column">
-                <h1>Borders</h1>
-                <p>The following examples illustrate the border helper classes to style divs that are available through OUI's CSS.</p>
-                <p>Click through the different options in the columns to get your desired effect.</p>
-                <div className="flex flex--column flex-align--start push-double--sides">  
-                    <div className="flex width--1-1">
-                        <div className="width--200 push-quad--left soft--sides border--sides">
-                            <Table>
-                                <Table.THead>
-                                    <Table.TR>
-                                        <Table.TH>
-                                            Remove or add spacing
-                                        </Table.TH>
-                                    </Table.TR>
-                                </Table.THead>
-                                <Table.TBody>
-                                    <BorderRow onRowClick={() => this.switchBorderAddition('add')} helperClass='add' isSelected={borderAddition === 'add'} />
-                                    <BorderRow onRowClick={() => this.switchBorderAddition('remove')} helperClass='remove' isSelected={borderAddition === 'remove'} />
-                                </Table.TBody>
-                            </Table>
-                        </div>
-                        <div className="width--200 soft--sides border--right">
-                            <Table>
-                                <Table.THead>
-                                    <Table.TR>
-                                        <Table.TH>
-                                            Features
-                                        </Table.TH>
-                                    </Table.TR>
-                                </Table.THead>
-                                <Table.TBody>
-                                    <BorderRow onRowClick={() => this.switchBorderFeature('none')} helperClass='none' isSelected={borderFeature === 'none'} />
-                                    <BorderRow onRowClick={() => this.switchBorderFeature('radius')} helperClass='border radius' isSelected={borderFeature === 'radius'} />
-                                    <BorderRow onRowClick={() => this.switchBorderFeature('dashed')} helperClass='dashed line' isSelected={borderFeature === 'dashed'} />
-                                </Table.TBody>
-                            </Table>
-                        </div>
-                        <div className="width--100 soft--sides border--right">
-                            <Table>
-                                <Table.THead>
-                                    <Table.TR>
-                                        <Table.TH>
-                                            Side
-                                        </Table.TH>
-                                    </Table.TR>
-                                </Table.THead>
-                                <Table.TBody>
-                                    <BorderRow onRowClick={() => this.switchBorderSide('all')} helperClass='all' isSelected={borderSide === 'all'} />
-                                    <BorderRow disableClick={borderFeature === 'dashed'} onRowClick={() => this.switchBorderSide('top')} helperClass='top' isSelected={borderSide === 'top'} />
-                                    <BorderRow disableClick={borderFeature === 'dashed'} onRowClick={() => this.switchBorderSide('right')} helperClass='right' isSelected={borderSide === 'right'} />
-                                    <BorderRow disableClick={borderFeature === 'dashed'} onRowClick={() => this.switchBorderSide('bottom')} helperClass='bottom' isSelected={borderSide === 'bottom'} />
-                                    <BorderRow disableClick={borderFeature === 'dashed'} onRowClick={() => this.switchBorderSide('left')} helperClass='left' isSelected={borderSide === 'left'} />
-                                    <BorderRow disableClick={borderAddition === 'remove' || borderFeature === 'dashed'} onRowClick={() => this.switchBorderSide('ends')} helperClass='ends' isSelected={borderSide === 'ends'} />
-                                    <BorderRow disableClick={borderAddition === 'remove' || borderFeature === 'dashed'} onRowClick={() => this.switchBorderSide('sides')} helperClass='sides' isSelected={borderSide === 'sides'} />
-                                </Table.TBody>
-                            </Table>
-                        </div>
-                        <div className='flex flex--1 flex--column push-quad--left'>
-                            <p className="max-width--300">Helper class: <code>{borderClass}</code></p>
-                            <div className={externalBoxHelperClasses}>
-                                <div className={internalBoxHelperClasses}><code>{borderClass}</code></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-            </section>
-        );
-    }
-}
-
 interface SizingState {
     stylingTab: string,
     minWidthExample: string,
@@ -320,6 +38,7 @@ export class Sizing extends React.Component<{}, SizingState> {
             stylingTab: 'width',
             minWidthExample: '300',
             minHeightExample: '300',
+            sizingIncrements: ['50', '75', '100', '150', '200', '250', '300']
         };
 
         this.aboutRef = React.createRef<HTMLDivElement>();
@@ -463,8 +182,24 @@ export class Sizing extends React.Component<{}, SizingState> {
         this.setState({minHeightExample: newSize})
     }
 
+    renderHeightTabs = size => {
+        return (
+            <TabNav.Tab onClick={() => this.changeContainerHeightSize(size) } tabId={size}>
+                {size}px
+            </TabNav.Tab>
+        )
+    }
+
+    renderWidthTabs = size => {
+        return (
+            <TabNav.Tab onClick={() => this.changeContainerWidthSize(size) } tabId={size}>
+                {size}px
+            </TabNav.Tab>
+        )
+    }
+
     render() {
-        const {stylingTab, minWidthExample, minHeightExample} = this.state;
+        const {stylingTab, minWidthExample, minHeightExample, sizingIncrements} = this.state;
 
         let tabContent;
         const exampleContainerClasses = classNames(
@@ -526,27 +261,13 @@ export class Sizing extends React.Component<{}, SizingState> {
                                     as you can set the absolute smallest div width you want when the screen shrinks.</p>
                                 <p>Use the tabs below to change the size of the container (light purple) and see how the different boxes respond given their min-width settings.</p>
                                 <TabNav activeTab={minHeightExample} style={ ['small', 'sub'] }>
-                                    <TabNav.Tab onClick={() => this.changeContainerHeightSize('50') } tabId="50">
-                                        50px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerHeightSize('75') } tabId="75">
-                                        75px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerHeightSize('100') } tabId="100">
-                                        100px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={() => this.changeContainerHeightSize('150') } tabId="150">
-                                        150px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerHeightSize('200') } tabId="200">
-                                        200px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={() => this.changeContainerHeightSize('250') } tabId="250">
-                                        250px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerHeightSize('300') } tabId="300">
-                                        300px
-                                    </TabNav.Tab>
+                                    {sizingIncrements.map((increment) => {
+                                        return (
+                                            <TabNav.Tab onClick={() => this.changeContainerHeightSize(increment) } tabId={increment}>
+                                                {increment}px
+                                            </TabNav.Tab>
+                                        )
+                                    })}
                                 </TabNav>
                                 <div className={exampleContainerClasses + ` flex demo-only-special-height-${minHeightExample}`}>
                                     <div className="min-height--50 height--auto border-radius soft-half demo-only-dark-background"><code>min-height--50</code></div>
@@ -864,27 +585,13 @@ export class Sizing extends React.Component<{}, SizingState> {
                                     as you can set the absolute smallest div width you want when the screen shrinks.</p>
                                 <p>Use the tabs below to change the size of the container (light purple) and see how the different boxes respond given their min-width settings.</p>
                                 <TabNav activeTab={minWidthExample} style={ ['small', 'sub'] }>
-                                    <TabNav.Tab onClick={() => this.changeContainerWidthSize('50') } tabId="50">
-                                        50px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerWidthSize('75') } tabId="75">
-                                        75px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerWidthSize('100') } tabId="100">
-                                        100px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={() => this.changeContainerWidthSize('150') } tabId="150">
-                                        150px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerWidthSize('200') } tabId="200">
-                                        200px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={() => this.changeContainerWidthSize('250') } tabId="250">
-                                        250px
-                                    </TabNav.Tab>
-                                    <TabNav.Tab onClick={ () => this.changeContainerWidthSize('300') } tabId="300">
-                                        300px
-                                    </TabNav.Tab>
+                                    {sizingIncrements.map((increment) => {
+                                        return (
+                                            <TabNav.Tab onClick={() => this.changeContainerWidthSize(increment) } tabId={increment}>
+                                                {increment}px
+                                            </TabNav.Tab>
+                                        )
+                                    })}
                                 </TabNav>
                                 <div className={exampleContainerClasses + ` demo-only-special-width-${minWidthExample}`}>
                                     <div className="min-width--50 width--1-1 border-radius soft-half demo-only-dark-background"><code>min-width--50</code></div>
@@ -926,73 +633,5 @@ export class Sizing extends React.Component<{}, SizingState> {
                 {tabContent}
             </section>
         );
-    }
-}
-
-interface BorderRowProps {
-    onRowClick: () => void,
-    isSelected: boolean,
-    helperClass: string,
-    darkBackground?: boolean,
-    disableClick?: boolean,
-}
-  
-class BorderRow extends React.Component<BorderRowProps> {
-    constructor(props: BorderRowProps) {
-        super(props)
-    }
-  
-    render() {
-        const {onRowClick, isSelected, helperClass, disableClick} = this.props;
-        let classes = classNames(
-            {'oui-table-row--highlighted': !disableClick && isSelected,
-            'muted': disableClick},
-        );
-  
-        return (
-          <tr
-              className={ classes }
-              onClick={!disableClick && onRowClick}>
-              <Table.TD verticalAlign="middle"><code className="push-half--left">{helperClass}</code></Table.TD>
-          </tr>
-                        
-        );
-      }
-}
-
-interface BackgroundColorRowProps {
-    onRowClick: () => void,
-    isSelected: boolean,
-    helperClass: string,
-    darkBackground?: boolean,
-}
-  
-class BackgroundColorRow extends React.Component<BackgroundColorRowProps> {
-    constructor(props: BackgroundColorRowProps) {
-        super(props)
-    }
-  
-    render() {
-      const {onRowClick, isSelected, helperClass, darkBackground} = this.props;
-      let typographyDemonstrationClasses = classNames(
-          helperClass,
-          'soft',
-          {
-              'reverse': darkBackground,
-          }
-      )
-      let classes = classNames(
-        {'oui-table-row--highlighted': isSelected,},
-        'no-border',
-      );
-      return (
-        <tr
-            className={ classes }
-            onClick={onRowClick}>
-            <Table.TD verticalAlign="middle"><code className="push--left">{helperClass}</code></Table.TD>
-            <Table.TD verticalAlign="middle"><div className={typographyDemonstrationClasses}><code>{helperClass}</code></div></Table.TD>
-        </tr>
-                      
-      );
     }
 }

@@ -1,0 +1,74 @@
+{ "white" : {
+        "source": "variable",
+        "color": "$color > background, white",
+        "root": "$base-white",
+        "note": "This class is identical to background--faint"
+    },
+    "faint" : {
+        "source": "variable",
+        "color": "$color > background, faint",
+        "root": "$base-white",
+        "note": "This class is identical to background--white"
+    },
+    "light" : {
+        "source": "variable",
+        "color": "$root-color, grey-06",
+        "root": "$base-black, 94%"
+    },
+    "muted" : {
+        "source": "variable",
+        "color": "$root-color, grey-35",
+        "root": "$base-black, 65%"
+    },
+    "medium" : {
+        "source": "variable",
+        "color": "$root-color, grey-50",
+        "root": "$base-black, 50%"
+    },
+    "charcoal" : {
+        "source": "variable",
+        "color": "$root-color, grey-78",
+        "root": "$base-black, 22%"
+    },
+    "brand" : {
+        "source": "variable",
+        "color": "$root-color, light-blue-75",
+        "root": "#4069FF"
+    },
+    "brand-dark" : {
+        "source": "variable",
+        "color": "$root-color, dark-blue-75",
+        "root": "#46456A"
+    },
+    "warning" : {
+        "source": "variable",
+        "color": "$brand-color, gold, 20% white",
+        "root": "#FFD233, 20% white"
+    },
+    "bad-news" : {
+        "source": "variable",
+        "color": "$brand-color, red, 20% white",
+        "root": "#FF5B5B, 20% white"
+    },
+    "good-news" : {
+        "source": "variable",
+        "color": "$brand-color, green, 20% white",
+        "root": "#33CF76, 20% white"
+    },
+    "live" : {
+        "source": "variable",
+        "color": "$brand-color, green",
+        "root": "#33CF76"
+    },
+    "draft" : {
+        "source": "variable",
+        "color": "$brand-color, orange",
+        "root": "#FF9C33"
+    },
+    "current-color": {
+        "note": "This class takes on the value of the current font color"
+    },
+    "none" : {
+        "note": "This class removes all background color"
+    }
+}

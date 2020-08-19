@@ -3,7 +3,9 @@ import { storiesOf } from "@storybook/react";
 
 import "./index.scss";
 
-import { Sizing, BackgroundColor, Border } from "./divStyling";
+import { BackgroundColor } from "./backgroundColor";
+import { Border } from "./border";
+import { Sizing } from "./sizing";
 
 const stories = storiesOf("Overview|Helper Classes/Div Styling", module);
 stories
