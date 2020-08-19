@@ -7,6 +7,10 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 
 ## Unreleased
 
+## 48.0.1 - 2020-08-18
+- [Patch] Fix missing value in color Design Tokens ([#1404](https://github.com/optimizely/oui/pull/1404))
+- [Patch] Updated Flex helper classes to ensure they are enforced ([#1403](https://github.com/optimizely/oui/pull/1403))
+
 ## 48.0.0 - 2020-08-17
 - [Release] Update Color design tokens and rename amber to yellow ([#1398](https://github.com/optimizely/oui/pull/1398))
 - [Feature] Add Github action to automatically update CHANGELOG.md based on PR comment ([#1399](https://github.com/optimizely/oui/pull/1399))
