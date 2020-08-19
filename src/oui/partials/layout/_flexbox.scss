@@ -28,6 +28,8 @@
 
 .flex--1 {
   flex: 1 !important;
+  min-height: 0;
+  min-width: 0;
 }
 
 .flex--none {
