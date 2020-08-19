@@ -12,17 +12,21 @@ async function writeToFile(changelogLine) {
   const path = "./CHANGELOG.md";
   const fileContents = readFileSync(path,'utf8');
 
-  // Parse through the changelog to find insertion point
-  const splitFile = fileContents.split("## Unreleased\n");
-  let finalContents = `${splitFile[0]}## Unreleased\n`;
+  if (fileContents.indexOf(changelogLine) === -1) {
+    // Parse through the changelog to find insertion point
+    const splitFile = fileContents.split("## Unreleased\n");
+    let finalContents = `${splitFile[0]}## Unreleased\n`;
 
-  // add the the changelogline
-  finalContents += changelogLine;
-  finalContents += "\n";
-  finalContents += splitFile[1];
+    // add the the changelogline
+    finalContents += changelogLine;
+    finalContents += "\n";
+    finalContents += splitFile[1];
 
-  // write to file
-  await writeFileAsync(path, finalContents);
+    // write to file
+    await writeFileAsync(path, finalContents);
+    return true;
+  }
+  return false;
 }
 
 async function main() {
@@ -30,6 +34,7 @@ async function main() {
     const {
       payload
     } = github.context;
+
     // Get PR information
     let prBody = payload.pull_request.body;
     const prLink = payload.pull_request.html_url;
@@ -45,7 +50,7 @@ async function main() {
 
     const repoToken = process.env['GITHUB_TOKEN'];
     const octokit = github.getOctokit(repoToken);
-  
+
     // Parse out the explanation comment if necessary
     if (prBody.indexOf('-->') !== -1) {
       prBody = prBody.split("-->")[1];
@@ -58,9 +63,13 @@ async function main() {
     const changelogLocation = feature !== -1 ? feature :
       (patch !== -1 ? patch : release)
 
-    let foundline = true;
+    // output variable defining whether action should add/commit changelog.md
+    // don't want to commit if no files are edited bc will cause an error
+    let success = true;
+
+    // will we add a comment to the PR thread?
     let pushComment = true;
-    let commentMessage = ":warning: No Changelog line provided, please update the `Changelog Entry` section of the PR comment. Describe in one line your changes, like so: [Feature] Updated **ComponentName** with new `propName` to fix alignment ";
+    let commentMessage = ":warning: No Changelog line provided. To add to the Changelog, please comment on this PR, and describe in one line your changes, like so: [Feature] Updated **ComponentName** with new `propName` to fix alignment ";
     
     // Get past prComments to check if this latest one will be a duplicate of the last one
     const prComments = await octokit.issues.listComments({
@@ -79,7 +88,8 @@ async function main() {
       if (lastComment === commentMessage ) {
         pushComment = false;
       }
-      foundline = false;
+      success = false;
+      updatePrBody = false;
     } else {
       // Get the changelog line
       const changelogKey = feature !== -1 ? '[Feature]' :
@@ -94,14 +104,14 @@ async function main() {
       // check that this changelogLine isn't the same as the last comment's
       // if so, don't bother with a new comment
       if (lastComment.indexOf('```') !== -1) {
-        lastComment = lastComment.split("```\n")[1];
+        lastComment = lastComment.split("Changelog with: \n```\n")[1];
         lastComment = lastComment.split("\n```")[0];
         if (lastComment === changelogLine) { pushComment= false}
       }
 
-      await writeToFile(changelogLine);
+      success = await writeToFile(changelogLine);
 
-      commentMessage= ":tada:  Updated the Unreleased section of the Changelog with: \n```\n".concat(changelogLine, "\n```");
+      commentMessage= ":tada:  Updated the Unreleased section of the Changelog with: \n```\n".concat(changelogLine, "\n```\nTo update this entry, please comment on this PR, and describe in one line your changes, like so: [Feature] Updated **ComponentName** with new `propName` to fix alignment ");
     }
     // if we do want to write a new comment
     if (pushComment) {
@@ -113,7 +123,7 @@ async function main() {
       })
     }
     // determines if the next action will run (add, commit, and push changelog.md)
-    core.setOutput("success", foundline);
+    core.setOutput("success", success);
   } catch (error) {
     core.setFailed(error.message);
   }
