@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Fix trigger for Github Action ([#1401](https://github.com/optimizely/oui/pull/1401))
 
 ## 48.0.1 - 2020-08-18
 - [Patch] Fix missing value in color Design Tokens ([#1404](https://github.com/optimizely/oui/pull/1404))
