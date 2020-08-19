@@ -8672,17 +8672,21 @@ async function writeToFile(changelogLine) {
   const path = "./CHANGELOG.md";
   const fileContents = readFileSync(path,'utf8');
 
-  // Parse through the changelog to find insertion point
-  const splitFile = fileContents.split("## Unreleased\n");
-  let finalContents = `${splitFile[0]}## Unreleased\n`;
+  if (fileContents.indexOf(changelogLine) === -1) {
+    // Parse through the changelog to find insertion point
+    const splitFile = fileContents.split("## Unreleased\n");
+    let finalContents = `${splitFile[0]}## Unreleased\n`;
 
-  // add the the changelogline
-  finalContents += changelogLine;
-  finalContents += "\n";
-  finalContents += splitFile[1];
+    // add the the changelogline
+    finalContents += changelogLine;
+    finalContents += "\n";
+    finalContents += splitFile[1];
 
-  // write to file
-  await writeFileAsync(path, finalContents);
+    // write to file
+    await writeFileAsync(path, finalContents);
+    return true;
+  }
+  return false;
 }
 
 async function main() {
@@ -8721,7 +8725,7 @@ async function main() {
 
     // output variable defining whether action should add/commit changelog.md
     // don't want to commit if no files are edited bc will cause an error
-    let foundline = true;
+    let success = true;
 
     // will we add a comment to the PR thread?
     let pushComment = true;
@@ -8744,7 +8748,7 @@ async function main() {
       if (lastComment === commentMessage ) {
         pushComment = false;
       }
-      foundline = false;
+      success = false;
       updatePrBody = false;
     } else {
       // Get the changelog line
@@ -8760,12 +8764,12 @@ async function main() {
       // check that this changelogLine isn't the same as the last comment's
       // if so, don't bother with a new comment
       if (lastComment.indexOf('```') !== -1) {
-        lastComment = lastComment.split("```\n")[1];
+        lastComment = lastComment.split("Changelog with: \n```\n")[1];
         lastComment = lastComment.split("\n```")[0];
         if (lastComment === changelogLine) { pushComment= false}
       }
 
-      await writeToFile(changelogLine);
+      success = await writeToFile(changelogLine);
 
       commentMessage= ":tada:  Updated the Unreleased section of the Changelog with: \n```\n".concat(changelogLine, "\n```\nTo update this entry, please comment on this PR, and describe in one line your changes, like so: [Feature] Updated **ComponentName** with new `propName` to fix alignment ");
     }
@@ -8779,7 +8783,7 @@ async function main() {
       })
     }
     // determines if the next action will run (add, commit, and push changelog.md)
-    core.setOutput("success", foundline);
+    core.setOutput("success", success);
   } catch (error) {
     core.setFailed(error.message);
   }
