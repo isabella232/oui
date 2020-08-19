@@ -21,13 +21,9 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 
 ## 47.0.0 - 2020-08-07
 - [Release] Remove `word-break` helper class in favor of `word-break--all` ([#1394](https://github.com/optimizely/oui/pull/1394))
-<<<<<<< HEAD
 - [Feature] Add `hasClearButton` to **DatePicker** and **DateRangePicker** ([#1396](https://github.com/optimizely/oui/pull/1396))
 - [Feature] Add `leftIcon` and `rightIcon` to **Link** ([#1393](https://github.com/optimizely/oui/pull/1393))
 - [Patch] Replaced `name` and `secondaryText`'s string requirement to node for **Dropdown** ([#1395](https://github.com/optimizely/oui/pull/1395))
-=======
-- [Feature] Added new Storybook examples detailing div styling helper classes ([#1391](https://github.com/optimizely/oui/pull/1391))
->>>>>>> added changelog
 
 ## 46.13.0 - 2020-08-05
 - [Feature] Update Storybook to organize components ([#1381](https://github.com/optimizely/oui/pull/1381))
