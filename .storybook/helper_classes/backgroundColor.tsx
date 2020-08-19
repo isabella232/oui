@@ -10,6 +10,7 @@ import backgroundColorInformation from "./data.json";
 interface BackgroundColorState {
     stylingColorRow: string,
     colorList: string[],
+    darkBackgroundColors: string[],
 }
 
 export class BackgroundColor extends React.Component<{}, BackgroundColorState> {
@@ -17,7 +18,8 @@ export class BackgroundColor extends React.Component<{}, BackgroundColorState> {
         super(props);
         this.state = {
             stylingColorRow: 'white',
-            colorList: ['white', 'faint', 'light', 'muted', 'medium', 'charcoal', 'brand', 'brand-dark', 'warning', 'bad-news', 'good-news', 'live', 'draft', 'current-color', 'none']
+            colorList: Object.keys(backgroundColorInformation),
+            darkBackgroundColors: ["muted", "medium", "charcoal", "brand", "brand-dark"],
         }
     }
 
@@ -26,7 +28,7 @@ export class BackgroundColor extends React.Component<{}, BackgroundColorState> {
     }
 
     render() {
-        const {colorList, stylingColorRow} = this.state;
+        const {colorList, stylingColorRow, darkBackgroundColors} = this.state;
         const currentColor = backgroundColorInformation[stylingColorRow];
                     
         return (
@@ -49,7 +51,7 @@ export class BackgroundColor extends React.Component<{}, BackgroundColorState> {
                         <Table.TBody>
                             {colorList.map((color) => {
                                 return (
-                                    <BackgroundColorRow onRowClick={() => this.switchColorRow(color)} isSelected={stylingColorRow === color} helperClass={`background--${color}`}/>
+                                    <BackgroundColorRow darkBackground={darkBackgroundColors.includes(color)} onRowClick={() => this.switchColorRow(color)} isSelected={stylingColorRow === color} helperClass={`background--${color}`}/>
                                 )
                             })}
                         </Table.TBody>
