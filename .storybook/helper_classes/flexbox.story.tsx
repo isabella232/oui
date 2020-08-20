@@ -1,7 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { withKnobs } from "@storybook/addon-knobs";
 import "./index.scss";
 import TabNav from "../../src/components/TabNav/index";
 import Code from "../../src/components/Code/index";
@@ -14,7 +13,6 @@ import { FlexAligning,
 
 const stories = storiesOf("Overview|Helper Classes/Layout/Flexbox", module);
 stories
-  .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);
 
 stories.add("Default", () => {
