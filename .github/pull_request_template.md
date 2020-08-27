@@ -8,7 +8,7 @@ What did you change and why?
 
 ## Test Plan
 
-Please remember to add tests for all new functionality.
+Please remember to add tests for all new functionality, and manually test for Accessibility (including keyboard navigation and screen reader usage)
 
 ## Jira
 
