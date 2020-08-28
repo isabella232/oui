@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import SelectDropdown from './index.js';
@@ -102,26 +102,25 @@ stories
             </p>
             <Form.Row>
               <Form.Item>
-              <SelectDropdown
-              items={ items }
-              minDropdownWidth={ '400px ' }
-              displayError={ true }
-              note="A note about this error"
-              value={ 'dog' }
-            />
+                <SelectDropdown
+                  items={ items }
+                  minDropdownWidth={ '400px ' }
+                  displayError={ true }
+                  note="A note about this error"
+                  value={ 'dog' }
+                />
               </Form.Item>
               <Form.Item>
-              <SelectDropdown
-              label="Favorite Animal"
-              items={ items }
-              minDropdownWidth={ '400px ' }
-              displayError={ true }
-              note="A note about this error"
-              value={ 'dog' }
-            />
+                <SelectDropdown
+                  label="Favorite Animal"
+                  items={ items }
+                  minDropdownWidth={ '400px ' }
+                  displayError={ true }
+                  note="A note about this error"
+                  value={ 'dog' }
+                />
               </Form.Item>
             </Form.Row>
-
           </Form.Section>
           <Form.Section>
             <p>With isDisabled = true</p>
