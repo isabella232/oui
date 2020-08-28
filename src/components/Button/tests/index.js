@@ -107,6 +107,13 @@ describe('components/Button', () => {
     expect(component.find('[aria-label="a11y"]').exists()).toBe(true);
   });
 
+  it('should add an `aria-haspopup` when provided', () => {
+    const component = mount(
+      <Button ariaHasPopup={ true }>Hello!</Button>
+    );
+    expect(component.find('[aria-haspopup=true]').exists()).toBe(true);
+  });
+
   it('should add a title when provided', () => {
     const component = mount(
       <Button title="a11y">Hello!</Button>
