@@ -6,15 +6,12 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import SelectDropdown from './index.js';
+import Form from '../Form/index';
 
 const stories = storiesOf('Forms|SelectDropdown', module);
 stories
   .addDecorator(withKnobs)
-  .addDecorator(story => (
-    <div id="root-preview">
-      {story()}
-    </div>
-  ));
+  .addDecorator((story) => <div id="root-preview">{story()}</div>);
 
 const items = [
   {
@@ -44,198 +41,265 @@ const items = [
   },
 ];
 
-stories.add('Default', (() => {
+stories
+  .add('With Labels, Errors, and Notes', () => {
+    return (
+      <Container>
+        <Form>
+          <Form.Section>
+            <SelectDropdown
+              items={ items }
+              value={ 'dog' }
+              onChange={ action('SelectDropdown value changed') }
+            />
+          </Form.Section>
+          <Form.Section>
+            <p>
+              With a label above using <code>label </code>prop
+            </p>
+            <Form.Row>
+              <Form.Item>
+                <SelectDropdown
+                  label="Favorite Animal"
+                  items={ items }
+                  minDropdownWidth={ '400px ' }
+                  onChange={ action('SelectDropdown value changed') }
+                  value={ 'dog' }
+                />
+              </Form.Item>
+              <Form.Item>
+                <SelectDropdown
+                  label="Favorite Animal"
+                  isRequired={ true }
+                  items={ items }
+                  minDropdownWidth={ '400px ' }
+                  onChange={ action('SelectDropdown value changed') }
+                  value={ 'dog' }
+                />
+              </Form.Item>
+            </Form.Row>
+          </Form.Section>
+          <Form.Section>
+            <p>
+              With a label within using <code>buttonContent </code>prop
+            </p>
 
-  return (
-    <Container>
-      <SelectDropdown
-        items={ items }
-        value={ 'dog' }
-        onChange={ action('SelectDropdown value changed') }
-      />
-    </Container>
-  );
-})).add('Initial placeholder', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        items={ items }
-        initialPlaceholder="Select a value..."
-        onChange={ action('SelectDropdown value changed') }
-      />
-    </Container>
-  );
-})).add('Width of activator', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        items={ items }
-        value={ 'dog' }
-        onChange={ action('SelectDropdown value changed') }
-        width={ '400px ' }
-      />
-    </Container>
-  );
-})).add('Full Width Activator with Full Width items', (() => {
-  return (
-    <Container>
-      <div style={{'width': '400px', 'border': '1px solid', 'height': '100px' }}>
-        <SelectDropdown
-          items={ items }
-          value={ 'dog' }
-          onChange={ action('SelectDropdown value changed') }
-          fullWidth={ true }
-        />
-      </div>
-    </Container>
-  );
-})).add('Full Width Activator with items with a different min width', (() => {
-  return (
-    <Container>
-      <div style={{'width': '400px', 'border': '1px solid', 'height': '100px' }}>
-        <SelectDropdown
-          items={ items }
-          value={ 'dog' }
-          onChange={ action('SelectDropdown value changed') }
-          fullWidth={ true }
-          minDropdownWidth={ 500 }
-        />
-      </div>
-    </Container>
-  );
-})).add('Specify max width of activator', (() => {
-  return (
-    <div>
-      <p className="push--bottom">
-        Specifying the <code>maxWidth</code> property allows you to truncate longer dropdowns while keeping shorter ones short.
-      </p>
+            <SelectDropdown
+              buttonContent={{
+                label: 'Favorite Animal',
+                content: 'Dog',
+              }}
+              items={ items }
+              minDropdownWidth={ '400px ' }
+              onChange={ action('SelectDropdown value changed') }
+              value={ 'dog' }
+            />
+          </Form.Section>
+          <Form.Section>
+            <p>
+              With an error and note using <code>displayError and note </code>
+              props
+            </p>
+            <Form.Row>
+              <Form.Item>
+              <SelectDropdown
+              items={ items }
+              minDropdownWidth={ '400px ' }
+              displayError={ true }
+              note="A note about this error"
+              value={ 'dog' }
+            />
+              </Form.Item>
+              <Form.Item>
+              <SelectDropdown
+              label="Favorite Animal"
+              items={ items }
+              minDropdownWidth={ '400px ' }
+              displayError={ true }
+              note="A note about this error"
+              value={ 'dog' }
+            />
+              </Form.Item>
+            </Form.Row>
+
+          </Form.Section>
+          <Form.Section>
+            <p>With isDisabled = true</p>
+            <SelectDropdown
+              label="Favorite Animal"
+              items={ items }
+              isDisabled={ true }
+              minDropdownWidth={ '400px ' }
+              note="Only applies to XYZ"
+              value={ 'dog' }
+            />
+          </Form.Section>
+        </Form>
+      </Container>
+    );
+  })
+  .add('Initial placeholder', () => {
+    return (
       <Container>
         <SelectDropdown
           items={ items }
-          value={ 'dog-long' }
+          initialPlaceholder="Select a value..."
           onChange={ action('SelectDropdown value changed') }
-          maxWidth={ '120px ' }
-        />
-        <div className="push--left"></div>
-        <SelectDropdown
-          items={ items }
-          value={ 'dog' }
-          onChange={ action('SelectDropdown value changed') }
-          maxWidth={ '120px ' }
         />
       </Container>
-    </div>
-  );
-})).add('Display Error', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        items={ items }
-        displayError={ true }
-        value={ 'bear' }
-        onChange={ action('SelectDropdown value changed') }
-      />
-    </Container>
-  );
-})).add('Width of dropdown', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        items={ items }
-        value={ 'dog' }
-        onChange={ action('SelectDropdown value changed') }
-        minDropdownWidth={ '400px ' }
-      />
-    </Container>
-  );
-})).add('Disabled', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        items={ items }
-        value={ 'dog' }
-        minDropdownWidth={ '400px ' }
-        isDisabled={ boolean('isDisabled', true) }
-        onChange={ action('SelectDropdown value changed') }
-      />
-    </Container>
-  );
-})).add('Activator Label differs from Value', (() => {
-  const itemsWithActivatorLabel = [
-    {
-      activatorLabel: 'Production',
-      label: 'Production (50%)',
-      value: 'Production',
-    },
-    {
-      activatorLabel: 'Staging',
-      label: 'Staging (100%)',
-      value: 'Staging',
-    },
-  ];
-  return (
-    <Container>
-      <SelectDropdown
-        items={ itemsWithActivatorLabel }
-        value='Production'
-        onChange={ action('SelectDropdown value changed') }
-      />
-    </Container>
-  );
-})).add('Multi Select', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        isMultiSelect={ true }
-        items={ items }
-        initialPlaceholder="Select a value..."
-        minDropdownWidth={ '400px ' }
-        onChange={ action('SelectDropdown value changed') }
-      />
-    </Container>
-  );
-})).add('Items with linkText or linkURL', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        items={ [{label: 'Elephant', description: 'Very loud', value: 'elephant', linkText: 'I am a link, click me!', linkURL: 'https://www.google.com', linkNewWindow: true}].concat(items) }
-        initialPlaceholder="Select a value..."
-        onChange={ action('SelectDropdown value changed') }
-      />
-    </Container>
-  );
-})).add('With label in the button', (() => {
-  return (
-    <Container>
-      <SelectDropdown
-        buttonContent={{
-          label: 'Favorite Animal',
-          content: 'Dog',
-        }}
-        items={ items }
-        minDropdownWidth={ '400px ' }
-        onChange={ action('SelectDropdown value changed') }
-        value={ 'dog' }
-      />
-    </Container>
-  );
-})).add('With a change in direction', (() => {
-  return (
-    <Container>
-      <div style={{marginTop: '200px'}}>
-        <p>Placement of dropdown is above</p>
+    );
+  })
+  .add('Width of activator', () => {
+    return (
+      <Container>
         <SelectDropdown
           items={ items }
+          value={ 'dog' }
+          onChange={ action('SelectDropdown value changed') }
+          width={ '400px ' }
+        />
+      </Container>
+    );
+  })
+  .add('Width of dropdown', () => {
+    return (
+      <Container>
+        <SelectDropdown
+          items={ items }
+          value={ 'dog' }
+          onChange={ action('SelectDropdown value changed') }
+          minDropdownWidth={ '400px ' }
+        />
+      </Container>
+    );
+  })
+  .add('Full Width Activator with Full Width items', () => {
+    return (
+      <Container>
+        <div style={{ width: '400px', border: '1px solid', height: '100px' }}>
+          <SelectDropdown
+            items={ items }
+            value={ 'dog' }
+            onChange={ action('SelectDropdown value changed') }
+            fullWidth={ true }
+          />
+        </div>
+      </Container>
+    );
+  })
+  .add('Full Width Activator with items with a different min width', () => {
+    return (
+      <Container>
+        <div style={{ width: '400px', border: '1px solid', height: '100px' }}>
+          <SelectDropdown
+            items={ items }
+            value={ 'dog' }
+            onChange={ action('SelectDropdown value changed') }
+            fullWidth={ true }
+            minDropdownWidth={ 500 }
+          />
+        </div>
+      </Container>
+    );
+  })
+  .add('Specify max width of activator', () => {
+    return (
+      <div>
+        <p className="push--bottom">
+          Specifying the <code>maxWidth</code> property allows you to truncate
+          longer dropdowns while keeping shorter ones short.
+        </p>
+        <Container>
+          <SelectDropdown
+            items={ items }
+            value={ 'dog-long' }
+            onChange={ action('SelectDropdown value changed') }
+            maxWidth={ '120px ' }
+          />
+          <div className="push--left"></div>
+          <SelectDropdown
+            items={ items }
+            value={ 'dog' }
+            onChange={ action('SelectDropdown value changed') }
+            maxWidth={ '120px ' }
+          />
+        </Container>
+      </div>
+    );
+  })
+  .add('Activator Label differs from Value', () => {
+    const itemsWithActivatorLabel = [
+      {
+        activatorLabel: 'Production',
+        label: 'Production (50%)',
+        value: 'Production',
+      },
+      {
+        activatorLabel: 'Staging',
+        label: 'Staging (100%)',
+        value: 'Staging',
+      },
+    ];
+    return (
+      <Container>
+        <SelectDropdown
+          items={ itemsWithActivatorLabel }
+          value="Production"
+          onChange={ action('SelectDropdown value changed') }
+        />
+      </Container>
+    );
+  })
+  .add('Multi Select', () => {
+    return (
+      <Container>
+        <SelectDropdown
+          isMultiSelect={ true }
+          items={ items }
+          initialPlaceholder="Select a value..."
           minDropdownWidth={ '400px ' }
           onChange={ action('SelectDropdown value changed') }
-          placement={ 'top-start' }
-          dropdownDirection="up"
-          value={ 'dog' }
         />
-      </div>
-    </Container>
-  );
-}));
+      </Container>
+    );
+  })
+  .add('Items with linkText or linkURL', () => {
+    return (
+      <Container>
+        <SelectDropdown
+          items={ [
+            {
+              label: 'Elephant',
+              description: 'Very loud',
+              value: 'elephant',
+              linkText: 'I am a link, click me!',
+              linkURL: 'https://www.google.com',
+              linkNewWindow: true,
+            },
+          ].concat(items) }
+          initialPlaceholder="Select a value..."
+          onChange={ action('SelectDropdown value changed') }
+        />
+      </Container>
+    );
+  })
+  .add('With a change in direction', () => {
+    return (
+      <Container>
+        <div style={{ marginTop: '200px' }}>
+          <p>Placement of dropdown is above</p>
+          <SelectDropdown
+            items={ items }
+            minDropdownWidth={ '400px ' }
+            onChange={ action('SelectDropdown value changed') }
+            placement={ 'top-start' }
+            dropdownDirection="up"
+            value={ 'dog' }
+          />
+        </div>
+      </Container>
+    );
+  });
 
 const Container = styled.div`
   display: flex;

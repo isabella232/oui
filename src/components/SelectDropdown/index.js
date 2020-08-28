@@ -13,7 +13,10 @@ class SelectDropdown extends React.Component {
      * When this prop is defined, value and initialPlaceholder
      * are not used.
      */
-    buttonContent: PropTypes.shape({label: PropTypes.string, content: PropTypes.string}),
+    buttonContent: PropTypes.shape({
+      label: PropTypes.string,
+      content: PropTypes.string,
+    }),
     /**
      * Style value that is passed to the OUI button that controls the dropdown.
      */
@@ -44,36 +47,45 @@ class SelectDropdown extends React.Component {
      */
     isMultiSelect: PropTypes.bool,
     /**
+     * Whether this dropdown is required
+     * Only applies if "label" prop is supplied
+     */
+    isRequired: PropTypes.bool,
+    /**
      * Dropdown items that can be selected from the select dropdown.
      */
-    items: PropTypes.arrayOf(PropTypes.shape({
-      activatorLabel: PropTypes.node,
-      description: PropTypes.string,
-      isSelected: PropTypes.bool,
-      label: PropTypes.node.isRequired,
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-        PropTypes.bool,
-      ]).isRequired,
-      linkNewWindow: PropTypes.bool,
-      linkText: PropTypes.string,
-      linkURL: PropTypes.string,
-    })).isRequired,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        activatorLabel: PropTypes.node,
+        description: PropTypes.string,
+        isSelected: PropTypes.bool,
+        label: PropTypes.node.isRequired,
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.bool,
+        ]).isRequired,
+        linkNewWindow: PropTypes.bool,
+        linkText: PropTypes.string,
+        linkURL: PropTypes.string,
+      })
+    ).isRequired,
+    /**
+     * Label to use above the activator
+     */
+    label: PropTypes.string,
     /**
      * Max width of the activator container.
      */
-    maxWidth: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
+    maxWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     /**
      * The minimum width of the dropdown list; any valid CSS width value.
      */
-    minDropdownWidth: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
+    minDropdownWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    /**
+     * Note to use below the activator
+     */
+    note: PropTypes.string,
     /**
      * Function that is called when user selects
      * an item from dropdown list.
@@ -113,10 +125,7 @@ class SelectDropdown extends React.Component {
     /**
      * Width of the activator container.
      */
-    width: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
+    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     /**
      * zIndex of dropdown group
      */
@@ -141,23 +150,26 @@ class SelectDropdown extends React.Component {
       buttonStyle,
       value,
       width,
+      isRequired,
+      label,
       maxWidth,
+      note,
       isDisabled,
       initialPlaceholder,
       trackId,
       testSection,
     } = this.props;
     let selectedItem;
-    this.props.items.forEach(item => {
+    this.props.items.forEach((item) => {
       if (item.value === value) {
         selectedItem = item;
       }
     });
 
-    const outerClass = classNames(
-      {['oui-form-bad-news']: this.props.displayError,
-        'oui-dropdown-group__activator': true}
-    );
+    const outerClass = classNames({
+      ['oui-form-bad-news']: this.props.displayError,
+      'oui-dropdown-group__activator': true,
+    });
 
     let activatorLabel = '';
     if (selectedItem) {
@@ -173,11 +185,16 @@ class SelectDropdown extends React.Component {
     }
 
     return (
-      <div
-        style={{ width: width, maxWidth: maxWidth}}
-        className={ outerClass }>
+      <div style={{ width: width, maxWidth: maxWidth }} className={ outerClass }>
+        {label && (
+          <p className="oui-label">
+            {label}
+            {isRequired && <span className="oui-label--required"></span>}
+          </p>
+        )}
         <Button
           title={ activatorLabel }
+          ariaHasPopup={ true }
           isDisabled={ isDisabled }
           style={ adjustedButtonStyle }
           size="narrow"
@@ -203,6 +220,13 @@ class SelectDropdown extends React.Component {
             <span className="push--left oui-arrow-inline--down" />
           </div>
         </Button>
+        {note && (
+          <div
+            className="oui-form-note"
+            data-test-section={ testSection && testSection + '-note' }>
+            {note}
+          </div>
+        )}
       </div>
     );
   };
@@ -212,11 +236,23 @@ class SelectDropdown extends React.Component {
   };
 
   renderContents = () => {
-    const { isMultiSelect, items, onChange, value, minDropdownWidth, dropdownDirection } = this.props;
+    const {
+      buttonContent,
+      isMultiSelect,
+      items,
+      label,
+      onChange,
+      value,
+      minDropdownWidth,
+      dropdownDirection,
+    } = this.props;
 
     return (
-      <Dropdown.Contents minWidth={ minDropdownWidth } direction={ dropdownDirection }>
-        { items.map((entry, index) => (
+      <Dropdown.Contents
+        minWidth={ minDropdownWidth }
+        direction={ dropdownDirection }
+        ariaLabel={ (buttonContent && buttonContent.label) || label }>
+        {items.map((entry, index) => (
           <Dropdown.ListItem key={ entry.value }>
             <Dropdown.BlockLink
               value={ entry.value }
@@ -225,21 +261,19 @@ class SelectDropdown extends React.Component {
               isItemSelected={ entry.isSelected }
               isMultiSelect={ isMultiSelect }
               testSection={ 'dropdown-block-link-' + entry.value }>
-              { entry.label }
-              { entry.description && (
-                <div className="micro muted">
-                  { entry.description }
-                </div>
+              {entry.label}
+              {entry.description && (
+                <div className="micro muted">{entry.description}</div>
               )}
             </Dropdown.BlockLink>
-            { entry.linkText && entry.linkURL && (
+            {entry.linkText && entry.linkURL && (
               <div className="micro muted">
                 <Link
                   title={ entry.linkText }
                   onClick={ this.handleLinkClick }
                   newWindow={ entry.linkNewWindow }
                   href={ entry.linkURL }>
-                  { entry.linkText}
+                  {entry.linkText}
                 </Link>
               </div>
             )}
@@ -266,7 +300,7 @@ class SelectDropdown extends React.Component {
         fullWidth={ fullWidth }
         renderActivator={ this.renderActivator }
         shouldHideChildrenOnClick={ !isMultiSelect }>
-        { this.renderContents() }
+        {this.renderContents()}
       </Dropdown>
     );
   }

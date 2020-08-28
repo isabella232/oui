@@ -217,6 +217,30 @@ describe('components/SelectDropdown', function() {
     expect(component.find('.oui-assistive-text').length).toBe(1);
   });
 
+  it('should add a label when label specifies one', () => {
+    component = mount(
+      <SelectDropdown
+        label="date"
+        items={ items }
+        initialPlaceholder="Select a value..."
+        onChange={ onChange }
+      />);
+
+    expect(component.find('.oui-label').length).toBe(1);
+  });
+
+  it('should add a note when note specifies one', () => {
+    component = mount(
+      <SelectDropdown
+        note="You have an error"
+        items={ items }
+        initialPlaceholder="Select a value..."
+        onChange={ onChange }
+      />);
+
+    expect(component.find('.oui-form-note').length).toBe(1);
+  });
+
   describe('links', function() {
     describe('if linkURL and linkText are provided', function() {
       beforeEach(function() {
