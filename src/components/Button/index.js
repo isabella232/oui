@@ -11,6 +11,7 @@ import Icon from 'react-oui-icons';
 
 const Button = ({
   ariaLabel,
+  ariaHasPopup,
   isSubmit,
   isLink,
   children,
@@ -99,6 +100,7 @@ const Button = ({
       onMouseDown={ onMouseDown }
       data-test-section={ testSection }
       aria-label={ ariaLabel }
+      aria-haspopup={ ariaHasPopup }
       aria-live="polite"
       title={ title }
       ref={ buttonRef }>
@@ -112,6 +114,8 @@ const Button = ({
 };
 
 Button.propTypes = {
+  /** Should be true if this button displays a menu or tooltip */
+  ariaHasPopup: PropTypes.bool,
   /** Describes buttons that have an icon but no text */
   ariaLabel: PropTypes.string,
   /** React ref to the underlying button component */

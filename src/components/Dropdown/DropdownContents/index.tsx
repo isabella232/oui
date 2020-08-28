@@ -3,6 +3,9 @@ import React from 'react';
 import classNames from 'classnames';
 
 type DropdownContentsProps = {
+  /** Label for the dropdown contents for screen readers */
+  ariaLabel?: string
+
   /** Whether contents can scroll */
   canScroll?: boolean;
 
@@ -52,6 +55,7 @@ export const DropdownContents: React.SFC<DropdownContentsProps> = React.forwardR
         <ul
           className={listClasses}
           role="listbox"
+          aria-label={ props.ariaLabel }
           style={styleProps}
           {...(props.testSection ? { 'data-test-section': props.testSection } : {})}
         >

@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Updated **SelectDropdown** with `label`, `note`, and `isRequired` props ([#1408](https://github.com/optimizely/oui/pull/1408))
 - [Feature] Added new Storybook examples detailing div styling helper classes ([#1391](https://github.com/optimizely/oui/pull/1391))
 
 ## 48.0.2 - 2020-08-19

@@ -140,9 +140,10 @@ declare module "components/Spinner/index" {
 }
 declare module "components/Button/index" {
     export default Button;
-    function Button({ ariaLabel, isSubmit, isLink, children, isActive, isDisabled, isLoading, leftIcon, loadingText, onBlur, onClick, onMouseDown, rightIcon, size, style, testSection, width, buttonRef, title, }: any): any;
+    function Button({ ariaLabel, ariaHasPopup, isSubmit, isLink, children, isActive, isDisabled, isLoading, leftIcon, loadingText, onBlur, onClick, onMouseDown, rightIcon, size, style, testSection, width, buttonRef, title, }: any): any;
     namespace Button {
         export namespace propTypes {
+            export const ariaHasPopup: PropTypes.Requireable<boolean>;
             export const ariaLabel: PropTypes.Requireable<string>;
             export const buttonRef: PropTypes.Requireable<((...args: any[]) => any) | PropTypes.InferProps<{
                 current: PropTypes.Requireable<Element>;
@@ -1527,6 +1528,8 @@ declare module "utils/recompose-utils" {
 declare module "components/Dropdown/DropdownContents/index" {
     import React from 'react';
     type DropdownContentsProps = {
+        /** Label for the dropdown contents for screen readers */
+        ariaLabel?: string;
         /** Whether contents can scroll */
         canScroll?: boolean;
         /** Direction of contents */
@@ -4941,6 +4944,11 @@ declare module "components/SelectDropdown/index" {
              */
             isMultiSelect: PropTypes.Requireable<boolean>;
             /**
+             * Whether this dropdown is required
+             * Only applies if "label" prop is supplied
+             */
+            isRequired: PropTypes.Requireable<boolean>;
+            /**
              * Dropdown items that can be selected from the select dropdown.
              */
             items: PropTypes.Validator<(PropTypes.InferProps<{
@@ -4954,6 +4962,10 @@ declare module "components/SelectDropdown/index" {
                 linkURL: PropTypes.Requireable<string>;
             }> | null | undefined)[]>;
             /**
+             * Label to use above the activator
+             */
+            label: PropTypes.Requireable<string>;
+            /**
              * Max width of the activator container.
              */
             maxWidth: PropTypes.Requireable<string | number>;
@@ -4961,6 +4973,10 @@ declare module "components/SelectDropdown/index" {
              * The minimum width of the dropdown list; any valid CSS width value.
              */
             minDropdownWidth: PropTypes.Requireable<string | number>;
+            /**
+             * Note to use below the activator
+             */
+            note: PropTypes.Requireable<string>;
             /**
              * Function that is called when user selects
              * an item from dropdown list.
@@ -5878,6 +5894,81 @@ declare module "components/Select/example/index" {
     }[];
     export default _default;
 }
+declare module "components/Form/Section/index" {
+    import PropTypes from 'prop-types';
+    const Section: {
+        (props: any): JSX.Element;
+        propTypes: {
+            children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            /** Description for Form Section */
+            description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            /** Indicates whether to include a help popover */
+            helpIcon: PropTypes.Requireable<boolean>;
+            /** Indicates whether to include the "optional" tag to the section */
+            isOptional: PropTypes.Requireable<boolean>;
+            /** Indicates whether to include a required asterisk */
+            isRequired: PropTypes.Requireable<boolean>;
+            /** Text for popover */
+            popoverText: PropTypes.Requireable<string>;
+            /** Title for popover */
+            popoverTitle: PropTypes.Requireable<string>;
+            testSection: PropTypes.Requireable<string>;
+            /** Title for Section */
+            title: PropTypes.Requireable<string>;
+        };
+    };
+    export default Section;
+}
+declare module "components/Form/index" {
+    import PropTypes from 'prop-types';
+    const Form: {
+        (props: any): JSX.Element;
+        Section: {
+            (props: any): JSX.Element;
+            propTypes: {
+                children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+                description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+                helpIcon: PropTypes.Requireable<boolean>;
+                isOptional: PropTypes.Requireable<boolean>;
+                isRequired: PropTypes.Requireable<boolean>;
+                popoverText: PropTypes.Requireable<string>;
+                popoverTitle: PropTypes.Requireable<string>;
+                testSection: PropTypes.Requireable<string>;
+                title: PropTypes.Requireable<string>;
+            };
+        };
+        Item: {
+            (props: any): JSX.Element;
+            propTypes: {
+                children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+                testSection: PropTypes.Requireable<string>;
+            };
+        };
+        Row: {
+            (props: any): JSX.Element;
+            propTypes: {
+                children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+                isFullWidth: PropTypes.Requireable<boolean>;
+                testSection: PropTypes.Requireable<string>;
+            };
+        };
+        propTypes: {
+            children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            /** Description for Form */
+            description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            /** Indicates whether to include a help popover */
+            helpIcon: PropTypes.Requireable<boolean>;
+            /** Text for popover */
+            popoverText: PropTypes.Requireable<string>;
+            /** Title for popover */
+            popoverTitle: PropTypes.Requireable<string>;
+            testSection: PropTypes.Requireable<string>;
+            /** Title for Form */
+            title: PropTypes.Requireable<string>;
+        };
+    };
+    export default Form;
+}
 declare module "components/SelectDropdown/SelectDropdown.story" {
     export {};
 }
@@ -6476,81 +6567,6 @@ declare module "components/Toolbar/index" {
 }
 declare module "components/Toolbar/Toolbar.story" {
     export {};
-}
-declare module "components/Form/Section/index" {
-    import PropTypes from 'prop-types';
-    const Section: {
-        (props: any): JSX.Element;
-        propTypes: {
-            children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-            /** Description for Form Section */
-            description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-            /** Indicates whether to include a help popover */
-            helpIcon: PropTypes.Requireable<boolean>;
-            /** Indicates whether to include the "optional" tag to the section */
-            isOptional: PropTypes.Requireable<boolean>;
-            /** Indicates whether to include a required asterisk */
-            isRequired: PropTypes.Requireable<boolean>;
-            /** Text for popover */
-            popoverText: PropTypes.Requireable<string>;
-            /** Title for popover */
-            popoverTitle: PropTypes.Requireable<string>;
-            testSection: PropTypes.Requireable<string>;
-            /** Title for Section */
-            title: PropTypes.Requireable<string>;
-        };
-    };
-    export default Section;
-}
-declare module "components/Form/index" {
-    import PropTypes from 'prop-types';
-    const Form: {
-        (props: any): JSX.Element;
-        Section: {
-            (props: any): JSX.Element;
-            propTypes: {
-                children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-                description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-                helpIcon: PropTypes.Requireable<boolean>;
-                isOptional: PropTypes.Requireable<boolean>;
-                isRequired: PropTypes.Requireable<boolean>;
-                popoverText: PropTypes.Requireable<string>;
-                popoverTitle: PropTypes.Requireable<string>;
-                testSection: PropTypes.Requireable<string>;
-                title: PropTypes.Requireable<string>;
-            };
-        };
-        Item: {
-            (props: any): JSX.Element;
-            propTypes: {
-                children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-                testSection: PropTypes.Requireable<string>;
-            };
-        };
-        Row: {
-            (props: any): JSX.Element;
-            propTypes: {
-                children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-                isFullWidth: PropTypes.Requireable<boolean>;
-                testSection: PropTypes.Requireable<string>;
-            };
-        };
-        propTypes: {
-            children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-            /** Description for Form */
-            description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-            /** Indicates whether to include a help popover */
-            helpIcon: PropTypes.Requireable<boolean>;
-            /** Text for popover */
-            popoverText: PropTypes.Requireable<string>;
-            /** Title for popover */
-            popoverTitle: PropTypes.Requireable<string>;
-            testSection: PropTypes.Requireable<string>;
-            /** Title for Form */
-            title: PropTypes.Requireable<string>;
-        };
-    };
-    export default Form;
 }
 declare module "components/Fieldset/Fieldset.story" { }
 declare module "components/Form/Form.story" { }
