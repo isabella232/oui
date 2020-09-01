@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Regenerate types for **Tile** prop fix ([#1411](https://github.com/optimizely/oui/pull/1411))
 
 ## 48.1.0 - 2020-09-01
 - [Feature] Update **SelectDropdown** with `label`, `note`, and `isRequired` props ([#1408](https://github.com/optimizely/oui/pull/1408))

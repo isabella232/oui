@@ -2065,7 +2065,7 @@ declare module "components/Tile/index" {
         /**
          * Description of the item for this reference Tile
          */
-        description?: string;
+        description?: string | React.ReactNode;
         /**
          * Optional properties to include when using Tile
          * in DragAndDrop component
