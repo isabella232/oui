@@ -252,7 +252,7 @@ stories
           </div>
         }
         footerContent={
-          <div className="flex flex--1 flex--column flex-align--center">
+          <div className="flex width--1-1 flex--column flex-align--center">
             <p className="weight--bold">Expand your options</p>
             <Button width={ 'full' } style="highlight" size="small">
               See Options

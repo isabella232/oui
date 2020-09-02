@@ -108,7 +108,7 @@ const NavBar = (props) => {
       }) }
       data-test-section="p13n-root-navbar">
       <div data-test-section="navbar-header">
-        <div className="root-nav__logo push-double--bottom">
+        <div className="root-nav__logo push--bottom">
           <Link href={ homeUrl }>
             <img
               alt="logo"
@@ -133,11 +133,11 @@ const NavBar = (props) => {
           </Badge>
         </div>
       </div>
-      <ul className="push-double--ends">
+      <ul className="push--ends">
         { renderChildrenByType(PrimaryLink) }
       </ul>
       <div className="anchor--bottom">
-        <ul className="push-double--ends">
+        <ul className="push--ends">
           { renderChildrenByType(SecondaryLink) }
         </ul>
         { renderChildrenByType(CurrentUserMenu) }

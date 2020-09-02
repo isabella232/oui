@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Upgrade `react-oui-icons` to v2.11.3 ([#1412](https://github.com/optimizely/oui/pull/1412))
 - [Patch] Regenerate types for **Tile** prop fix ([#1411](https://github.com/optimizely/oui/pull/1411))
 
 ## 48.1.0 - 2020-09-01
