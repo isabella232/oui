@@ -5520,6 +5520,7 @@ code {
 
 .root-nav__link {
   display: flex;
+  align-items: center;
   color: var(--dark-blue-100);
   padding-top: 8.66667px;
   padding-bottom: 8.66667px;
