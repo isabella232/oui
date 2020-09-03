@@ -178,20 +178,25 @@
 
   &--plain {
     color: map-fetch($button, type, plain, color);
-    border-color: transparent;
+    border-color: $grey-base;
     background-color: transparent;
     box-shadow: none;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: map-fetch($button, type, plain, hover, color);
-      border: 1px solid var(--light-blue-25);
+      border: 1px solid $brand-blue-base;
+    }
+
+    &:focus {
+      color: map-fetch($button, type, plain, active, color);
+      border: 1px solid $brand-blue-dark;
     }
 
     &:active,
     &.is-active:hover,
     &.is-active:focus {
-      color: map-fetch($button, type, base, active, color);
+      color: map-fetch($button, type, plain, color);
+      background-color: transparent;
     }
 
   }
