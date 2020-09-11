@@ -136,6 +136,10 @@ textarea:focus {
   cursor: text;
   outline: none;
   box-shadow: 0px 0px 3px $brand-blue-dark;
+
+  &:disabled {
+    box-shadow: none;
+  }
 }
 
 // ## Links

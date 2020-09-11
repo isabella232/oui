@@ -128,17 +128,20 @@
   margin-top: spacer(0.5);
 }
 
-.#{$namespace}token__close,
-.oui-token__close {
-  color: map-fetch($color, ui, white);
-  height: map-fetch($token, token__close, height);
-  width: map-fetch($token, token__close, width);
-}
-
 .oui-token--full-width {
   width: 100%;
 
   .oui-token {
     width: 100%;
+  }
+}
+
+.oui-pill--dismiss {
+  svg {
+    width: 8px;
+    height: 8px;
+    margin-bottom: 2px;
+    stroke: currentColor !important;
+    stroke-width: 2;
   }
 }

@@ -14,6 +14,32 @@ const SAMPLE_DATA = [
   { name: 'tertiary', style: 'tertiary' },
 ];
 
+const SAMPLE_DATA_BG = [
+  { name: 'Red', backgroundColor: 'red' },
+  {
+    name: (
+      <p className="flush">
+        <b>key:</b>Orange
+      </p>
+    ),
+    backgroundColor: 'orange',
+  },
+  { name: 'Yellow', backgroundColor: 'yellow' },
+  {
+    name: (
+      <p className="flush">
+        <b>userid:</b>Green
+      </p>
+    ),
+    backgroundColor: 'green',
+  },
+  { name: 'Aqua', backgroundColor: 'aqua' },
+  { name: 'Blue', backgroundColor: 'blue' },
+  { name: 'Pink', backgroundColor: 'pink' },
+  { name: 'Magenta', backgroundColor: 'magenta' },
+  { name: 'Purple', backgroundColor: 'purple' },
+];
+
 const SAMPLE_DATA_WITH_SPACES = [
   { name: 'errors present', style: 'error' },
   { name: 'primary token', style: 'primary' },
@@ -34,7 +60,13 @@ class TokensInput extends React.Component {
 
   render() {
     const { tokens, onChange, ...rest } = this.props; //eslint-disable-line
-    return <TokensInputCore tokens={ this.state.tokens } onChange={ this.onChange } { ...rest } />;
+    return (
+      <TokensInputCore
+        tokens={ this.state.tokens }
+        onChange={ this.onChange }
+        { ...rest }
+      />
+    );
   }
 }
 
@@ -43,15 +75,22 @@ TokensInput.defaultProps = TokensInputCore.defaultProps;
 
 storiesOf('Forms|TokensInput', module)
   .addDecorator(withKnobs)
-  .addDecorator(story => (
-    <div id="root-preview">
-      {story()}
-    </div>
-  ))
-  .add('Default', (() => {
-    return <TokensInput onChange={ action('tokens changed') } tokens={ SAMPLE_DATA }/>;
-  }))
-  .add('With extraAddKeys', (() => {
+  .addDecorator((story) => <div id="root-preview">{story()}</div>)
+  .add('Default', () => {
+    return (
+      <TokensInput onChange={ action('tokens changed') } tokens={ SAMPLE_DATA } />
+    );
+  })
+  .add('With Background Color', () => {
+    return (
+      <TokensInput
+        onChange={ action('tokens changed') }
+        tokens={ SAMPLE_DATA_BG }
+        hasSearchIcon={ true }
+      />
+    );
+  })
+  .add('With extraAddKeys', () => {
     return (
       <TokensInput
         onChange={ action('tokens changed') }
@@ -59,4 +98,14 @@ storiesOf('Forms|TokensInput', module)
         extraAddKeys={ [' ', '_', ';', '|', '.'] }
       />
     );
-  }));
+  })
+  .add('Disabled', () => {
+    return (
+      <TokensInput
+        isDisabled={ true }
+        onChange={ action('tokens changed') }
+        tokens={ SAMPLE_DATA_WITH_SPACES }
+        extraAddKeys={ [' ', '_', ';', '|', '.'] }
+      />
+    );
+  });

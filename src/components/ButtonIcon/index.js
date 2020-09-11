@@ -75,6 +75,7 @@ ButtonIcon.propTypes = {
     'danger-outline',
     'outline',
     'plain',
+    'unstyled',
   ]),
   /**
    * Hook for automated JavaScript tests

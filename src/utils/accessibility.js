@@ -4,14 +4,25 @@ import { noop } from 'lodash';
 
 import {
   yellowDark,
+  yellowXLight,
   aquaDark,
+  aquaXLight,
   brandBlueDark,
   greenDark,
+  greenXLight,
   orangeDark,
+  orangeXLight,
   pinkDark,
+  pinkXLight,
   redDark,
+  redXLight,
   magentaDark,
+  magentaXLight,
   greyDark,
+  blueXLight,
+  purpleDark,
+  black,
+  purpleXLight,
 } from '../tokens/forimport/index.es';
 
 /**
@@ -125,8 +136,24 @@ export const FILL_COLOR_MAP = {
   red: redDark,
   magenta: magentaDark,
   grey: greyDark,
+  purple: purpleDark,
+  black: black,
+};
+
+// map fillColorName prop values to OUI color tokens
+export const FILL_COLOR_MAP_LIGHT = {
+  aqua: aquaXLight,
+  yellow: yellowXLight,
+  blue: blueXLight,
+  green: greenXLight,
+  orange: orangeXLight,
+  pink: pinkXLight,
+  red: redXLight,
+  magenta: magentaXLight,
+  purple: purpleXLight,
 };
 
 export default {
   FILL_COLOR_MAP,
+  FILL_COLOR_MAP_LIGHT,
 };

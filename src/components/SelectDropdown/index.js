@@ -181,7 +181,7 @@ class SelectDropdown extends React.Component {
     let adjustedButtonStyle = buttonStyle;
 
     if (buttonContent) {
-      adjustedButtonStyle = '';
+      adjustedButtonStyle = undefined;
     }
 
     return (

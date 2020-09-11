@@ -34,10 +34,10 @@ describe('components/TokensInput', () => {
     });
 
     function assertTokenRender(comp, style, font, text) {
-      expect(comp.find('[data-test-section="token"]').hasClass('oui-token-wrap--snug')).toBe(true);
-      expect(comp.find(`[data-test-section="token"] div.oui-token--${style}`).length).toBe(1);
-      expect(comp.find(`[data-test-section="token"] div.oui-token--${font}`).length).toBe(1);
-      expect(comp.find(`[data-test-section="token"] div.oui-token--${font}`).text()).toBe(text);
+      expect(comp.find(`[data-test-section="token-${text}"]`).hasClass('oui-token-wrap--snug')).toBe(true);
+      expect(comp.find(`[data-test-section="token-${text}"] div.oui-token--${style}`).length).toBe(1);
+      expect(comp.find(`[data-test-section="token-${text}"] div.oui-token--${font}`).length).toBe(1);
+      expect(comp.find(`[data-test-section="token-${text}"] div.oui-token--${font}`).text()).toBe(text);
     }
 
     it('should render with 5 tokens', () => {

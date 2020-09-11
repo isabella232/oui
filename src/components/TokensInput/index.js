@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTagsInput from 'react-tagsinput';
+import Icon from 'react-oui-icons';
 import Token from '../Token';
+import { brandBlueDark } from '../../tokens/forimport/index.es';
 
 /**
  * @typedef {Object} TokenWrapper
@@ -41,6 +43,8 @@ export const TokensInput = ({
   addOnBlur,
   addOnPaste,
   extraAddKeys,
+  hasSearchIcon,
+  isDisabled,
   maxTags,
   onChange,
   onInputBlur,
@@ -58,7 +62,14 @@ export const TokensInput = ({
    */
   function renderLayout(tokenComponents, inputComponent) {
     return (
-      <div className="flex flex-1 flex-wrap">
+      <div
+        className="flex flex-1 flex-wrap flex-align--center"
+        style={{ resize: 'both' }}>
+        {hasSearchIcon && (
+          <span className="flex flex-align--center push-half--sides">
+            <Icon name="search" fill={ brandBlueDark } />
+          </span>
+        )}
         {tokenComponents}
         {inputComponent}
       </div>
@@ -72,11 +83,12 @@ export const TokensInput = ({
    * @param {Object} renderOptions - Values to render token
    * @returns {ReactElement}
    */
-  function renderToken({ tag, key, onRemove }) { // eslint-disable-line react/prop-types
+  // eslint-disable-next-line react/prop-types
+  function renderToken({ tag, key, onRemove }) {
     function onDismiss() {
       onRemove(key);
     }
-    const { name, style } = tag;
+    const { name, style, backgroundColor } = tag;
     return (
       <Token
         key={ key }
@@ -85,8 +97,9 @@ export const TokensInput = ({
         onDismiss={ onDismiss }
         name={ name }
         style={ style }
+        backgroundColor={ backgroundColor }
         showWell={ false }
-        testSection="token"
+        testSection={ `token-${name}` }
       />
     );
   }
@@ -100,15 +113,16 @@ export const TokensInput = ({
    * @returns {Array<string>}
    */
   function pasteSplit(str) {
-    return ADD_KEYS
-      .map(k => k.match)
-      .concat(extraAddKeys)
+    return (
+      ADD_KEYS.map((k) => k.match)
+        .concat(extraAddKeys)
 
-      // Split the string by all our addKeys by joining with a
-      // \n, which we will use as the final split operator.
-      .reduce((acc, value) => acc.split(value).join('\n'), str)
-      .split('\n')
-      .filter(k => !!k);
+        // Split the string by all our addKeys by joining with a
+        // \n, which we will use as the final split operator.
+        .reduce((acc, value) => acc.split(value).join('\n'), str)
+        .split('\n')
+        .filter((k) => !!k)
+    );
   }
 
   /**
@@ -123,22 +137,25 @@ export const TokensInput = ({
         if (typeof token === 'string') {
           token = { name: token };
         }
-        if (!acc.find(item => item.name === token.name)) {
+        if (!acc.find((item) => item.name === token.name)) {
           acc.push(token);
         }
         return acc;
       }, [])
-      .filter(token => !!token.name);
+      .filter((token) => !!token.name);
 
     onChange(updatedTokens);
   }
 
-  const addKeys = ADD_KEYS.map(k => k.keyCode).concat(extraAddKeys);
-  const isNumberOfTokensMoreThanOrEqualToMaxTags = tokens.length >= maxTags && maxTags !== -1;
-  const minWidth = isNumberOfTokensMoreThanOrEqualToMaxTags ? '' : 'min-width--150';
+  const addKeys = ADD_KEYS.map((k) => k.keyCode).concat(extraAddKeys);
+  const isNumberOfTokensMoreThanOrEqualToMaxTags =
+    tokens.length >= maxTags && maxTags !== -1;
+  const minWidth = isNumberOfTokensMoreThanOrEqualToMaxTags
+    ? ''
+    : 'min-width--150';
 
   return (
-    <div className="oui-text-input text--left flush height--auto">
+    <div className="oui-text-input oui-pill-input text--left flush height--auto">
       <ReactTagsInput
         addKeys={ addKeys }
         addOnBlur={ addOnBlur }
@@ -148,8 +165,11 @@ export const TokensInput = ({
           onBlur: onInputBlur,
           onChange: onInputChange,
           onFocus: onInputFocus,
-          placeholder: isNumberOfTokensMoreThanOrEqualToMaxTags ? '' : placeholder,
+          placeholder: isNumberOfTokensMoreThanOrEqualToMaxTags
+            ? ''
+            : placeholder,
           readOnly: isNumberOfTokensMoreThanOrEqualToMaxTags,
+          disabled: isDisabled,
         }}
         maxTags={ maxTags }
         onChange={ __onChange }
@@ -179,10 +199,19 @@ TokensInput.propTypes = {
    * an intent to enter the current string as a new Token.
    * See ADD_KEYS above.
    */
-  extraAddKeys: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-  ])),
+  extraAddKeys: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  ),
+
+  /**
+   * Whether a search icon should be present
+   */
+  hasSearchIcon: PropTypes.bool,
+
+  /**
+   * Whether the input is disabled or not
+   */
+  isDisabled: PropTypes.bool,
 
   /**
    * Maximum number of allowed tokens (pass-through to <ReactTagsInput>)

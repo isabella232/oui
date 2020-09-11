@@ -1,0 +1,16 @@
+.oui-pill-input {
+  padding: 2px 5px;
+
+  input {
+    resize: both;
+  }
+
+  &:focus-within {
+    box-shadow: 0px 0px 3px $brand-blue-dark;
+    border: solid 1px map-fetch($color, ui, brand);
+
+    input {
+      box-shadow: none;
+    }
+  }
+}

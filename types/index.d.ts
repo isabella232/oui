@@ -262,12 +262,35 @@ declare module "utils/accessibility" {
         red: string;
         magenta: string;
         grey: string;
+        purple: string;
+        black: string;
     };
+    export namespace FILL_COLOR_MAP_LIGHT {
+        export { aquaXLight as aqua };
+        export { yellowXLight as yellow };
+        export { blueXLight as blue };
+        export { greenXLight as green };
+        export { orangeXLight as orange };
+        export { pinkXLight as pink };
+        export { redXLight as red };
+        export { magentaXLight as magenta };
+        export { purpleXLight as purple };
+    }
     namespace _default {
         export { FILL_COLOR_MAP };
+        export { FILL_COLOR_MAP_LIGHT };
     }
     export default _default;
     import React from "react";
+    import { aquaXLight } from "tokens/forimport/index.es";
+    import { yellowXLight } from "tokens/forimport/index.es";
+    import { blueXLight } from "tokens/forimport/index.es";
+    import { greenXLight } from "tokens/forimport/index.es";
+    import { orangeXLight } from "tokens/forimport/index.es";
+    import { pinkXLight } from "tokens/forimport/index.es";
+    import { redXLight } from "tokens/forimport/index.es";
+    import { magentaXLight } from "tokens/forimport/index.es";
+    import { purpleXLight } from "tokens/forimport/index.es";
 }
 declare module "components/Attention/index" {
     export type AttentionProps = {
@@ -502,11 +525,52 @@ declare module "components/BlockList/index" {
     import Category from "components/BlockList/Category";
     import Item from "components/BlockList/Item";
 }
+declare module "components/ButtonIcon/index" {
+    export default ButtonIcon;
+    function ButtonIcon({ buttonRef, iconFill, iconName, isDisabled, onClick, size, style, testSection, title, }: {
+        buttonRef: any;
+        iconFill: any;
+        iconName: any;
+        isDisabled: any;
+        onClick: any;
+        size: any;
+        style: any;
+        testSection: any;
+        title: any;
+    }): JSX.Element;
+    namespace ButtonIcon {
+        export namespace propTypes {
+            export const buttonRef: PropTypes.Requireable<((...args: any[]) => any) | PropTypes.InferProps<{
+                current: PropTypes.Requireable<Element>;
+            }>>;
+            export const iconFill: PropTypes.Requireable<string>;
+            export const iconName: PropTypes.Validator<string>;
+            export const isDisabled: PropTypes.Requireable<boolean>;
+            export const onClick: PropTypes.Validator<(...args: any[]) => any>;
+            export const size: PropTypes.Requireable<string>;
+            export const style: PropTypes.Requireable<string>;
+            export const testSection: PropTypes.Requireable<string>;
+            export const title: PropTypes.Validator<string>;
+        }
+        export namespace defaultProps {
+            const iconName_1: string;
+            export { iconName_1 as iconName };
+            export function onClick_1(): void;
+            export { onClick_1 as onClick };
+            const size_1: string;
+            export { size_1 as size };
+            const title_1: string;
+            export { title_1 as title };
+        }
+    }
+    import PropTypes from "prop-types";
+}
 declare module "components/Token/DismissButton/index" {
     export default DismissButton;
     function DismissButton(props: any): any;
     namespace DismissButton {
         export namespace propTypes {
+            export const backgroundColor: PropTypes.Requireable<string>;
             export const fill: PropTypes.Requireable<string>;
             export const onClick: PropTypes.Validator<(...args: any[]) => any>;
             export const testSection: PropTypes.Requireable<string>;
@@ -521,9 +585,10 @@ declare module "components/Token/DismissButton/index" {
 }
 declare module "components/Token/index" {
     export default Token;
-    function Token({ description, dragHandleProps, hasSnugWrap, hasWrap, isDismissible, isDraggable, isFullWidth, name, onDismiss, order, style, showWell, testSection, usesDragHandle, }: any): any;
+    function Token({ description, dragHandleProps, backgroundColor, hasSnugWrap, hasWrap, isDismissible, isDraggable, isFullWidth, name, onDismiss, order, style, showWell, testSection, usesDragHandle, }: any): any;
     namespace Token {
         export namespace propTypes {
+            export const backgroundColor: PropTypes.Requireable<string>;
             export const description: PropTypes.Requireable<string>;
             export const dragHandleProps: PropTypes.Requireable<object>;
             export const hasSnugWrap: PropTypes.Requireable<boolean>;
@@ -531,7 +596,7 @@ declare module "components/Token/index" {
             export const isDismissible: PropTypes.Requireable<boolean>;
             export const isDraggable: PropTypes.Requireable<boolean>;
             export const isFullWidth: PropTypes.Requireable<boolean>;
-            export const name: PropTypes.Validator<string>;
+            export const name: PropTypes.Validator<PropTypes.Requireable<PropTypes.ReactNodeLike>>;
             export const onDismiss: PropTypes.Requireable<(...args: any[]) => any>;
             export const order: PropTypes.Requireable<number>;
             export const showWell: PropTypes.Requireable<boolean>;
@@ -688,46 +753,6 @@ declare module "components/Button/example/index" {
         examples: JSX.Element[];
     })[];
     export default _default;
-}
-declare module "components/ButtonIcon/index" {
-    export default ButtonIcon;
-    function ButtonIcon({ buttonRef, iconFill, iconName, isDisabled, onClick, size, style, testSection, title, }: {
-        buttonRef: any;
-        iconFill: any;
-        iconName: any;
-        isDisabled: any;
-        onClick: any;
-        size: any;
-        style: any;
-        testSection: any;
-        title: any;
-    }): JSX.Element;
-    namespace ButtonIcon {
-        export namespace propTypes {
-            export const buttonRef: PropTypes.Requireable<((...args: any[]) => any) | PropTypes.InferProps<{
-                current: PropTypes.Requireable<Element>;
-            }>>;
-            export const iconFill: PropTypes.Requireable<string>;
-            export const iconName: PropTypes.Validator<string>;
-            export const isDisabled: PropTypes.Requireable<boolean>;
-            export const onClick: PropTypes.Validator<(...args: any[]) => any>;
-            export const size: PropTypes.Requireable<string>;
-            export const style: PropTypes.Requireable<string>;
-            export const testSection: PropTypes.Requireable<string>;
-            export const title: PropTypes.Validator<string>;
-        }
-        export namespace defaultProps {
-            const iconName_1: string;
-            export { iconName_1 as iconName };
-            export function onClick_1(): void;
-            export { onClick_1 as onClick };
-            const size_1: string;
-            export { size_1 as size };
-            const title_1: string;
-            export { title_1 as title };
-        }
-    }
-    import PropTypes from "prop-types";
 }
 declare module "components/Layout/Col" {
     import React, { Ref } from 'react';
@@ -6418,12 +6443,14 @@ declare module "components/Token/example/index" {
     export default _default;
 }
 declare module "components/TokensInput/index" {
-    export function TokensInput({ addOnBlur, addOnPaste, extraAddKeys, maxTags, onChange, onInputBlur, onInputChange, onInputFocus, placeholder, tokens, }: any): any;
+    export function TokensInput({ addOnBlur, addOnPaste, extraAddKeys, hasSearchIcon, isDisabled, maxTags, onChange, onInputBlur, onInputChange, onInputFocus, placeholder, tokens, }: any): any;
     export namespace TokensInput {
         export namespace propTypes {
             export const addOnBlur: PropTypes.Requireable<boolean>;
             export const addOnPaste: PropTypes.Requireable<boolean>;
             export const extraAddKeys: PropTypes.Requireable<(string | number | null | undefined)[]>;
+            export const hasSearchIcon: PropTypes.Requireable<boolean>;
+            export const isDisabled: PropTypes.Requireable<boolean>;
             export const maxTags: PropTypes.Requireable<number>;
             export const onChange: PropTypes.Validator<(...args: any[]) => any>;
             export const onInputBlur: PropTypes.Requireable<(...args: any[]) => any>;

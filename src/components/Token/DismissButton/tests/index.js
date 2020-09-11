@@ -7,7 +7,7 @@ describe('components/Token/DismissButton', () => {
 
   it('should render `Button`', () => {
     const component = shallow(<DismissButton onClick={ mockFunction } />);
-    expect(component.find('Button').length).toBe(1);
+    expect(component.find('ButtonIcon').length).toBe(1);
   });
 
   it('should pass test section to `Button`', () => {
@@ -17,7 +17,7 @@ describe('components/Token/DismissButton', () => {
         onClick={ mockFunction }
       />
     );
-    expect(component.find('Button').props().testSection).toBe('goose-dismiss');
+    expect(component.find('ButtonIcon').props().testSection).toBe('goose-dismiss');
   });
 
   it('should pass `onClick` to `Button`', () => {
@@ -28,6 +28,6 @@ describe('components/Token/DismissButton', () => {
         onClick={ myFunc }
       />
     );
-    expect(component.find('Button').props().onClick).toBe(myFunc);
+    expect(component.find('ButtonIcon').props().onClick).toBe(myFunc);
   });
 });
