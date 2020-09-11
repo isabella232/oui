@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 48.2.0 - 2020-09-11
 - [Feature] Update styling options for **Token** (`backgroundColor` and `name`) and **TokensInput** (`hasSearchIcon` and `isDisabled`) ([#1416](https://github.com/optimizely/oui/pull/1416))
 - [Patch] Update default **Button** style and **SelectDropdown** style with label ([#1413](https://github.com/optimizely/oui/pull/1413))
 

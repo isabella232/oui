@@ -1708,6 +1708,23 @@ textarea:focus {
   cursor: text;
   outline: none;
   box-shadow: 0px 0px 3px #0037ff; }
+  [type="text"]:active:disabled,
+  [type="text"]:focus:disabled,
+  [type="password"]:active:disabled,
+  [type="password"]:focus:disabled,
+  [type="email"]:active:disabled,
+  [type="email"]:focus:disabled,
+  [type="number"]:active:disabled,
+  [type="number"]:focus:disabled,
+  [type="search"]:active:disabled,
+  [type="search"]:focus:disabled,
+  [type="url"]:active:disabled,
+  [type="url"]:focus:disabled,
+  [type="time"]:active:disabled,
+  [type="time"]:focus:disabled,
+  textarea:active:disabled,
+  textarea:focus:disabled {
+    box-shadow: none; }
 
 a {
   text-decoration: none; }
@@ -1824,8 +1841,8 @@ blockquote {
   height: 34px;
   padding: 0 15px;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
-  background-color: #f7f7f7;
-  border-color: #bfbfbf;
+  background-color: #FFFFFF;
+  border-color: #9e9e9e;
   color: #080736; }
   
   .button:visited,
@@ -1836,14 +1853,15 @@ blockquote {
   .button:hover,
   .toolbar__button:hover,
   .oui-button:hover {
-    color: #080736;
-    background-color: #FFFFFF; }
+    color: #0037ff;
+    border: 1px solid #b3c3ff; }
   
   .button:focus,
   .toolbar__button:focus,
   .oui-button:focus {
     outline: none;
-    border: 1px solid #999999; }
+    color: #0037ff;
+    border: 1px solid #0037ff; }
   
   .button.is-active,
   .button:active,
@@ -1851,9 +1869,9 @@ blockquote {
   .toolbar__button:active,
   .oui-button.is-active,
   .oui-button:active {
-    background: #46456A;
+    background: #FFFFFF;
     border-color: #46456A;
-    color: #FFFFFF;
+    color: #0037ff;
     box-shadow: inset 1px 0 3px 0 rgba(0, 0, 0, 0.5); }
   
   .button--highlight,
@@ -1899,6 +1917,7 @@ blockquote {
     
     .button--outline:focus,
     .oui-button--outline:focus {
+      color: #4069FF;
       border: 1px solid #0037ff; }
     
     .button--outline:hover,
@@ -1954,6 +1973,7 @@ blockquote {
     
     .button--danger-outline:focus,
     .oui-button--danger-outline:focus {
+      color: #FF5B5B;
       border: 1px solid #b34040; }
     
     .button--danger-outline:hover,
@@ -1982,7 +2002,7 @@ blockquote {
     .oui-button--plain:hover,
     .oui-button--plain:focus {
       color: #4069FF;
-      border: 1px solid var(--light-blue-25); }
+      border: 1px solid #b3c3ff; }
     
     .button--plain:active,
     .button--plain.is-active:hover,
@@ -6788,16 +6808,27 @@ code {
   font-size: 11px;
   margin-top: 5px; }
 
-.token__close,
-.oui-token__close {
-  color: #FFFFFF;
-  height: 12px;
-  width: 12px; }
-
 .oui-token--full-width {
   width: 100%; }
   .oui-token--full-width .oui-token {
     width: 100%; }
+
+.oui-pill--dismiss svg {
+  width: 8px;
+  height: 8px;
+  margin-bottom: 2px;
+  stroke: currentColor !important;
+  stroke-width: 2; }
+
+.oui-pill-input {
+  padding: 2px 5px; }
+  .oui-pill-input input {
+    resize: both; }
+  .oui-pill-input:focus-within {
+    box-shadow: 0px 0px 3px #0037ff;
+    border: solid 1px #4069FF; }
+    .oui-pill-input:focus-within input {
+      box-shadow: none; }
 
 .toolbar {
   z-index: 1; }
