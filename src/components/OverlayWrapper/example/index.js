@@ -12,8 +12,8 @@ export default [
         <OverlayWrapper
           overlay={ <Popover title="Lorem ipsum dolor sit amet">
             <p>
-                Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
-                nihil libero et, hic!
+              Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
+              nihil libero et, hic!
             </p>
           </Popover> }>
           <Button>Open Popover</Button>
@@ -27,8 +27,8 @@ export default [
         <OverlayWrapper
           overlay={ <Popover title="Lorem ipsum dolor sit amet">
             <p>
-                Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
-                nihil libero et, hic!
+              Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
+              nihil libero et, hic!
             </p>
           </Popover> }
           horizontalAttachment="left"
@@ -47,8 +47,8 @@ export default [
         <OverlayWrapper
           overlay={ <Popover>
             <p>
-                The close button works because `OverlayWrapper` exposes a
-                `hideOverlay` method using `context` in React.
+              The close button works because `OverlayWrapper` exposes a
+              `hideOverlay` method using `context` in React.
             </p>
             <p>See the source for `OverlayWrapper` to learn more.</p>
           </Popover> }>
@@ -63,8 +63,8 @@ export default [
         <OverlayWrapper
           overlay={ <Popover title="Lorem ipsum dolor sit amet">
             <p>
-                Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
-                nihil libero et, hic!
+              Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
+              nihil libero et, hic!
             </p>
           </Popover> }
           horizontalAttachment="left"
@@ -82,8 +82,8 @@ export default [
         <OverlayWrapper
           overlay={ <Popover title="Lorem ipsum dolor sit amet">
             <p>
-                Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
-                nihil libero et, hic!
+              Ipsa officiis bad-news minus earum a aperiam! Aperiam reiciendis vitae
+              nihil libero et, hic!
             </p>
           </Popover> }
           shouldHideOnClick={ false }>

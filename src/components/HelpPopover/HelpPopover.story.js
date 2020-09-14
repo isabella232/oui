@@ -28,7 +28,7 @@ stories
         behavior="hover"
         horizontalAttachment="left"
         verticalAttachment="middle">
-       You hovered! 🤓
+        You hovered! 🤓
       </HelpPopover>
     </div>
   </div>)))
@@ -40,7 +40,7 @@ stories
         behavior="hover"
         horizontalAttachment="left"
         verticalAttachment="middle">
-       You hovered! 🤓
+        You hovered! 🤓
       </HelpPopover>
     </Row>
   </div>)));

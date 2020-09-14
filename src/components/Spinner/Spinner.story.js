@@ -26,8 +26,8 @@ stories.add('With overlay', () => {
   return (
     <div className="position--relative">
       <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non cum iusto repudiandae
-      earum porro reprehenderit perspiciatis iste delectus ipsam, accusantium ad sunt,
-      rem mollitia, omnis illum explicabo facere quibusdam qui.</div>
+        earum porro reprehenderit perspiciatis iste delectus ipsam, accusantium ad sunt,
+        rem mollitia, omnis illum explicabo facere quibusdam qui.</div>
       <Spinner hasOverlay={ true } />
     </div>
   );
