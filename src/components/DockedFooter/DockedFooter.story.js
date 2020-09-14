@@ -45,10 +45,10 @@ const ScrollContainer = function({
         includesMargin={ true }
         rightGroup={ !hasCenterGroup && [
           <Button style="plain" key={ 0 } onClick={ noop }>
-              Cancel
+            Cancel
           </Button>,
           <Button style="highlight" key={ 1 } onClick={ noop }>
-              Confirm
+            Confirm
           </Button>,
         ] }
         centerGroup={ hasCenterGroup && [

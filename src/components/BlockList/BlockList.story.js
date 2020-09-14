@@ -141,7 +141,7 @@ stories
         <BlockList.Item>View Results</BlockList.Item></BlockList> }
       shouldHideOnClick={ true } verticalAttachment="top" verticalTargetAttachment="bottom">
       <Button style="unstyled" width="default">
-                ...
+        ...
       </Button>
     </OverlayWrapper>
   </div>)))
@@ -155,7 +155,7 @@ stories
           est vitae, ullamcorper neque. Proin efficitur porttitor nunc quis suscipit. Maecenas odio elit, varius et aliquam ac.
         </BlockList.Item>
         <BlockList.Item>
-            https://wwww.example.com/path1/path2/path3/path4/path5/superlongvaluethatdoesntfitintheblocklistwhenitgetsveryveryveryveryveryveryveryveryverylong
+          https://wwww.example.com/path1/path2/path3/path4/path5/superlongvaluethatdoesntfitintheblocklistwhenitgetsveryveryveryveryveryveryveryveryverylong
         </BlockList.Item>
       </BlockList.Category>
     </BlockList>

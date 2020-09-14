@@ -44,11 +44,11 @@ export const DropdownBlockLink = props => {
       style={ styleProps }
       { ...(props.testSection ? { 'data-test-section': props.testSection } : {}) }
       { ...(props.trackId ? { 'data-track-id': props.trackId } : {}) }
-      { ...(!props.isMultiSelect ? {onClick} : {}) }
+      { ...(!props.isMultiSelect ? { onClick } : {}) }
       onMouseEnter={ onMouseEnter }
       onMouseLeave={ onMouseLeave }>
       {props.isMultiSelect ? (
-        <Checkbox onChange={onClick} defaultChecked={ props.isItemSelected } label={ props.children } isDisabled={ false } />
+        <Checkbox onChange={ onClick } defaultChecked={ props.isItemSelected } label={ props.children } isDisabled={ false } />
       ) : (
         props.children
       )}

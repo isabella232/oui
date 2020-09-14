@@ -132,13 +132,13 @@ export default [
       <OverlayWrapper
         overlay={ <BlockList>
           <BlockList.Item onClick={ mockFunction }>
-              Archive
+            Archive
           </BlockList.Item>
           <BlockList.Item onClick={ mockFunction }>
-              Pause
+            Pause
           </BlockList.Item>
           <BlockList.Item onClick={ mockFunction }>
-              View Results
+            View Results
           </BlockList.Item>
         </BlockList> }
         horizontalAttachment="left"
