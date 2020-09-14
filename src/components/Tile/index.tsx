@@ -83,6 +83,13 @@ export type TileProps = {
   onEdit?: (...args: any[]) => any;
 
   /**
+   * Function to call when results button is clicked
+   * Supplying this function adds a results button
+   * to the tile
+   */
+  onResultsLink?: (...args: any[]) => any;
+
+  /**
    * Function to call when the main area of the Tile is clicked
    * If function is not supplied, main content of the Tile
    * will not be clickable (div instead of a button)
@@ -137,6 +144,7 @@ const Tile = ({
   onCopy,
   onDismiss,
   onEdit,
+  onResultsLink,
   onTileClick,
   order,
   status,
@@ -160,7 +168,7 @@ const Tile = ({
     </>
   );
   const hasExtraContent =
-    status || onCopy || onEdit || onDismiss || dropdownItems;
+    status || onCopy || onEdit || onDismiss || onResultsLink || dropdownItems;
   return (
     <div
       className={classNames('oui-tile flex flex-align--center soft--sides', {
@@ -243,6 +251,15 @@ const Tile = ({
               style="plain"
               iconFill="default"
               onClick={onDismiss}
+            />
+          )}
+          {onResultsLink && (
+            <ButtonIcon
+              iconName="winner"
+              size="medium"
+              style="plain"
+              iconFill="default"
+              onClick={onResultsLink}
             />
           )}
           {dropdownItems && (

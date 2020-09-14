@@ -66,6 +66,7 @@ describe('components/Tile', () => {
     const mockDeleteClick = jest.fn();
     const mockCopyClick = jest.fn();
     const mockEditClick = jest.fn();
+    const mockResultsClick = jest.fn();
 
     console.error = jest.fn();
     const component = mount(
@@ -76,9 +77,10 @@ describe('components/Tile', () => {
         onCopy={ mockCopyClick }
         onDismiss={ mockDeleteClick }
         onEdit={ mockEditClick }
+        onResultsLink={ mockResultsClick }
       />
     );
-    expect(component.find('.oui-button-icon').length).toBe(3);
+    expect(component.find('.oui-button-icon').length).toBe(4);
   });
 
   it('should render the title in monospace when `usesMonospaceTitle` is true', () => {
