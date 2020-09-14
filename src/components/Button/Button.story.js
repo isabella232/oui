@@ -115,7 +115,7 @@ stories
             style="highlight"
             onClick={ action('I have been clicked') }
             rightIcon='external'>
-          Right icon
+            Right icon
           </Button>,
           <Button
             key="3"
@@ -200,7 +200,7 @@ stories
         style="highlight"
         isLoading={ boolean('isLoading', true) }
         onClick={ action('I have been clicked') }>
-          Create Campaign
+        Create Campaign
       </Button>
     );
   })
@@ -211,7 +211,7 @@ stories
         isLoading={ boolean('isLoading', true) }
         loadingText={ text('loadingText', 'Creating Campaign') }
         onClick={ action('I have been clicked') }>
-          Create Campaign
+        Create Campaign
       </Button>
     );
   });

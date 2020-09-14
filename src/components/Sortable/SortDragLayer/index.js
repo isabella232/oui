@@ -60,6 +60,7 @@ class SortDragLayer extends React.Component {
       ]).isRequired,
       id: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
       position: PropTypes.arrayOf(PropTypes.number).isRequired,
+      type: PropTypes.string,
     }),
     renderItem: PropTypes.func.isRequired,
   };

@@ -229,7 +229,7 @@ stories
         <p>
           Using the classes
           <em><code> oui-manager-side-nav__custom-link </code></em>
-           and
+          and
           <code><em> oui-manager-side-nav__custom-link--active</em></code>,
           you can use a custom link for the nav item content and get consistent styling
         </p>

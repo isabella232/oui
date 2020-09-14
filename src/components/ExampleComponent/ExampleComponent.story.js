@@ -90,7 +90,7 @@ storiesOf('Overview|Examples', module)
             <React.Fragment>
               <h1>Example OUI Component</h1>
               <p>
-                  This component uses the <a href="https://reactjs.org/docs/render-props.html" target="_blank" rel="noopener noreferrer">render props</a> pattern to allow for more extensibility while abstracting some common complexity. Check out the README in the "Show Info" section for more info!
+                This component uses the <a href="https://reactjs.org/docs/render-props.html" target="_blank" rel="noopener noreferrer">render props</a> pattern to allow for more extensibility while abstracting some common complexity. Check out the README in the "Show Info" section for more info!
               </p>
               <p className="micro"><span className="example-background--yellow">This text has its background color changed</span> by the ExampleComponent's sass.</p>
               <h3 className="push-double--top">Abstrating State Management</h3>

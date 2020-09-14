@@ -8,10 +8,10 @@ export default [
       <Disclose title='Some Title'>
         <h3>Some Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur
-         adipisicing elit. Commodi id voluptas vitae eius
-         expedita alias iste deserunt rndis earum
-         voluptatibus quae, numquam dolorum perspiciatis
-         accusantium corporis, beatae maxime quasi. Tempora.</p>
+          adipisicing elit. Commodi id voluptas vitae eius
+          expedita alias iste deserunt rndis earum
+          voluptatibus quae, numquam dolorum perspiciatis
+          accusantium corporis, beatae maxime quasi. Tempora.</p>
       </Disclose>,
     ],
   },

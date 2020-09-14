@@ -10,7 +10,6 @@ exports[`components/Dropdown/DropdownBlockLink should add a checked checkbox whe
 >
   <div
     className="link oui-dropdown__block-link"
-    onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     style={Object {}}
@@ -20,6 +19,7 @@ exports[`components/Dropdown/DropdownBlockLink should add a checked checkbox whe
       isDisabled={false}
       label="foo"
       labelWeight="normal"
+      onChange={[Function]}
     >
       <Label>
         <label
@@ -34,6 +34,7 @@ exports[`components/Dropdown/DropdownBlockLink should add a checked checkbox whe
               data-oui-component={true}
               defaultChecked={true}
               disabled={false}
+              onChange={[Function]}
               style={
                 Object {
                   "marginTop": "0.35em",

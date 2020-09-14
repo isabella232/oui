@@ -20,8 +20,8 @@ stories.add('Default', (() => {
     <Disclose title='default title'>
       <h3>Some Title</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-      expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-      accusantium corporis, beatae maxime quasi. Tempora.</p>
+        expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+        accusantium corporis, beatae maxime quasi. Tempora.</p>
     </Disclose>
   );
 }));
@@ -33,16 +33,16 @@ stories.add('Multiple stacked', (() => {
         <div className='soft--left'>
           <h3>Some Title</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-          expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-          accusantium corporis, beatae maxime quasi. Tempora.</p>
+            expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+            accusantium corporis, beatae maxime quasi. Tempora.</p>
         </div>
       </Disclose>
       <Disclose headerStyle='header-bordered' title='Some Title'>
         <div className='soft--left'>
           <h3>Some Title</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-          expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-          accusantium corporis, beatae maxime quasi. Tempora.</p>
+            expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+            accusantium corporis, beatae maxime quasi. Tempora.</p>
         </div>
       </Disclose>
     </div>
@@ -62,8 +62,8 @@ stories.add('Header style', (() => {
         <div className='soft--left'>
           <h3>Some Title</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-          expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-          accusantium corporis, beatae maxime quasi. Tempora.</p>
+            expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+            accusantium corporis, beatae maxime quasi. Tempora.</p>
         </div>
       </Disclose>
     </div>
@@ -76,14 +76,14 @@ stories.add('With divider', (() => {
       <Disclose childrenStyle='divider' title='Some Title'>
         <h3>Some Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-        expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-        accusantium corporis, beatae maxime quasi. Tempora.</p>
+          expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+          accusantium corporis, beatae maxime quasi. Tempora.</p>
       </Disclose>
       <Disclose childrenStyle='divider' title='Some Title'>
         <h3>Some Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-        expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-        accusantium corporis, beatae maxime quasi. Tempora.</p>
+          expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+          accusantium corporis, beatae maxime quasi. Tempora.</p>
       </Disclose>
     </div>
   );

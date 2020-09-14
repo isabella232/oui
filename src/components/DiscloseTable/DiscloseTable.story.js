@@ -97,8 +97,8 @@ stories
                   <Table.TR>
                     <Table.TD>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-                                  expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-                                  accusantium corporis, beatae maxime quasi. Tempora.</p>
+                        expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+                        accusantium corporis, beatae maxime quasi. Tempora.</p>
                     </Table.TD>
                   </Table.TR>
                 </Table.TBody>
@@ -122,8 +122,8 @@ stories
           ]
           }>
           <p className="soft--sides">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi id voluptas vitae eius
-          expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
-          accusantium corporis, beatae maxime quasi. Tempora.</p>
+            expedita alias iste deserunt rndis earum voluptatibus quae, numquam dolorum perspiciatis
+            accusantium corporis, beatae maxime quasi. Tempora.</p>
         </DiscloseTable.Row>
       </Table.TBody>
     </DiscloseTable>
