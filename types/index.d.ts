@@ -596,7 +596,7 @@ declare module "components/Token/index" {
             export const isDismissible: PropTypes.Requireable<boolean>;
             export const isDraggable: PropTypes.Requireable<boolean>;
             export const isFullWidth: PropTypes.Requireable<boolean>;
-            export const name: PropTypes.Validator<PropTypes.Requireable<PropTypes.ReactNodeLike>>;
+            export const name: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             export const onDismiss: PropTypes.Requireable<(...args: any[]) => any>;
             export const order: PropTypes.Requireable<number>;
             export const showWell: PropTypes.Requireable<boolean>;
@@ -2137,6 +2137,12 @@ declare module "components/Tile/index" {
          */
         onEdit?: (...args: any[]) => any;
         /**
+         * Function to call when results button is clicked
+         * Supplying this function adds a results button
+         * to the tile
+         */
+        onResultsLink?: (...args: any[]) => any;
+        /**
          * Function to call when the main area of the Tile is clicked
          * If function is not supplied, main content of the Tile
          * will not be clickable (div instead of a button)
@@ -2171,7 +2177,7 @@ declare module "components/Tile/index" {
          */
         warningTitle?: string;
     };
-    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, hasWarning, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onTileClick, order, status, testSection, usesMonospaceName, warningContent, warningTitle, }: TileProps) => JSX.Element;
+    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, hasWarning, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onResultsLink, onTileClick, order, status, testSection, usesMonospaceName, warningContent, warningTitle, }: TileProps) => JSX.Element;
     export default Tile;
 }
 declare module "components/DragAndDrop/DragAndDrop.story" {

@@ -175,7 +175,7 @@ Token.propTypes = {
   isFullWidth: PropTypes.bool,
 
   /** Name label on token */
-  name: PropTypes.oneOf([PropTypes.string, PropTypes.node]).isRequired,
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
 
   /**
    * Function to call that dismisses the token. Required if the token is

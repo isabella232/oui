@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Fixed Proptype for name prop inside Token ([#1419](https://github.com/optimizely/oui/pull/1419))
 
 ## 48.3.0 - 2020-09-15
 - [Feature] Updated **Tile** to support new optional prop `onResultsLink` ([#1418](https://github.com/optimizely/oui/pull/1418))
