@@ -15,7 +15,7 @@ exports[`components/Dropdown/DropdownBlockLink should add a checked checkbox whe
     style={Object {}}
   >
     <Checkbox
-      defaultChecked={true}
+      checked={true}
       isDisabled={false}
       label="foo"
       labelWeight="normal"
@@ -30,9 +30,9 @@ exports[`components/Dropdown/DropdownBlockLink should add a checked checkbox whe
             className="flex"
           >
             <input
+              checked={true}
               className="flex--none"
               data-oui-component={true}
-              defaultChecked={true}
               disabled={false}
               onChange={[Function]}
               style={

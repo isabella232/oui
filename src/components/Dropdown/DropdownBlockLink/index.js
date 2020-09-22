@@ -48,7 +48,7 @@ export const DropdownBlockLink = props => {
       onMouseEnter={ onMouseEnter }
       onMouseLeave={ onMouseLeave }>
       {props.isMultiSelect ? (
-        <Checkbox onChange={ onClick } defaultChecked={ props.isItemSelected } label={ props.children } isDisabled={ false } />
+        <Checkbox onChange={ onClick } checked={ props.isItemSelected } label={ props.children } isDisabled={ false } />
       ) : (
         props.children
       )}

@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Updated **DropdownBlockLink'' with passing **props.isItemSelected** to Checkbox checked prop instead of defaultChecked prop ([#1420](https://github.com/optimizely/oui/pull/1420))
 - [Patch] Fixed Proptype for name prop inside Token ([#1419](https://github.com/optimizely/oui/pull/1419))
 
 ## 48.3.0 - 2020-09-15

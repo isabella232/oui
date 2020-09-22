@@ -202,7 +202,7 @@ describe('components/SelectDropdown', function() {
     const activator = component.find('Button');
     activator.simulate('click');
     expect(component.find('Checkbox').length).toBe(2);
-    expect(component.find('Checkbox').last().prop('defaultChecked')).toBe(true);
+    expect(component.find('Checkbox').last().prop('checked')).toBe(true);
   });
 
   it('should add a label when the buttonContent specifies one', () => {
