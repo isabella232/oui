@@ -63,6 +63,10 @@ describe('components/TokensInput', () => {
       const tertiaryToken = component.find('Token').at(4);
       assertTokenRender(tertiaryToken, 'tertiary', 'font-dark', 'tertiary');
     });
+
+    it('should render tokens with DismissButton correctly', () => {
+      expect(component.find('DismissButton').length).toBe(5);
+    });
   });
 
   describe('when rendering tokens with optional props', function() {
@@ -107,6 +111,37 @@ describe('components/TokensInput', () => {
         expect(component.find(inputCSS).props().placeholder).toBe('');
       });
     });
+
+    describe('when optional prop is isDisabled', function() {
+      beforeEach(function() {
+        mockOnChange = jest.fn();
+      });
+
+      it('should render DismissButton when isDisabled is false', function() {
+        component = mount(
+          <TokensInput
+            isDisabled={ false }
+            onChange={ mockOnChange }
+            tokens={ SAMPLE_DATA }
+          />
+        );
+
+        expect(component.find('DismissButton').length).toBe(5);
+      });
+
+      it('should not render DismissButton when isDisabled is true', function() {
+        component = mount(
+          <TokensInput
+            isDisabled={ true }
+            onChange={ mockOnChange }
+            tokens={ SAMPLE_DATA }
+          />
+        );
+
+        expect(component.find('DismissButton').length).toBe(0);
+      });
+    });
+
   });
 
   describe('entering tokens', function() {

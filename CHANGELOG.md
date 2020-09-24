@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Updated **TokensInput**  component to set **isDismissible** prop of **Token** component to false when **isDisabled** prop is true.  ([#1421](https://github.com/optimizely/oui/pull/1421))
 
 ## 48.3.1 - 2020-09-22
 - [Patch] Updated **DropdownBlockLink'' with passing **props.isItemSelected** to Checkbox checked prop instead of defaultChecked prop ([#1420](https://github.com/optimizely/oui/pull/1420))

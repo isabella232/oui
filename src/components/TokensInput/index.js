@@ -93,7 +93,7 @@ export const TokensInput = ({
       <Token
         key={ key }
         hasSnugWrap={ true }
-        isDismissible={ true }
+        isDismissible={ !isDisabled }
         onDismiss={ onDismiss }
         name={ name }
         style={ style }
