@@ -3,6 +3,7 @@ import React from "react";
 import Icon from "react-oui-icons";
 import classNames from "classnames";
 import { FILL_COLOR_MAP } from "../../utils/accessibility";
+import { fill } from "lodash";
 
 const ButtonIcon = ({
   buttonRef,
