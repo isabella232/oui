@@ -12,7 +12,6 @@ describe('components/BlockList/Item', () => {
 
       it('should render children and render item in a `div` if `isDisabled` is true', function() {
         component = shallow(<Item isDisabled={ disabled }>{ text }</Item>);
-        console.log(`[DEBUG] ${+new Date} component`, component.html());
         expect(component.find('.oui-block-list__item.pointer-events--none.background--faint.muted').text()).toBe(text);
         expect(component.find('.oui-block-list__item.pointer-events--none.background--faint.muted').is('div')).toBe(true);
       });
