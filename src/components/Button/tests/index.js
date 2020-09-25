@@ -198,6 +198,6 @@ describe('components/Button', () => {
     const component = mount(
       <Button leftIcon="add">Create Campaign</Button>
     );
-    expect(component.find('Icon').exists()).toBe(true);
+    expect(component.find('Memo(Icon)').exists()).toBe(true);
   });
 });

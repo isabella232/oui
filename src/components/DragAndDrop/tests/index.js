@@ -59,7 +59,7 @@ describe('components/DragAndDrop', function() {
       />
     );
     expect(
-      component.find('.oui-token__move [data-rbd-drag-handle-draggable-id="5"]').length
+      component.find('.oui-token__move[data-rbd-drag-handle-draggable-id="5"]').length
     ).toBe(1);
   });
 

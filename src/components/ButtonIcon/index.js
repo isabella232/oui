@@ -94,4 +94,4 @@ ButtonIcon.defaultProps = {
   title: '',
 };
 
-export default ButtonIcon;
+export default React.memo(ButtonIcon);

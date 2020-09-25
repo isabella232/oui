@@ -13,7 +13,7 @@ describe('components/DiscloseTable/DiscloseRow', () => {
         <p>Content</p>
       </DiscloseRow>
     );
-    expect(component.find('tr').find('TD').exists()).toBe(true);
+    expect(component.find('tr').find('td').exists()).toBe(true);
   });
 
   it('should render the arrow inside first `Table.TD `', () => {

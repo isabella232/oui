@@ -21,6 +21,7 @@ exports[`components/TextField custom min max percentages invalid custom maximum 
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -45,6 +46,7 @@ exports[`components/TextField custom min max percentages invalid custom maximum 
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -69,6 +71,7 @@ exports[`components/TextField custom min max percentages invalid custom maximum 
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -93,6 +96,7 @@ exports[`components/TextField custom min max percentages invalid custom minimum 
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -117,6 +121,7 @@ exports[`components/TextField custom min max percentages invalid custom minimum 
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -141,6 +146,7 @@ exports[`components/TextField custom min max percentages invalid custom minimum 
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -165,6 +171,7 @@ exports[`components/TextField custom min max percentages should allow minimum an
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -189,6 +196,7 @@ exports[`components/TextField should render HTML type=number for when prop.type 
       %
     </span>
   </span>
+  <Component />
 </div>
 `;
 
@@ -205,7 +213,9 @@ exports[`components/TextField should render a simple input with type text 1`] = 
       disabled={false}
       type="text"
     />
+    <Component />
   </span>
+  <Component />
 </div>
 `;
 
@@ -227,6 +237,7 @@ exports[`components/TextField should render error style 1`] = `
       disabled={false}
       type="text"
     />
+    <Component />
   </span>
   <div
     className="oui-form-note"
@@ -251,7 +262,9 @@ exports[`components/TextField should render max and min limits 1`] = `
       min={0}
       type="number"
     />
+    <Component />
   </span>
+  <Component />
 </div>
 `;
 
@@ -268,7 +281,9 @@ exports[`components/TextField should render search icon 1`] = `
       disabled={false}
       type="text"
     />
+    <Component />
   </span>
+  <Component />
 </div>
 `;
 
@@ -286,7 +301,9 @@ exports[`components/TextField should render with a placeholder 1`] = `
       placeholder="Simple placeholder"
       type="text"
     />
+    <Component />
   </span>
+  <Component />
 </div>
 `;
 
@@ -308,7 +325,9 @@ exports[`components/TextField should render with a simple label 1`] = `
       disabled={false}
       type="text"
     />
+    <Component />
   </span>
+  <Component />
 </div>
 `;
 
@@ -330,6 +349,7 @@ exports[`components/TextField should render with a simple label and a note 1`] =
       disabled={false}
       type="text"
     />
+    <Component />
   </span>
   <div
     className="oui-form-note"

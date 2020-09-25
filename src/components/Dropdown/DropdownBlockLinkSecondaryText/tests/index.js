@@ -25,12 +25,12 @@ describe('components/Dropdown/DropdownBlockLinkSecondaryText', () => {
 
   it('should not render a warning if not passed as a prop', () => {
     const component = shallow(<DropdownBlockLinkSecondaryText />);
-    expect(component.find('Icon').exists()).toBe(false);
+    expect(component.find('Memo(Icon)').exists()).toBe(false);
   });
 
   it('should render a warning', () => {
     const component = shallow(<DropdownBlockLinkSecondaryText isWarning={ true } />);
-    expect(component.find('Icon').exists()).toBe(true);
-    expect(component.find('Icon').prop('name')).toBe('exclamation');
+    expect(component.find('Memo(Icon)').exists()).toBe(true);
+    expect(component.find('Memo(Icon)').prop('name')).toBe('exclamation');
   });
 });
