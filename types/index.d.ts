@@ -526,44 +526,66 @@ declare module "components/BlockList/index" {
     import Item from "components/BlockList/Item";
 }
 declare module "components/ButtonIcon/index" {
-    export default ButtonIcon;
-    function ButtonIcon({ buttonRef, iconFill, iconName, isDisabled, onClick, size, style, testSection, title, }: {
-        buttonRef: any;
-        iconFill: any;
-        iconName: any;
-        isDisabled: any;
-        onClick: any;
-        size: any;
-        style: any;
-        testSection: any;
-        title: any;
-    }): JSX.Element;
-    namespace ButtonIcon {
-        export namespace propTypes {
-            export const buttonRef: PropTypes.Requireable<((...args: any[]) => any) | PropTypes.InferProps<{
+    var _default: React.MemoExoticComponent<{
+        ({ buttonRef, iconFill, iconName, isDisabled, onClick, size, style, testSection, title, }: {
+            buttonRef: any;
+            iconFill: any;
+            iconName: any;
+            isDisabled: any;
+            onClick: any;
+            size: any;
+            style: any;
+            testSection: any;
+            title: any;
+        }): JSX.Element;
+        propTypes: {
+            /** React ref to the underlying button component */
+            buttonRef: PropTypes.Requireable<((...args: any[]) => any) | PropTypes.InferProps<{
                 current: PropTypes.Requireable<Element>;
             }>>;
-            export const iconFill: PropTypes.Requireable<string>;
-            export const iconName: PropTypes.Validator<string>;
-            export const isDisabled: PropTypes.Requireable<boolean>;
-            export const onClick: PropTypes.Validator<(...args: any[]) => any>;
-            export const size: PropTypes.Requireable<string>;
-            export const style: PropTypes.Requireable<string>;
-            export const testSection: PropTypes.Requireable<string>;
-            export const title: PropTypes.Validator<string>;
-        }
-        export namespace defaultProps {
-            const iconName_1: string;
-            export { iconName_1 as iconName };
-            export function onClick_1(): void;
-            export { onClick_1 as onClick };
-            const size_1: string;
-            export { size_1 as size };
-            const title_1: string;
-            export { title_1 as title };
-        }
-    }
+            /**
+             *  Color to use for the fill of the icon
+             */
+            iconFill: PropTypes.Requireable<string>;
+            /**
+             *  Name of the icon to use
+             */
+            iconName: PropTypes.Validator<string>;
+            /**
+             * Prevent users from interacting with the button
+             */
+            isDisabled: PropTypes.Requireable<boolean>;
+            /**
+             *  Function to perform when the close button is clicked.
+             */
+            onClick: PropTypes.Validator<(...args: any[]) => any>;
+            /**
+             *  Size of the button, medium by default
+             */
+            size: PropTypes.Requireable<string>;
+            /**
+             *  Various style options
+             */
+            style: PropTypes.Requireable<string>;
+            /**
+             * Hook for automated JavaScript tests
+             */
+            testSection: PropTypes.Requireable<string>;
+            /**
+             *  Title of the button used on hover and for screen readers
+             */
+            title: PropTypes.Validator<string>;
+        };
+        defaultProps: {
+            iconName: string;
+            onClick: () => void;
+            size: string;
+            title: string;
+        };
+    }>;
+    export default _default;
     import PropTypes from "prop-types";
+    import React from "react";
 }
 declare module "components/Token/DismissButton/index" {
     export default DismissButton;
