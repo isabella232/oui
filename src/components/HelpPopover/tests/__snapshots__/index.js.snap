@@ -23,7 +23,7 @@ exports[`components/HelpPopover renders correctly 1`] = `
     className="cursor--pointer push-half--left"
     data-test-section="help-popover-icon"
   >
-    <[object Object]
+    <Memo(Icon)
       name="help"
       size="medium"
     />

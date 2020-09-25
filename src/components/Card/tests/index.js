@@ -37,7 +37,7 @@ describe('components/Card', () => {
       </Card>
     );
 
-    expect(component.exists('[[data-test-section="foo-body-inner"]]')).toBe(true);
+    expect(component.exists('[data-test-section="foo-body-inner"]')).toBe(true);
   });
 
   it('should not render dismiss button by default', () => {

@@ -19,10 +19,10 @@ describe('components/DiscloseTable', () => {
         </Table.THead>
       </DiscloseTable>
     );
-    expect(component.find('THead').exists()).toBe(true);
+    expect(component.find('thead').exists()).toBe(true);
     expect(component.find('TR').exists()).toBe(true);
-    expect(component.find('TH').exists()).toBe(true);
-    expect(component.find('TH').text()).toBe('Table Header Name');
+    expect(component.find('th').exists()).toBe(true);
+    expect(component.find('th').text()).toBe('Table Header Name');
   });
 
   it('should render with correct style and classNames', function() {

@@ -25,7 +25,7 @@ describe('components/CodeDiff', function() {
         testSection="my-code-diff"
       />
     );
-    expect(component.find('[data-test-section="my-code-diff"]').find('Icon').length).toBe(2);
+    expect(component.find('[data-test-section="my-code-diff"]').find('Memo(Icon)').length).toBe(2);
   });
 
 
@@ -38,7 +38,7 @@ describe('components/CodeDiff', function() {
         testSection="my-code-diff"
       />
     );
-    expect(component.find('[data-test-section="my-code-diff"]').find('Icon').length).toBe(2);
+    expect(component.find('[data-test-section="my-code-diff"]').find('Memo(Icon)').length).toBe(2);
   });
 
   it('correctly passes props through to ReactDiffViewer', () => {

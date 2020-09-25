@@ -27,7 +27,7 @@ exports[`components/SearchPicker default case should render component same as sn
     }
   >
     <div>
-      <[object Object]
+      <Input
         hasSpellCheck={true}
         isFilter={true}
         isRequired={false}
@@ -51,7 +51,7 @@ exports[`components/SearchPicker default case should render component same as sn
           type="search"
           value=""
         />
-      </[object Object]>
+      </Input>
       <p>
         A list of entities
       </p>

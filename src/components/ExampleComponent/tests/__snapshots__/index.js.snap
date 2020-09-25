@@ -36,7 +36,7 @@ exports[`components/ExampleComponent should match the Jest Snapshot 1`] = `
   <div
     className="oui-example-component"
   >
-    <[object Object]
+    <Input
       hasSpellCheck={true}
       isRequired={false}
       note={null}
@@ -53,7 +53,7 @@ exports[`components/ExampleComponent should match the Jest Snapshot 1`] = `
         spellCheck={true}
         type="text"
       />
-    </[object Object]>
+    </Input>
     <div
       data-test-section="inputNameValue"
     />
