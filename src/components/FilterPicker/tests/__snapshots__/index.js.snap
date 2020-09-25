@@ -204,7 +204,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -238,7 +238,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1 push-half--ends"
@@ -310,7 +310,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -344,7 +344,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -427,7 +427,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -461,7 +461,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -544,7 +544,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -578,7 +578,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -838,7 +838,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -872,7 +872,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1 push-half--ends"
@@ -944,7 +944,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -978,7 +978,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -1061,7 +1061,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -1095,7 +1095,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -1178,7 +1178,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -1212,7 +1212,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -1447,7 +1447,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -1481,7 +1481,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1 push-half--ends"
@@ -1553,7 +1553,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -1587,7 +1587,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -1670,7 +1670,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -1704,7 +1704,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -1787,7 +1787,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -1821,7 +1821,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -2057,7 +2057,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -2091,7 +2091,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1 push-half--ends"
@@ -2163,7 +2163,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -2197,7 +2197,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -2280,7 +2280,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -2314,7 +2314,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"
@@ -2397,7 +2397,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                           <div
                             className="push--right flex"
                           >
-                            <Icon
+                            <[object Object]
                               name="add"
                             >
                               <svg
@@ -2431,7 +2431,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
                                   key="path-1"
                                 />
                               </svg>
-                            </Icon>
+                            </[object Object]>
                           </div>
                           <div
                             className="flex--1"

@@ -1,6 +1,7 @@
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import DropdownBlockLinkSecondaryText from '../index';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 describe('components/Dropdown/DropdownBlockLinkSecondaryText', () => {
   it('should render as a `div`', () => {
@@ -28,8 +29,10 @@ describe('components/Dropdown/DropdownBlockLinkSecondaryText', () => {
     expect(component.find('Icon').exists()).toBe(false);
   });
 
-  it('should render a warning', () => {
-    const component = shallow(<DropdownBlockLinkSecondaryText isWarning={ true } />);
+  it.only('should render a warning', () => {
+    const component = mount(<DropdownBlockLinkSecondaryText isWarning={ true } />);
+    console.log(`[DEBUG] ${+new Date} component.debug()`, component.debug());
+    console.log(`[DEBUG] ${+new Date} component.find('Icon')`, component.find('Icon'));
     expect(component.find('Icon').exists()).toBe(true);
     expect(component.find('Icon').prop('name')).toBe('exclamation');
   });

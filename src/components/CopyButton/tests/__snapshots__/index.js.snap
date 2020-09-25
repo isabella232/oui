@@ -19,7 +19,7 @@ exports[`components/CopyButton should render children the icon button 1`] = `
     testSection="fake-test-section-copy-button"
     width="default"
   >
-    <Icon
+    <[object Object]
       name="clipboard"
     />
   </Button>
