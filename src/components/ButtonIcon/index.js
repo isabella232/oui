@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
-import React from "react";
-import Icon from "react-oui-icons";
-import classNames from "classnames";
-import { FILL_COLOR_MAP } from "../../utils/accessibility";
-import { fill } from "lodash";
+import PropTypes from 'prop-types';
+import React from 'react';
+import Icon from 'react-oui-icons';
+import classNames from 'classnames';
+import { FILL_COLOR_MAP } from '../../utils/accessibility';
 
 const ButtonIcon = ({
   buttonRef,
@@ -16,11 +15,9 @@ const ButtonIcon = ({
   testSection,
   title,
 }) => {
+
   // ensure valid fillColor name (in the case that propType errors are ignored)
-  const fillColor =
-    iconFill && Object.keys(FILL_COLOR_MAP).includes(iconFill)
-      ? FILL_COLOR_MAP[iconFill]
-      : null;
+  const fillColor = iconFill && Object.keys(FILL_COLOR_MAP).includes(iconFill) ? FILL_COLOR_MAP[iconFill] : null;
 
   function handleOnClick(event) {
     if (isDisabled) {
@@ -31,20 +28,14 @@ const ButtonIcon = ({
 
   return (
     <button
-      className={classNames(
-        "oui-button",
-        "oui-button-icon",
-        `oui-button-icon__${size}`,
-        `oui-button--${style}`
-      )}
-      data-oui-component={true}
-      data-test-section={testSection}
-      disabled={isDisabled}
-      onClick={handleOnClick}
-      ref={buttonRef}
-      title={title}
-    >
-      <Icon name={iconName} size={size} fill={fillColor} />
+      className={ classNames('oui-button', 'oui-button-icon', `oui-button-icon__${size}`, `oui-button--${style}`) }
+      data-oui-component={ true }
+      data-test-section={ testSection }
+      disabled={ isDisabled }
+      onClick={ handleOnClick }
+      ref={ buttonRef }
+      title={ title }>
+      <Icon name={ iconName } size={ size } fill={ fillColor }/>
     </button>
   );
 };
@@ -74,17 +65,17 @@ ButtonIcon.propTypes = {
   /**
    *  Size of the button, medium by default
    */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   /**
    *  Various style options
    */
   style: PropTypes.oneOf([
-    "highlight",
-    "danger",
-    "danger-outline",
-    "outline",
-    "plain",
-    "unstyled",
+    'highlight',
+    'danger',
+    'danger-outline',
+    'outline',
+    'plain',
+    'unstyled',
   ]),
   /**
    * Hook for automated JavaScript tests
@@ -97,10 +88,10 @@ ButtonIcon.propTypes = {
 };
 
 ButtonIcon.defaultProps = {
-  iconName: "add",
+  iconName: 'add',
   onClick: () => {},
-  size: "medium",
-  title: "",
+  size: 'medium',
+  title: '',
 };
 
 export default React.memo(ButtonIcon);
