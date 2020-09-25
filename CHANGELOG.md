@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 48.3.3 - 2020-09-24
 - [Patch] Updated **ButtonIcon** component to be memoized to improve usage performance ([#1422](https://github.com/optimizely/oui/pull/1422))
 - [Patch] Updated **react-oui-icons** package with memoized **Icon** to improve usage performance ([#1422](https://github.com/optimizely/oui/pull/1422))
 
