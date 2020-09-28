@@ -24,6 +24,19 @@ stories
     <Badge color="plain">Plain</Badge>
     <Badge color="bad-news">Bad News</Badge>
   </div>))
+  .add('With Background Color', () => (<div>
+    <Badge backgroundColor="aqua">Aqua</Badge>
+    <Badge backgroundColor="yellow">Yellow</Badge>
+    <Badge backgroundColor="default">Default</Badge>
+    <Badge backgroundColor="green">Green</Badge>
+    <Badge backgroundColor="orange">Orange</Badge>
+    <Badge backgroundColor="pink">Pink</Badge>
+    <Badge backgroundColor="red">Red</Badge>
+    <Badge backgroundColor="magenta">Magenta</Badge>
+    <Badge backgroundColor="grey">Grey</Badge>
+    <Badge backgroundColor="purple">Purple</Badge>
+    <Badge backgroundColor="black">black</Badge>
+  </div>))
   .add('With text', (() => (<div className="flex flex-align--center">
     <Badge color="draft">1</Badge>{ text('text', 'Unpublished Change') }
   </div>)
