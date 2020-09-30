@@ -22,10 +22,10 @@ const Badge = ({
 
   // ensure valid backgroundColor name
   // (in the case that propType errors are ignored)
-  const badgeFillColor =
-    backgroundColor && Object.keys(FILL_COLOR_MAP).includes(backgroundColor)
+  const badgeFillColor = backgroundColor && color === 'default'
+    && (Object.keys(FILL_COLOR_MAP).includes(backgroundColor)
       ? FILL_COLOR_MAP[backgroundColor]
-      : null;
+      : null);
 
   return (
     <span
