@@ -6,8 +6,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+
+## 48.4.1 - 2020-10-01
 - [Patch] Updated  **Sidebar** with new prop `sticky` to allow it to maintain it's fixed position when needed. ([#1424](https://github.com/optimizely/oui/pull/1424))
-- [Patch] Memomized the **DraggableItem** props to increase re-render performance. ([#1425](https://github.com/optimizely/oui/pull/1425))
+- [Patch] Memorized the **DraggableItem** props to increase re-render performance. ([#1425](https://github.com/optimizely/oui/pull/1425))
 
 ## 48.4.0 - 2020-09-24
 - [Feature] Updated **Badge** with new `backgroundColor` to support additional colors. ([#1423](https://github.com/optimizely/oui/pull/1423))
