@@ -25,6 +25,7 @@ const Sidebar = (props) => {
     boxShadow,
     children,
     docked,
+    sticky,
     isOpen,
     width,
     testSection,
@@ -44,7 +45,8 @@ const Sidebar = (props) => {
     'border--left': border && anchor === 'right',
     'oui-shadow': boxShadow,
     'position--relative': docked,
-    'position--absolute height--1-1': !docked,
+    'position--absolute height--1-1': !docked && !sticky,
+    'position--fixed height--1-1': !docked && sticky,
     'visibility--hidden': !isOpen,
   });
 
@@ -71,6 +73,7 @@ Sidebar.defaultProps = {
   anchor: 'right',
   border: false,
   docked: false,
+  sticky: false,
   isOpen: false,
   width: 0,
 };
@@ -95,8 +98,14 @@ Sidebar.propTypes = {
    * Un-docked sidebars render open over page-content (i.e postition absolute)
    */
   docked: PropTypes.bool,
-  /** Determines if the sidebar is visible */
+  /**
+   * Sticky sidebars render open over page-content (i.e postition fixed).
+   * And maintain their position on the screen on scroll.
+   * This prop is only in effect when docked is false.
+   */
   isOpen: PropTypes.bool,
+  /** Determines if the sidebar is visible */
+  sticky: PropTypes.bool,
   /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,
   /** The pixel width of the sidebar */

@@ -55,6 +55,16 @@ describe('components/Sidebar', function() {
       expect(component.find('[data-test-section="oui-sidebar"]').hasClass('position--relative')).toEqual(true);
     });
 
+    it('should add position:fixed class when Sidebar is sticky and not docked', function() {
+      expect(component.find('[data-test-section="oui-sidebar"]').hasClass('position--fixed')).toEqual(false);
+      component.setProps({ sticky: true });
+      expect(component.find('[data-test-section="oui-sidebar"]').hasClass('position--fixed')).toEqual(true);
+      component.setProps({ sticky: true, docked: true });
+      expect(component.find('[data-test-section="oui-sidebar"]').hasClass('position--fixed')).toEqual(false);
+      component.setProps({ sticky: true, docked: false });
+      expect(component.find('[data-test-section="oui-sidebar"]').hasClass('position--fixed')).toEqual(true);
+    });
+
     it('should add open left props when Sidebar anchor is left', function() {
       component.setProps({ isOpen: false, anchor: 'left' });
       const closedProps = component.find('[data-test-section="oui-sidebar"]').props();

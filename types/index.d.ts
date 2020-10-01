@@ -6074,6 +6074,7 @@ declare module "components/Sidebar/Sidebar" {
             export const anchor: string;
             export const border: boolean;
             export const docked: boolean;
+            export const sticky: boolean;
             export const isOpen: boolean;
             export const width: number;
         }
@@ -6086,6 +6087,8 @@ declare module "components/Sidebar/Sidebar" {
             export const children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             const docked_1: PropTypes.Requireable<boolean>;
             export { docked_1 as docked };
+            const sticky_1: PropTypes.Requireable<boolean>;
+            export { sticky_1 as sticky };
             const isOpen_1: PropTypes.Requireable<boolean>;
             export { isOpen_1 as isOpen };
             export const testSection: PropTypes.Requireable<string>;

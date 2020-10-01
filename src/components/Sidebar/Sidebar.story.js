@@ -138,4 +138,84 @@ stories
         </div>
       </Sidebar>
     </div>
+  )))
+  .add('Sticky', (() => (
+    <div className="flex">
+      <div className="flex--1 soft">
+        <h2>Content</h2>
+        <p>
+          {
+            text('content', `Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nam ac velit eu nibh sagittis laoreet. Nullam et purus vel
+            metus pellentesque sodales. Proin auctor sagittis justo. Nam ipsum
+            turpis, sollicitudin sed pellentesque a, scelerisque ac nisi. Cras
+            arcu tortor, ultrices id fringilla id, venenatis eu lectus. Sed quis
+            turpis eu neque auctor tempus at in sapien. Nunc venenatis ex vitae
+            malesuada volutpat. Aenean non metus quam. Curabitur a dapibus sapien,
+            sit amet tincidunt lacus.`)
+          }
+        </p>
+      </div>
+      <Sidebar
+        border={ boolean('border', true) }
+        isOpen={ boolean('isOpen', true) }
+        sticky={ boolean('sticky', true) }
+        width={ number('width', 200) }>
+        <div className="soft">
+          <h2>Sidebar</h2>
+          <div>item 1</div>
+          <div>item 2</div>
+          <div>item 3</div>
+        </div>
+      </Sidebar>
+    </div>
   )));
