@@ -131,6 +131,22 @@ stories
       />
     );
   })
+  .add("With unsaved changes", () => {
+    return (
+      <Tile
+        name="Alpha"
+        description="ID:12345678"
+        onTileClick={action("onTileClick")}
+        isSelected={boolean("isSelected", false)}
+        isDraggable={boolean("isDraggable", true)}
+        testSection="with-warning"
+        unsavedChangesText={text(
+          "unsavedChangesText",
+          "This rule has unsaved changes"
+        )}
+      />
+    );
+  })
   .add("With Action Items on the right", () => {
     return (
       <Container>

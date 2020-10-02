@@ -144,6 +144,65 @@ describe('components/Tile', () => {
     ).toBe(1);
   });
 
+  it('should NOT render the unsaved changes status indicator when `unsavedChangesText` is not provided', () => {
+    const mockClickFunction = jest.fn();
+
+    const component = mount(
+      <Tile
+        name="Alpha"
+        description="ID:12345678"
+        onTileClick={ mockClickFunction }
+        testSection="test-tile"
+      />
+    );
+    expect(
+      component.find(
+        '[data-test-section="test-tile-unsaved-changes-indicator"]'
+      ).length
+    ).toBe(0);
+  });
+
+  it('should NOT render the unsaved changes status indicator when `unsavedChangesText` is an empty string', () => {
+    const mockClickFunction = jest.fn();
+
+    const component = mount(
+      <Tile
+        name="Alpha"
+        description="ID:12345678"
+        onTileClick={ mockClickFunction }
+        testSection="test-tile"
+        unsavedChangesText=""
+      />
+    );
+    expect(
+      component.find(
+        '[data-test-section="test-tile-unsaved-changes-indicator"]'
+      ).length
+    ).toBe(0);
+  });
+
+  it('should render the unsaved changes status indicator when `unsavedChangesText` is non-empty string', () => {
+    const mockClickFunction = jest.fn();
+
+    const component = mount(
+      <Tile
+        name="Alpha"
+        description="ID:12345678"
+        onTileClick={ mockClickFunction }
+        testSection="test-tile"
+        unsavedChangesText="This has unsaved changes"
+      />
+    );
+    expect(
+      component.find(
+        '[data-test-section="test-tile-unsaved-changes-indicator"]'
+      ).length
+    ).toBe(1);
+    expect(component.find('Poptip').props().content).toBe(
+      'This has unsaved changes'
+    );
+  });
+
   it('should render a `status` when provided', () => {
     const component = shallow(
       <Tile name="Goose" description="Duck" status="Running" />

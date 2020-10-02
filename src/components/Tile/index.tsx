@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Button from '../Button';
 import OverlayWrapper from '../OverlayWrapper';
 import Popover from '../Popover';
+import Poptip from '../Poptip';
 import Dropdown from '../Dropdown';
 import ButtonIcon from '../ButtonIcon';
 import Icon from 'react-oui-icons';
@@ -122,6 +123,11 @@ export type TileProps = {
   usesMonospaceName?: boolean;
 
   /**
+   * Text to show in unsaved status indicator. If empty or left out no status indicator will be shown
+   */
+  unsavedChangesText?: string;
+
+  /**
    * The content of the warning popover
    */
   warningContent?: any;
@@ -150,6 +156,7 @@ const Tile = ({
   status,
   testSection,
   usesMonospaceName = false,
+  unsavedChangesText = '',
   warningContent = '',
   warningTitle,
 }: TileProps) => {
@@ -185,6 +192,29 @@ const Tile = ({
       {isDraggable && (
         <div className="oui-tile__drag-handle push--right" {...dragHandleProps}>
           <Icon name="hamburger" fill={greyDark} />
+        </div>
+      )}
+      {unsavedChangesText && (
+        <div
+          className="push--right display--inline-block"
+          data-test-section={`${testSection}-unsaved-changes-indicator`}
+        >
+          <Poptip
+            content={unsavedChangesText}
+            isAnimated={false}
+            position="bottom"
+            trigger="mouseenter"
+          >
+            <span
+              style={{
+                height: "10px",
+                width: "10px",
+                backgroundColor: "hsla(227, 100%, 50%, 1)",
+                borderRadius: "50%",
+                display: "inline-block",
+              }}
+            />
+          </Poptip>
         </div>
       )}
       {hasWarning && (
