@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import { isEqual, pick } from 'lodash';
 
 const DraggableItem = ({
   id,
@@ -51,7 +50,4 @@ DraggableItem.propTypes = {
 };
 
 
-export default React.memo(DraggableItem, (prevProps, nextProps) => {
-  const deps = ['id', 'index', 'item', 'useCustomDragHandle'];
-  return isEqual(pick(prevProps, deps), pick(nextProps, deps));
-});
+export default DraggableItem;

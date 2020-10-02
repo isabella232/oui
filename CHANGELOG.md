@@ -7,6 +7,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 
 ## Unreleased
 - [Patch] Updated **Tile** with new `unsavedChangesText` prop to indicate a changed item ([#1427](https://github.com/optimizely/oui/pull/1427))
+- [Patch] Revert! Memomized the **DraggableItem** props to increase re-render performance. ([#1426](https://github.com/optimizely/oui/pull/1426))
 
 
 ## 48.4.1 - 2020-10-01
