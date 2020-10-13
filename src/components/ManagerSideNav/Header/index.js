@@ -80,7 +80,10 @@ Header.propTypes = {
   /** The title of the current entity */
   primaryTitle: PropTypes.string,
   /** The name of the current project */
-  projectName: PropTypes.string.isRequired,
+  projectName: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]).isRequired,
   /** A secondary name of the current entity, if applicable */
   secondaryTitle: PropTypes.string,
   /** Whether or not the header should scroll */
