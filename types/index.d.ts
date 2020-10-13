@@ -440,9 +440,10 @@ declare module "components/Avatar/avatar.story" {
 }
 declare module "components/Badge/index" {
     export default Badge;
-    function Badge(props: any): any;
+    function Badge({ backgroundColor, children, color, testSection, }: any): any;
     namespace Badge {
         export namespace propTypes {
+            export const backgroundColor: PropTypes.Requireable<string>;
             export const children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             export const color: PropTypes.Requireable<string>;
             export const testSection: PropTypes.Requireable<string>;
@@ -2106,6 +2107,68 @@ declare module "components/DragAndDrop/index" {
     }
     import PropTypes from "prop-types";
 }
+declare module "utils/poll" {
+    /**
+     * Method to detect when a given selector appears in the DOM
+     * using a recursive setTimeout.
+     *
+     * NOTE: For performance reasons, this should only be used
+     * when an element is certain to appear.
+     *
+     * @param {String} selector - CSS selector for an element that will appear
+     * @returns {Promise}
+     */
+    export function waitForSelector(selector: string): Promise<any>;
+}
+declare module "components/Poptip/index" {
+    export default Poptip;
+    /**
+     * Displays help text when hovering on an element.
+     * @param {Object} props - Properties passed to component
+     * @returns {ReactElement}
+     */
+    class Poptip extends React.Component<any, any, any> {
+        static displayName: string;
+        static propTypes: {
+            /** Content that, when hovered on, makes the Poptip appear */
+            children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            /** content could be a node of a string */
+            content: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            /** how long it takes after a trigger event is fired for a tooltip to show |
+             * default => 0 */
+            delay: PropTypes.Requireable<number>;
+            /** disable value | default => false */
+            disable: PropTypes.Requireable<boolean>;
+            /** how long it takes after a trigger event is fired for a tooltip to hide |
+             * default => 0 */
+            hideDelay: PropTypes.Requireable<number>;
+            /** should the poptip content be animated | default => true */
+            isAnimated: PropTypes.Requireable<boolean>;
+            /** should the poptip be displayed inline */
+            isInline: PropTypes.Requireable<boolean>;
+            /** position value options | default => top */
+            position: PropTypes.Requireable<string>;
+            /** background color | default => dark */
+            theme: PropTypes.Requireable<string>;
+            /** trigger value options | default => mouseenter focus */
+            trigger: PropTypes.Requireable<string>;
+        };
+        static defaultProps: {
+            delay: number;
+            disable: boolean;
+            hideDelay: number;
+            isAnimated: boolean;
+            isInline: boolean;
+            position: string;
+            theme: string;
+        };
+        constructor(props: any);
+        renderPoptip: () => JSX.Element;
+        render(): JSX.Element | null;
+    }
+    import React from "react";
+    import PropTypes from "prop-types";
+}
 declare module "components/Tile/index" {
     import React from 'react';
     export type TileProps = {
@@ -2191,6 +2254,10 @@ declare module "components/Tile/index" {
          */
         usesMonospaceName?: boolean;
         /**
+         * Text to show in unsaved status indicator. If empty or left out no status indicator will be shown
+         */
+        unsavedChangesText?: string;
+        /**
          * The content of the warning popover
          */
         warningContent?: any;
@@ -2199,7 +2266,7 @@ declare module "components/Tile/index" {
          */
         warningTitle?: string;
     };
-    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, hasWarning, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onResultsLink, onTileClick, order, status, testSection, usesMonospaceName, warningContent, warningTitle, }: TileProps) => JSX.Element;
+    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, hasWarning, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onResultsLink, onTileClick, order, status, testSection, usesMonospaceName, unsavedChangesText, warningContent, warningTitle, }: TileProps) => JSX.Element;
     export default Tile;
 }
 declare module "components/DragAndDrop/DragAndDrop.story" {
@@ -5097,68 +5164,6 @@ declare module "components/Layout/ColWithNubbin" {
     const ColWithNubbin: React.SFC<ColWithNubbinPropTypes>;
     export default ColWithNubbin;
 }
-declare module "utils/poll" {
-    /**
-     * Method to detect when a given selector appears in the DOM
-     * using a recursive setTimeout.
-     *
-     * NOTE: For performance reasons, this should only be used
-     * when an element is certain to appear.
-     *
-     * @param {String} selector - CSS selector for an element that will appear
-     * @returns {Promise}
-     */
-    export function waitForSelector(selector: string): Promise<any>;
-}
-declare module "components/Poptip/index" {
-    export default Poptip;
-    /**
-     * Displays help text when hovering on an element.
-     * @param {Object} props - Properties passed to component
-     * @returns {ReactElement}
-     */
-    class Poptip extends React.Component<any, any, any> {
-        static displayName: string;
-        static propTypes: {
-            /** Content that, when hovered on, makes the Poptip appear */
-            children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-            /** content could be a node of a string */
-            content: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-            /** how long it takes after a trigger event is fired for a tooltip to show |
-             * default => 0 */
-            delay: PropTypes.Requireable<number>;
-            /** disable value | default => false */
-            disable: PropTypes.Requireable<boolean>;
-            /** how long it takes after a trigger event is fired for a tooltip to hide |
-             * default => 0 */
-            hideDelay: PropTypes.Requireable<number>;
-            /** should the poptip content be animated | default => true */
-            isAnimated: PropTypes.Requireable<boolean>;
-            /** should the poptip be displayed inline */
-            isInline: PropTypes.Requireable<boolean>;
-            /** position value options | default => top */
-            position: PropTypes.Requireable<string>;
-            /** background color | default => dark */
-            theme: PropTypes.Requireable<string>;
-            /** trigger value options | default => mouseenter focus */
-            trigger: PropTypes.Requireable<string>;
-        };
-        static defaultProps: {
-            delay: number;
-            disable: boolean;
-            hideDelay: number;
-            isAnimated: boolean;
-            isInline: boolean;
-            position: string;
-            theme: string;
-        };
-        constructor(props: any);
-        renderPoptip: () => JSX.Element;
-        render(): JSX.Element | null;
-    }
-    import React from "react";
-    import PropTypes from "prop-types";
-}
 declare module "components/NavBar/IconLink/index" {
     export default IconLink;
     class IconLink extends React.PureComponent<any, any, any> {
@@ -5429,7 +5434,7 @@ declare module "components/ManagerSideNav/Header/index" {
             export const hasBackLink: PropTypes.Requireable<boolean>;
             export const isFullHeight: PropTypes.Requireable<boolean>;
             export const primaryTitle: PropTypes.Requireable<string>;
-            export const projectName: PropTypes.Validator<string>;
+            export const projectName: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             export const secondaryTitle: PropTypes.Requireable<string>;
             export const shouldHeaderScroll: PropTypes.Requireable<boolean>;
             export const usesMonospaceStyling: PropTypes.Requireable<boolean>;
@@ -6087,10 +6092,10 @@ declare module "components/Sidebar/Sidebar" {
             export const children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             const docked_1: PropTypes.Requireable<boolean>;
             export { docked_1 as docked };
-            const sticky_1: PropTypes.Requireable<boolean>;
-            export { sticky_1 as sticky };
             const isOpen_1: PropTypes.Requireable<boolean>;
             export { isOpen_1 as isOpen };
+            const sticky_1: PropTypes.Requireable<boolean>;
+            export { sticky_1 as sticky };
             export const testSection: PropTypes.Requireable<string>;
             const width_1: PropTypes.Validator<number>;
             export { width_1 as width };
