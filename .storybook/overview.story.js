@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Attention from '../src/components/Attention';
 import Badge from '../src/components/Badge';
 import BlockList from '../src/components/BlockList';
+import ButterBar from '../src/components/ButterBar';
 import Button from '../src/components/Button';
 import ButtonIcon from '../src/components/ButtonIcon';
 import EmptyDashboard from '../src/components/EmptyDashboard';
@@ -89,6 +90,19 @@ stories
       </div>
       <div className="push--bottom">
         <Attention type='warning'>Warning: This is a short attention bar.</Attention>
+      </div>
+
+      <div className="push--bottom">
+        <ButterBar type='brand' isDismissible alignment="center">Brand: This is a short butterbar.</ButterBar>
+      </div>
+      <div className="push--bottom">
+        <ButterBar type='good-news' isDismissible alignment="center">Good News: This is a short butterbar.</ButterBar>
+      </div>
+      <div className="push--bottom">
+        <ButterBar type='bad-news' isDismissible alignment="center">Bad News: This is a short butterbar.</ButterBar>
+      </div>
+      <div className="push--bottom">
+        <ButterBar type='warning' isDismissible alignment="center">Warning: This is a short butterbar.</ButterBar>
       </div>
 
       <div className="push--ends">

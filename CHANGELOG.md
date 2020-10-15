@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Added **ButterBar** component ([#1429](https://github.com/optimizely/oui/pull/1429))
 - [Patch] Updated **ManagerSideNav** to allow a node for projectName prop ([#1428](https://github.com/optimizely/oui/pull/1428))
 
 ## 48.4.2 - 2020-10-02

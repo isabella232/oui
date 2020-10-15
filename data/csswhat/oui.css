@@ -4486,6 +4486,39 @@ div[class*="fitContent"] {
 .oui-badge--purple {
   background: #693ab6; }
 
+
+.butterbar,
+.oui-butterbar {
+  padding: 5px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #FFFFFF; }
+  
+  .butterbar--brand,
+  .oui-butterbar--brand {
+    border-color: #BFCDFF;
+    background-color: #d9e1ff; }
+  
+  .butterbar--warning,
+  .oui-butterbar--warning {
+    border-color: #FFD233;
+    background-color: #fff6d6; }
+  
+  .butterbar--good-news,
+  .oui-butterbar--good-news {
+    border-color: #33CF76;
+    background-color: #d6f5e4; }
+  
+  .butterbar--bad-news,
+  .oui-butterbar--bad-news {
+    border-color: #FF5B5B;
+    background-color: #ffdede; }
+  
+  .butterbar__close,
+  .oui-butterbar__close {
+    float: right;
+    margin-left: 10px;
+    cursor: pointer; }
+
 .oui-button-icon {
   padding: 4px;
   line-height: normal; }

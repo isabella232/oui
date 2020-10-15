@@ -4,6 +4,7 @@ export { default as Attention } from './components/Attention';
 export { default as Avatar } from './components/Avatar';
 export { default as Badge } from './components/Badge';
 export { default as BlockList } from './components/BlockList';
+export { default as ButterBar } from './components/ButterBar';
 export { default as Button } from './components/Button';
 export { default as ButtonRow } from './components/ButtonRow';
 export { default as Card } from './components/Card';
