@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 48.5.1 - 2020-10-15
 - [Patch] Fixed **ButterBar** type definition export ([#1431](https://github.com/optimizely/oui/pull/1431))
 
 ## 48.5.0 - 2020-10-15
