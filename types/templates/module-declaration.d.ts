@@ -10,6 +10,7 @@ declare module 'optimizely-oui' {
   export { default as Avatar } from 'components/Avatar/index';
   export { default as Badge } from 'components/Badge/index';
   export { default as BlockList } from 'components/BlockList/index';
+  export { default as ButterBar } from 'components/ButterBar/index';
   export { default as Button } from 'components/Button/index';
   export { default as ButtonRow } from 'components/ButtonRow/index';
   export { default as Card } from 'components/Card/index';

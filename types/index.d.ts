@@ -10,6 +10,7 @@ declare module 'optimizely-oui' {
   export { default as Avatar } from 'components/Avatar/index';
   export { default as Badge } from 'components/Badge/index';
   export { default as BlockList } from 'components/BlockList/index';
+  export { default as ButterBar } from 'components/ButterBar/index';
   export { default as Button } from 'components/Button/index';
   export { default as ButtonRow } from 'components/ButtonRow/index';
   export { default as Card } from 'components/Card/index';
@@ -728,6 +729,21 @@ declare module "components/BlockList/example/index" {
         examples: JSX.Element[];
     }[];
     export default _default;
+}
+declare module "components/ButterBar/index" {
+    export type ButterBarProps = {
+        alignment?: 'left' | 'center';
+        children?: any;
+        isDismissible?: boolean;
+        testSection?: string;
+        type?: 'bad-news' | 'brand' | 'good-news' | 'warning';
+        onDismiss?: () => any;
+    };
+    const ButterBar: ({ alignment, children, isDismissible, testSection, type, onDismiss }: ButterBarProps) => JSX.Element;
+    export default ButterBar;
+}
+declare module "components/ButterBar/ButterBar.story" {
+    export {};
 }
 declare module "components/ButtonRow/index" {
     export default ButtonRow;
