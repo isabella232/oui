@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { Resizable } from 're-resizable';
 
 /**
  * Sidebar
@@ -26,8 +27,11 @@ const Sidebar = (props) => {
     children,
     docked,
     sticky,
+    isResizable,
     isOpen,
     width,
+    minWidth,
+    maxWidth,
     testSection,
   } = props;
 
@@ -58,6 +62,38 @@ const Sidebar = (props) => {
     [anchor]: isOpen ? 0 : anchorPosition,
   };
 
+  const resizeEnabled = {
+    top: false,
+    right: anchor === 'left' && isResizable,
+    bottom: false,
+    left: anchor === 'right' && isResizable,
+    topRight: false,
+    bottomRight: false,
+    bottomLeft: false,
+    topLeft: false,
+  };
+
+  const defaultSize = {
+    width: isOpen ? width : 0,
+    height: 'auto',
+  };
+
+  if (isResizable && !docked) {
+    return (
+      <Resizable
+        defaultSize={ defaultSize }
+        minWidth={ minWidth }
+        maxWidth={ maxWidth }
+        data-oui-component={ true }
+        data-test-section={ testSection }
+        className={ classes }
+        style={ styles }
+        enable={ resizeEnabled }>
+        { isOpen && children }
+      </Resizable>
+    );
+  }
+
   return (
     <div
       data-oui-component={ true }
@@ -74,6 +110,7 @@ Sidebar.defaultProps = {
   border: false,
   docked: false,
   sticky: false,
+  isResizable: false,
   isOpen: false,
   width: 0,
 };
@@ -105,6 +142,13 @@ Sidebar.propTypes = {
    */
   isOpen: PropTypes.bool,
   /** Determines if the sidebar is visible */
+  isResizable: PropTypes.bool,
+  /** When resizable, The maximum pixel width of the sidebar */
+  maxWidth: PropTypes.number,
+  /** When resizable, The minimum pixel width of the sidebar */
+  minWidth: PropTypes.number,
+  /** Determines if the sidebar is resizable.
+      Resizable only works for undocked sidebars. */
   sticky: PropTypes.bool,
   /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,

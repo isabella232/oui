@@ -2457,11 +2457,11 @@ declare module "components/FilterPicker/FilterPicker" {
     }
     namespace FilterPicker {
         export namespace propTypes {
-            export const allEntities: PropTypes.Requireable<any>;
+            export const allEntities: PropTypes.Requireable<unknown>;
             export const children: PropTypes.Validator<(...args: any[]) => any>;
             export const customFilterFn: PropTypes.Requireable<(...args: any[]) => any>;
             export const keysToSearch: PropTypes.Requireable<any[]>;
-            export const selectedEntityIds: PropTypes.Requireable<any>;
+            export const selectedEntityIds: PropTypes.Requireable<unknown>;
             export const testSection: PropTypes.Requireable<string>;
         }
         export namespace defaultProps {
@@ -6096,6 +6096,7 @@ declare module "components/Sidebar/Sidebar" {
             export const border: boolean;
             export const docked: boolean;
             export const sticky: boolean;
+            export const isResizable: boolean;
             export const isOpen: boolean;
             export const width: number;
         }
@@ -6110,6 +6111,10 @@ declare module "components/Sidebar/Sidebar" {
             export { docked_1 as docked };
             const isOpen_1: PropTypes.Requireable<boolean>;
             export { isOpen_1 as isOpen };
+            const isResizable_1: PropTypes.Requireable<boolean>;
+            export { isResizable_1 as isResizable };
+            export const maxWidth: PropTypes.Requireable<number>;
+            export const minWidth: PropTypes.Requireable<number>;
             const sticky_1: PropTypes.Requireable<boolean>;
             export { sticky_1 as sticky };
             export const testSection: PropTypes.Requireable<string>;

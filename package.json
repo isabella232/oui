@@ -17,6 +17,7 @@
     "lodash": ">=4.17.13",
     "lodash.debounce": "^4.0.8",
     "lodash.noop": "^3.0.1",
+    "re-resizable": "^6.6.1",
     "react-beautiful-dnd": "^12.1.1",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dates": "^20.1.0",
