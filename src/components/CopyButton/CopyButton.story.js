@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 
 import CopyButton from '../CopyButton';
 
@@ -54,11 +54,21 @@ stories
       />
     );
   }))
-  .add('With text', (() => {
+  .add('With default text', (() => {
     return (
       <CopyButton
         textToCopy={ code }
         usesTextLabel={ boolean('usesTextLabel', true) }
+        style='highlight'
+      />
+    );
+  }))
+  .add('With custom text', (() => {
+    return (
+      <CopyButton
+        textToCopy={ code }
+        usesTextLabel={ boolean('usesTextLabel', true) }
+        textLabel={ text('textLabel', 'Copy for me') }
         style='highlight'
       />
     );

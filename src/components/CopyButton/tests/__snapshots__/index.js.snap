@@ -26,7 +26,7 @@ exports[`components/CopyButton should render children the icon button 1`] = `
 </CopyToClipboard>
 `;
 
-exports[`components/CopyButton should render text when usesTextLabel is true 1`] = `
+exports[`components/CopyButton should render default text when usesTextLabel is true 1`] = `
 <CopyToClipboard
   text="let bingo = \\"BINGO\\""
 >
@@ -46,6 +46,30 @@ exports[`components/CopyButton should render text when usesTextLabel is true 1`]
     width="default"
   >
     Copy
+  </Button>
+</CopyToClipboard>
+`;
+
+exports[`components/CopyButton should render provided text when usesTextLabel is true and textLabel is given 1`] = `
+<CopyToClipboard
+  text="let bingo = \\"BINGO\\""
+>
+  <Button
+    ariaLabel="Copy code snippet"
+    isDisabled={false}
+    isLink={false}
+    isLoading={false}
+    isSubmit={false}
+    loadingText=""
+    onBlur={[Function]}
+    onClick={[Function]}
+    onMouseDown={[Function]}
+    size="tiny"
+    style="highlight"
+    testSection="fake-test-section-copy-button"
+    width="default"
+  >
+    custom-copy-label
   </Button>
 </CopyToClipboard>
 `;

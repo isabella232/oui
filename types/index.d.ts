@@ -945,19 +945,23 @@ declare module "components/CloseButton/index" {
 }
 declare module "components/CopyButton/index" {
     export default CopyButton;
-    function CopyButton({ style, testSection, textToCopy, usesTextLabel, }: any): any;
+    function CopyButton({ style, testSection, textToCopy, usesTextLabel, textLabel, onCopy }: any): any;
     namespace CopyButton {
         export namespace propTypes {
             export const style: PropTypes.Requireable<string>;
             export const testSection: PropTypes.Requireable<string>;
             export const textToCopy: PropTypes.Validator<string>;
             export const usesTextLabel: PropTypes.Requireable<boolean>;
+            export const textLabel: PropTypes.Requireable<string>;
+            export const onCopy: PropTypes.Requireable<(...args: any[]) => any>;
         }
         export namespace defaultProps {
             const style_1: string;
             export { style_1 as style };
             const usesTextLabel_1: boolean;
             export { usesTextLabel_1 as usesTextLabel };
+            const textLabel_1: string;
+            export { textLabel_1 as textLabel };
         }
     }
     import PropTypes from "prop-types";

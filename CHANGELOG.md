@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Updated **CopyButton** with new `textLabel` and `onCopy` to allow custom text label and onCopy callback.  ([#1433](https://github.com/optimizely/oui/pull/1433))
 - [Patch] Updated Sidebar with new props to make it resizable horizontally. ([#1432](https://github.com/optimizely/oui/pull/1432))
 
 ## 48.5.1 - 2020-10-15
