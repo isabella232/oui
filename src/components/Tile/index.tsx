@@ -1,15 +1,15 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from "react";
+import classNames from "classnames";
 
-import Button from '../Button';
-import OverlayWrapper from '../OverlayWrapper';
-import Popover from '../Popover';
-import Poptip from '../Poptip';
-import Dropdown from '../Dropdown';
-import ButtonIcon from '../ButtonIcon';
-import Icon from 'react-oui-icons';
+import Button from "../Button";
+import OverlayWrapper from "../OverlayWrapper";
+import Popover from "../Popover";
+import Poptip from "../Poptip";
+import Dropdown from "../Dropdown";
+import ButtonIcon from "../ButtonIcon";
+import Icon from "react-oui-icons";
 
-import { greyDark } from '../../tokens/forimport/index.es';
+import { greyDark, redBase } from "../../tokens/forimport/index.es";
 
 const renderDropdownActivator = (
   { onClick, buttonRef } // eslint-disable-line
@@ -46,11 +46,6 @@ export type TileProps = {
    * True by default
    */
   hasSpacing?: boolean;
-
-  /**
-   * Whether or not this Tile has a warning popover
-   */
-  hasWarning?: boolean;
 
   /**
    * Whether or not this Tile includes a drag handle
@@ -128,14 +123,9 @@ export type TileProps = {
   unsavedChangesText?: string;
 
   /**
-   * The content of the warning popover
+   * The title and body content to show in the warning icon and popover
    */
-  warningContent?: any;
-
-  /**
-   * The title of the warning popover
-   */
-  warningTitle?: string;
+  warningTitleAndBodyContent?: [] | [string, React.ReactNode];
 };
 
 const Tile = ({
@@ -143,7 +133,6 @@ const Tile = ({
   dragHandleProps,
   dropdownItems,
   hasSpacing = true,
-  hasWarning = false,
   isDraggable = false,
   isSelected = false,
   name,
@@ -156,14 +145,13 @@ const Tile = ({
   status,
   testSection,
   usesMonospaceName = false,
-  unsavedChangesText = '',
-  warningContent = '',
-  warningTitle,
+  unsavedChangesText = "",
+  warningTitleAndBodyContent = [],
 }: TileProps) => {
   const tileContent = (
     <>
       <p
-        className={classNames('oui-tile__name text--left flush', {
+        className={classNames("oui-tile__name text--left flush", {
           monospace: usesMonospaceName,
         })}
       >
@@ -176,13 +164,17 @@ const Tile = ({
   );
   const hasExtraContent =
     status || onCopy || onEdit || onDismiss || onResultsLink || dropdownItems;
+
+  const hasWarning = !!warningTitleAndBodyContent.length;
   return (
     <div
-      className={classNames('oui-tile flex flex-align--center soft--sides', {
-        'oui-tile--selected': isSelected,
-        'push-half--ends': hasSpacing,
+      className={classNames("oui-tile flex flex-align--center soft--sides", {
+        "oui-button--danger-outline": hasWarning,
+        "oui-tile--selected": isSelected,
+        "push-half--ends": hasSpacing,
       })}
       data-test-section={testSection}
+      style={hasWarning ? { borderColor: redBase } : {}}
     >
       {order && (
         <span className="oui-tile__order-number milli text--right push--right">
@@ -194,7 +186,7 @@ const Tile = ({
           <Icon name="hamburger" fill={greyDark} />
         </div>
       )}
-      {unsavedChangesText && (
+      {unsavedChangesText && !hasWarning && (
         <div
           className="push--right display--inline-block"
           data-test-section={`${testSection}-unsaved-changes-indicator`}
@@ -224,16 +216,16 @@ const Tile = ({
             horizontalAttachment="center"
             overlay={
               <Popover
-                title={warningTitle}
+                title={warningTitleAndBodyContent[0]}
                 testSection={`${testSection}-warning-popover`}
               >
-                {warningContent}
+                {warningTitleAndBodyContent[1]}
               </Popover>
             }
             shouldHideOnClick={true}
             verticalAttachment="bottom"
           >
-            <Icon name="exclamation" />
+            <Icon name="exclamation" color="red" />
           </OverlayWrapper>
         </div>
       )}
@@ -295,11 +287,11 @@ const Tile = ({
           {dropdownItems && (
             <Dropdown
               renderActivator={renderDropdownActivator}
-              placement={'bottom-end'}
+              placement={"bottom-end"}
               key="dropdown"
               testSection={`${testSection}-action-overflow-button`}
             >
-              <Dropdown.Contents direction={'right'}>
+              <Dropdown.Contents direction={"right"}>
                 {dropdownItems}
               </Dropdown.Contents>
             </Dropdown>

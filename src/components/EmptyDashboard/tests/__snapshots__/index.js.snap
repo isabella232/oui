@@ -33,9 +33,9 @@ exports[`components/EmptyDashboard should render 1`] = `
   imagePath="https://app.optimizely.com/static/img/p13n/campaign-list-empty-state.svg"
 >
   <div
-    className="flex flex--column overflow-y--scroll flex--1"
+    className="flex flex--column overflow-y--auto flex--1"
     data-oui-component={true}
-    data-test-section="layers-empty-state"
+    data-test-section="empty-state"
   >
     <div
       className="flex push-quad--sides oui-empty-dashboard__button-row flex-justified--end"
@@ -160,9 +160,9 @@ exports[`components/EmptyDashboard should render with button below image when sh
   showButtonBelow={true}
 >
   <div
-    className="flex flex--column overflow-y--scroll flex--1"
+    className="flex flex--column overflow-y--auto flex--1"
     data-oui-component={true}
-    data-test-section="layers-empty-state"
+    data-test-section="empty-state"
   >
     <div
       className="anchor--middle height--1-1 flex flex--row flex-align--center"
@@ -288,9 +288,9 @@ exports[`components/EmptyDashboard should render with specified height and width
   imageWidth="200px"
 >
   <div
-    className="flex flex--column overflow-y--scroll flex--1"
+    className="flex flex--column overflow-y--auto flex--1"
     data-oui-component={true}
-    data-test-section="layers-empty-state"
+    data-test-section="empty-state"
   >
     <div
       className="flex push-quad--sides oui-empty-dashboard__button-row flex-justified--end"

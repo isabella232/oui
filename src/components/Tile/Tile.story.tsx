@@ -2,7 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
 import Tile from "./index";
 import Col from "../Layout/Col";
@@ -56,6 +56,10 @@ stories
 
 stories
   .add("Interactive (content is a Button)", () => {
+    const shouldShowWarning = boolean(
+      "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+      false
+    );
     return (
       <Container>
         <Row>
@@ -66,9 +70,11 @@ stories
               onTileClick={action("onTileClick - Alpha")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", false)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
             />
           </Col>
           <Col small={6}>
@@ -78,9 +84,11 @@ stories
               onTileClick={action("onTileClick - Beta")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", false)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
             />
           </Col>
         </Row>
@@ -88,19 +96,27 @@ stories
     );
   })
   .add("Static (content is not a Button)", () => {
+    const shouldShowWarning = boolean(
+      "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+      false
+    );
     return (
       <Tile
         name="Alpha: I am not a button"
         description="Clicking me will do nothing"
         isSelected={boolean("isSelected", false)}
         isDraggable={boolean("isDraggable", false)}
-        hasWarning={boolean("hasWarning", false)}
-        warningTitle={text("warningText", "This is a warning")}
-        warningContent={<p>Warning details</p>}
+        warningTitleAndBodyContent={
+          shouldShowWarning ? ["This is a warning", <p>Warning details</p>] : []
+        }
       />
     );
   })
   .add("With Monospace Name", () => {
+    const shouldShowWarning = boolean(
+      "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+      false
+    );
     return (
       <Tile
         name="amount"
@@ -109,14 +125,46 @@ stories
         onTileClick={action("onTileClick")}
         isSelected={boolean("isSelected", false)}
         isDraggable={boolean("isDraggable", false)}
-        hasWarning={boolean("hasWarning", false)}
-        warningTitle={text("warningText", "This is a warning")}
-        warningContent={<p>Warning details</p>}
+        warningTitleAndBodyContent={
+          shouldShowWarning ? ["This is a warning", <p>Warning details</p>] : []
+        }
         onCopy={action("onCopy called")}
       />
     );
   })
+  .add(
+    "With a warning and unsaved changes (warning overrides unsaved changes indicator)",
+    () => {
+      const shouldShowWarning = boolean(
+        "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+        true
+      );
+      return (
+        <Tile
+          name="Alpha"
+          description="ID:12345678"
+          onTileClick={action("onTileClick")}
+          isSelected={boolean("isSelected", false)}
+          isDraggable={boolean("isDraggable", true)}
+          testSection="with-warning"
+          unsavedChangesText={text(
+            "unsavedChangesText",
+            "This rule has unsaved changes"
+          )}
+          warningTitleAndBodyContent={
+            shouldShowWarning
+              ? ["This is a warning", <p>Warning details</p>]
+              : []
+          }
+        />
+      );
+    }
+  )
   .add("Draggable, with a warning", () => {
+    const shouldShowWarning = boolean(
+      "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+      true
+    );
     return (
       <Tile
         name="Alpha"
@@ -124,14 +172,18 @@ stories
         onTileClick={action("onTileClick")}
         isSelected={boolean("isSelected", false)}
         isDraggable={boolean("isDraggable", true)}
-        hasWarning={boolean("hasWarning", true)}
-        warningTitle={text("warningText", "This is a warning")}
-        warningContent={<p>Warning details</p>}
+        warningTitleAndBodyContent={
+          shouldShowWarning ? ["This is a warning", <p>Warning details</p>] : []
+        }
         testSection="with-warning"
       />
     );
   })
   .add("With unsaved changes", () => {
+    const shouldShowWarning = boolean(
+      "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+      false
+    );
     return (
       <Tile
         name="Alpha"
@@ -144,10 +196,17 @@ stories
           "unsavedChangesText",
           "This rule has unsaved changes"
         )}
+        warningTitleAndBodyContent={
+          shouldShowWarning ? ["This is a warning", <p>Warning details</p>] : []
+        }
       />
     );
   })
   .add("With Action Items on the right", () => {
+    const shouldShowWarning = boolean(
+      "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+      false
+    );
     return (
       <Container>
         <Row>
@@ -159,9 +218,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", false)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               onDismiss={action("onDismiss called")}
             />
           </Col>
@@ -175,9 +236,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={true}
               isDraggable={boolean("isDraggable", false)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               status="Archived"
               onDismiss={action("onDismiss called")}
             />
@@ -192,9 +255,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", false)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               onDismiss={action("onDismiss called")}
               onEdit={action("onEdit called")}
             />
@@ -209,9 +274,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", false)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               status="Running"
               dropdownItems={dropdownItems}
             />
@@ -226,9 +293,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", false)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               onCopy={action("onCopy called")}
               dropdownItems={dropdownItems}
             />
@@ -243,9 +312,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", true)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               status="Active"
               onCopy={action("onCopy called")}
               onDismiss={action("onDismiss called")}
@@ -259,6 +330,10 @@ stories
     );
   })
   .add("With Ordering", () => {
+    const shouldShowWarning = boolean(
+      "Show warningTitleAndBodyContent={[string, any]} (not actually a boolean prop, see story or component)",
+      false
+    );
     return (
       <Container>
         <Row>
@@ -271,9 +346,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", true)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               onDismiss={action("onDismiss called")}
             />
           </Col>
@@ -288,9 +365,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={true}
               isDraggable={boolean("isDraggable", true)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               status="Archived"
               onDismiss={action("onDismiss called")}
             />
@@ -306,9 +385,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", true)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               onDismiss={action("onDismiss called")}
               onEdit={action("onEdit called")}
             />
@@ -324,9 +405,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", true)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               status="Running"
               dropdownItems={dropdownItems}
             />
@@ -342,9 +425,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", true)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               onCopy={action("onCopy called")}
               dropdownItems={dropdownItems}
             />
@@ -360,9 +445,11 @@ stories
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
               isDraggable={boolean("isDraggable", true)}
-              hasWarning={boolean("hasWarning", false)}
-              warningTitle={text("warningText", "This is a warning")}
-              warningContent={<p>Warning details</p>}
+              warningTitleAndBodyContent={
+                shouldShowWarning
+                  ? ["This is a warning", <p>Warning details</p>]
+                  : []
+              }
               onCopy={action("onCopy called")}
               dropdownItems={dropdownItems}
             />

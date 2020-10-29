@@ -133,15 +133,34 @@ describe('components/Tile', () => {
         name="Alpha"
         description="ID:12345678"
         onTileClick={ mockClickFunction }
-        hasWarning={ true }
-        warningTitle={ 'Test Warning' }
-        warningContent={ ' Warning Content' }
+        warningTitleAndBodyContent={ ['Test Warning', ' Warning Content'] }
         testSection="test-tile"
       />
     );
     expect(
       component.find('[data-test-section="test-tile-warning-popover"]').length
     ).toBe(1);
+  });
+
+  it('should not show the unsaved changes indicator if `warningTitleAndBodyContent` is provided', () => {
+    const mockClickFunction = jest.fn();
+
+    const component = mount(
+      <Tile
+        name="Alpha"
+        description="ID:12345678"
+        onTileClick={ mockClickFunction }
+        testSection="test-tile"
+        warningTitleAndBodyContent={ ['Test Warning', ' Warning Content'] }
+        unsavedChangesText='You have unsaved changes'
+      />
+    );
+    expect(
+      component.find('[data-test-section="test-tile-warning-popover"]').length
+    ).toBe(1);
+    expect(
+      component.find('[data-test-section="test-tile-unsaved-changes-indicator"]').length
+    ).toBe(0);
   });
 
   it('should NOT render the unsaved changes status indicator when `unsavedChangesText` is not provided', () => {

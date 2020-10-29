@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Updated **Tile** with refactored `warningTitleAndBodyContent` prop to simplify interface and override unsaved changes indicator. This is a breaking change for anyone using the `hasWarning` prop. ([#1434](https://github.com/optimizely/oui/pull/1434))
+- [Patch] Updated **EmptyDashboard** to use "auto" scrolling instead of always showing the scroll bar. ([#1434](https://github.com/optimizely/oui/pull/1434))
+- [Patch] Updated **react-oui-icons** to version `2.12.0` which contains new `results` icon. ([#1434](https://github.com/optimizely/oui/pull/1434))
+- [Patch] Checked in `.npmrc` file to explicitly specify yarn registry. ([#1434](https://github.com/optimizely/oui/pull/1434))
 
 ## 48.6.0 - 2020-10-23
 - [Feature] Updated **CopyButton** with new `textLabel` and `onCopy` to allow custom text label and onCopy callback.  ([#1433](https://github.com/optimizely/oui/pull/1433))

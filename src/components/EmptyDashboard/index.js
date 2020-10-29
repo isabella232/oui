@@ -15,8 +15,8 @@ const EmptyDashboard = ({
   return (
     <div
       data-oui-component={ true }
-      className='flex flex--column overflow-y--scroll flex--1'
-      data-test-section='layers-empty-state'>
+      className='flex flex--column overflow-y--auto flex--1'
+      data-test-section='empty-state'>
       { button && !showButtonBelow && (
         <div className="flex push-quad--sides oui-empty-dashboard__button-row flex-justified--end">
           { button }
