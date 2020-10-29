@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Updated **Tile** to have types available. ([#1435](https://github.com/optimizely/oui/pull/1435))
 
 ## 48.7.0 - 2020-10-29
 - [Feature] Updated **Tile** with refactored `warningTitleAndBodyContent` prop to simplify interface and override unsaved changes indicator. This is a breaking change for anyone using the `hasWarning` prop. ([#1434](https://github.com/optimizely/oui/pull/1434))

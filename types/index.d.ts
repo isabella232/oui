@@ -945,15 +945,15 @@ declare module "components/CloseButton/index" {
 }
 declare module "components/CopyButton/index" {
     export default CopyButton;
-    function CopyButton({ style, testSection, textToCopy, usesTextLabel, textLabel, onCopy }: any): any;
+    function CopyButton({ style, testSection, textToCopy, usesTextLabel, textLabel, onCopy, }: any): any;
     namespace CopyButton {
         export namespace propTypes {
+            export const onCopy: PropTypes.Requireable<(...args: any[]) => any>;
             export const style: PropTypes.Requireable<string>;
             export const testSection: PropTypes.Requireable<string>;
+            export const textLabel: PropTypes.Requireable<string>;
             export const textToCopy: PropTypes.Validator<string>;
             export const usesTextLabel: PropTypes.Requireable<boolean>;
-            export const textLabel: PropTypes.Requireable<string>;
-            export const onCopy: PropTypes.Requireable<(...args: any[]) => any>;
         }
         export namespace defaultProps {
             const style_1: string;
@@ -2190,7 +2190,7 @@ declare module "components/Poptip/index" {
     import PropTypes from "prop-types";
 }
 declare module "components/Tile/index" {
-    import React from 'react';
+    import React from "react";
     export type TileProps = {
         /**
          * Description of the item for this reference Tile
@@ -2211,10 +2211,6 @@ declare module "components/Tile/index" {
          * True by default
          */
         hasSpacing?: boolean;
-        /**
-         * Whether or not this Tile has a warning popover
-         */
-        hasWarning?: boolean;
         /**
          * Whether or not this Tile includes a drag handle
          */
@@ -2278,15 +2274,11 @@ declare module "components/Tile/index" {
          */
         unsavedChangesText?: string;
         /**
-         * The content of the warning popover
+         * The title and body content to show in the warning icon and popover
          */
-        warningContent?: any;
-        /**
-         * The title of the warning popover
-         */
-        warningTitle?: string;
+        warningTitleAndBodyContent?: [] | [string, React.ReactNode];
     };
-    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, hasWarning, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onResultsLink, onTileClick, order, status, testSection, usesMonospaceName, unsavedChangesText, warningContent, warningTitle, }: TileProps) => JSX.Element;
+    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onResultsLink, onTileClick, order, status, testSection, usesMonospaceName, unsavedChangesText, warningTitleAndBodyContent, }: TileProps) => JSX.Element;
     export default Tile;
 }
 declare module "components/DragAndDrop/DragAndDrop.story" {
@@ -2461,11 +2453,11 @@ declare module "components/FilterPicker/FilterPicker" {
     }
     namespace FilterPicker {
         export namespace propTypes {
-            export const allEntities: PropTypes.Requireable<unknown>;
+            export const allEntities: PropTypes.Requireable<any>;
             export const children: PropTypes.Validator<(...args: any[]) => any>;
             export const customFilterFn: PropTypes.Requireable<(...args: any[]) => any>;
             export const keysToSearch: PropTypes.Requireable<any[]>;
-            export const selectedEntityIds: PropTypes.Requireable<unknown>;
+            export const selectedEntityIds: PropTypes.Requireable<any>;
             export const testSection: PropTypes.Requireable<string>;
         }
         export namespace defaultProps {

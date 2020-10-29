@@ -216,10 +216,10 @@ const Tile = ({
             horizontalAttachment="center"
             overlay={
               <Popover
-                title={warningTitleAndBodyContent[0]}
+                title={warningTitleAndBodyContent[0] || ""}
                 testSection={`${testSection}-warning-popover`}
               >
-                {warningTitleAndBodyContent[1]}
+                {warningTitleAndBodyContent[1] || <></>}
               </Popover>
             }
             shouldHideOnClick={true}
