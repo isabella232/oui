@@ -1,5 +1,5 @@
 # Updating this? Consider updating `.gitignore` as well.
-
+.npmrc
 coverage
 node_modules
 storybook-static

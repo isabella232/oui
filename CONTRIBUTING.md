@@ -7,7 +7,8 @@ OUI is an open source repo where anyone can contribute, and only Optimizely empl
 Requires [Node](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
 
 1. `git clone git@github.com:optimizely/oui.git && cd oui`
-2. `yarn install`
+2. Add an `.npmrc` file with `registry=https://registry.yarnpkg.com` to the project root
+3. `yarn install`
 
 Then you can run and develop locally:
 

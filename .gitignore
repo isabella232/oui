@@ -1,4 +1,5 @@
 # Updating this? Consider updating `.npmignore` as well.
+.npmrc
 npm-debug.log
 yarn-error.log
 package-lock.json
