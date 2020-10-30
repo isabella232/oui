@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 48.7.1 - 2020-10-29
 - [Patch] Updated **Tile** to have types available. ([#1435](https://github.com/optimizely/oui/pull/1435))
 
 ## 48.7.0 - 2020-10-29
