@@ -27,6 +27,7 @@ export { default as DragAndDrop } from './components/DragAndDrop';
 export { default as Dropdown } from './components/Dropdown';
 export { default as EmptyDashboard } from './components/EmptyDashboard';
 export { default as Fieldset } from './components/Fieldset';
+export { default as Form } from './components/Form';
 export { default as FilterPicker } from './components/FilterPicker';
 export { default as HelpPopover } from './components/HelpPopover';
 export { default as ButtonIcon } from './components/ButtonIcon';
