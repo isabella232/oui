@@ -34,7 +34,8 @@ const ButtonIcon = ({
       disabled={ isDisabled }
       onClick={ handleOnClick }
       ref={ buttonRef }
-      title={ title }>
+      title={ title }
+      type='button'>
       <Icon name={ iconName } size={ size } fill={ fillColor }/>
     </button>
   );
