@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Updated **DropdownBlockLinkText** with new `isItemSelected` prop to allow for black text ([#1440](https://github.com/optimizely/oui/pull/1440))
+- [Patch] Updated **Dropdown** with new `isLabelTight` styling option ([#1440](https://github.com/optimizely/oui/pull/1440))
+- [Patch] Updated **Input** with new `isAutoCompleteEnabled` prop to allow for disabling of autocomplete ([#1440](https://github.com/optimizely/oui/pull/1440))
+- [Patch] Updated **.oui-tile** class `overflow: hidden` style to prevent content from overlapping ([#1440](https://github.com/optimizely/oui/pull/1440))
 - [Patch] Updated **ButtonIcon** with to force center of icon ([#1439](https://github.com/optimizely/oui/pull/1439))
 - [Patch] Updated **ButtonIcon** to include `type="button"` ([#1438](https://github.com/optimizely/oui/pull/1438))
 

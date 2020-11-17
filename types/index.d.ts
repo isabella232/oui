@@ -1097,7 +1097,7 @@ declare module "components/DatePicker/CalendarNavButton" {
     import PropTypes from "prop-types";
 }
 declare module "components/Input/index" {
-    import React from 'react';
+    import React from "react";
     type InputProps = {
         /** The default value of the input used on initial render */
         defaultValue?: string;
@@ -1111,6 +1111,8 @@ declare module "components/Input/index" {
         hasSpellCheck?: boolean;
         /** Id of the input to properly associate with the input's label */
         id?: string;
+        /** Allows for prevention of input autocomplete suggestions */
+        isAutoCompleteEnabled?: boolean;
         /** Prevents input from being modified and appears disabled */
         isDisabled?: boolean;
         /** Includes error if true */
@@ -1166,9 +1168,9 @@ declare module "components/Input/index" {
         /** Hook for automated JavaScript tests */
         testSection?: string;
         /** Align text inside input. Default is left. */
-        textAlign?: 'left' | 'right';
+        textAlign?: "left" | "right";
         /** Supported input types */
-        type: 'text' | 'password' | 'date' | 'number' | 'email' | 'url' | 'search' | 'tel' | 'time';
+        type: "text" | "password" | "date" | "number" | "email" | "url" | "search" | "tel" | "time";
         /** Text within the input */
         value?: string | number;
     };
@@ -1669,6 +1671,7 @@ declare module "components/Dropdown/DropdownBlockLinkText/index" {
         export namespace propTypes {
             export const hasExternalIcon: PropTypes.Requireable<boolean>;
             export const isDestructive: PropTypes.Requireable<boolean>;
+            export const isItemSelected: PropTypes.Requireable<boolean>;
             export const testSection: PropTypes.Requireable<string>;
             const text_1: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export { text_1 as text };
@@ -1726,6 +1729,7 @@ declare module "components/Dropdown/index" {
             export const fullWidth: PropTypes.Requireable<boolean>;
             export const hide: PropTypes.Requireable<(...args: any[]) => any>;
             export const isDisabled: PropTypes.Requireable<boolean>;
+            export const isLabelTight: PropTypes.Requireable<boolean>;
             export const isOpen: PropTypes.Requireable<boolean>;
             export const overChildren: PropTypes.Requireable<boolean>;
             export const placement: PropTypes.Requireable<string>;
@@ -1747,6 +1751,8 @@ declare module "components/Dropdown/index" {
             export { fullWidth_1 as fullWidth };
             const isDisabled_1: boolean;
             export { isDisabled_1 as isDisabled };
+            const isLabelTight_1: boolean;
+            export { isLabelTight_1 as isLabelTight };
             const isOpen_1: boolean;
             export { isOpen_1 as isOpen };
             const overChildren_1: boolean;

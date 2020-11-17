@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
-import classNames from 'classnames';
+import React, { useCallback } from "react";
+import classNames from "classnames";
 
-import Label from '../Label';
-import Icon from 'react-oui-icons';
-import ButtonIcon from '../ButtonIcon';
+import Label from "../Label";
+import Icon from "react-oui-icons";
+import ButtonIcon from "../ButtonIcon";
 
 type InputProps = {
   /** The default value of the input used on initial render */
@@ -23,6 +23,9 @@ type InputProps = {
 
   /** Id of the input to properly associate with the input's label */
   id?: string;
+
+  /** Allows for prevention of input autocomplete suggestions */
+  isAutoCompleteEnabled?: boolean;
 
   /** Prevents input from being modified and appears disabled */
   isDisabled?: boolean;
@@ -101,19 +104,19 @@ type InputProps = {
   testSection?: string;
 
   /** Align text inside input. Default is left. */
-  textAlign?: 'left' | 'right';
+  textAlign?: "left" | "right";
 
   /** Supported input types */
   type:
-    | 'text'
-    | 'password'
-    | 'date'
-    | 'number'
-    | 'email'
-    | 'url'
-    | 'search'
-    | 'tel'
-    | 'time';
+    | "text"
+    | "password"
+    | "date"
+    | "number"
+    | "email"
+    | "url"
+    | "search"
+    | "tel"
+    | "time";
 
   /** Text within the input */
   value?: string | number;
@@ -128,6 +131,7 @@ const Input: React.SFC<InputProps> = React.forwardRef(
       hasClearButton,
       hasSpellCheck,
       id,
+      isAutoCompleteEnabled = true,
       isDisabled,
       isFilter,
       isOptional,
@@ -158,7 +162,7 @@ const Input: React.SFC<InputProps> = React.forwardRef(
       () => (
         <div
           className="oui-form-note"
-          data-test-section={testSection && testSection + '-note'}
+          data-test-section={testSection && testSection + "-note"}
         >
           {note}
         </div>
@@ -171,7 +175,15 @@ const Input: React.SFC<InputProps> = React.forwardRef(
     };
 
     const renderClearButton = () => {
-      return <ButtonIcon title="Clear Input" iconName='close' size="small" style='plain' onClick={onClearButtonClick}/>;
+      return (
+        <ButtonIcon
+          title="Clear Input"
+          iconName="close"
+          size="small"
+          style="plain"
+          onClick={onClearButtonClick}
+        />
+      );
     };
 
     const renderInput = () => {
@@ -180,15 +192,16 @@ const Input: React.SFC<InputProps> = React.forwardRef(
         hasAlignStyle = true;
       }
       let classes = classNames(
-        'oui-text-input',
-        { 'oui-text-input--read-only': isReadOnly },
-        { 'oui-text-input--search': isFilter },
-        { 'oui-form-bad-news': displayError },
+        "oui-text-input",
+        { "oui-text-input--read-only": isReadOnly },
+        { "oui-text-input--search": isFilter },
+        { "oui-form-bad-news": displayError },
         { [`text--${textAlign}`]: hasAlignStyle }
       );
 
       let input = (
         <input
+          autoComplete={isAutoCompleteEnabled ? "on" : "off"}
           data-oui-component={true}
           className={classes}
           id={id}
@@ -210,14 +223,14 @@ const Input: React.SFC<InputProps> = React.forwardRef(
           max={max}
           spellCheck={hasSpellCheck}
           step={step}
-          {...(typeof maxLength === 'undefined' ? {} : { maxLength })}
+          {...(typeof maxLength === "undefined" ? {} : { maxLength })}
           data-test-section={testSection}
           autoFocus={focus}
         />
       );
 
       if (leftIconName || rightIconName || hasClearButton) {
-        let containerClasses = classNames('position--relative', {
+        let containerClasses = classNames("position--relative", {
           [`oui-text-input-with-icon--left`]: leftIconName,
           [`oui-text-input-with-icon--right`]: rightIconName,
         });
@@ -229,7 +242,7 @@ const Input: React.SFC<InputProps> = React.forwardRef(
               </span>
             )}
             {input}
-            {(rightIconName && !hasClearButton) && (
+            {rightIconName && !hasClearButton && (
               <span className="flex oui-input-icon__right">
                 {renderIcon(rightIconName)}
               </span>
@@ -249,10 +262,10 @@ const Input: React.SFC<InputProps> = React.forwardRef(
       return (
         <div
           data-oui-component={true}
-          className={classNames({ 'oui-form-bad-news': displayError })}
+          className={classNames({ "oui-form-bad-news": displayError })}
         >
           <Label
-            testSection={testSection && testSection + '-label'}
+            testSection={testSection && testSection + "-label"}
             isRequired={isRequired}
             isOptional={isOptional}
             inputId={id}
@@ -281,7 +294,7 @@ Input.propTypes = {
   id: function verifyIDProp(props) {
     if (props.label && !props.id) {
       return new Error(
-        'Inputs must include an id when a label is specified for accessibility purposes.'
+        "Inputs must include an id when a label is specified for accessibility purposes."
       );
     }
     return null;
@@ -293,7 +306,7 @@ Input.propTypes = {
   isOptional: function verifyIsOptionalProp(props) {
     if (props.isOptional && !props.label) {
       return new Error(
-        'Must include a value for the label prop to use the isOptional prop'
+        "Must include a value for the label prop to use the isOptional prop"
       );
     }
     return null;
@@ -305,14 +318,14 @@ Input.propTypes = {
   isRequired: function verifyIsRequiredProp(props) {
     if (props.isRequired && !props.label) {
       return new Error(
-        'Must include a value for the label prop to use the isRequired prop'
+        "Must include a value for the label prop to use the isRequired prop"
       );
     }
     return null;
   },
 };
 
-Input.displayName = 'Input';
+Input.displayName = "Input";
 Input.defaultProps = {
   note: null,
   isRequired: false,

@@ -40,6 +40,7 @@ exports[`components/SearchPicker default case should render component same as sn
         value=""
       >
         <input
+          autoComplete="on"
           className="oui-text-input oui-text-input--search"
           data-oui-component={true}
           data-test-section="filter-features-input"

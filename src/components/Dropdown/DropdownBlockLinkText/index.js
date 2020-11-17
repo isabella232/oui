@@ -11,6 +11,7 @@ export default function DropdownBlockLinkText(props) {
     <span
       className={ classNames('flex flex-justified--between', {
         'color--bad-news': props.isDestructive,
+        'color--base': !props.isDestructive && props.isItemSelected,
       }) }
       { ...(testSection ? { 'data-test-section': testSection } : {}) }>
       {props.text}
@@ -31,6 +32,8 @@ DropdownBlockLinkText.propTypes = {
   hasExternalIcon: PropTypes.bool,
   /** Changes text to red when true */
   isDestructive: PropTypes.bool,
+  /** Changes text to black when true */
+  isItemSelected: PropTypes.bool,
   /** test section from parent */
   testSection: PropTypes.string,
   /** text, if provided */

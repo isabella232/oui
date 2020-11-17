@@ -126,6 +126,7 @@ stories.add('With a Label', () => {
       <Dropdown
         isDisabled={ boolean('isDisabled', false) }
         fullWidth={ boolean('fullWidth', false) }
+        isLabelTight={ boolean('isLabelTight', true) }
         buttonContent={{
           label: 'Date',
           content: 'Anytime',

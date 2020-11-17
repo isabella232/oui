@@ -130,6 +130,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
       type="search"
     >
       <input
+        autoComplete="on"
         className="oui-text-input oui-text-input--search"
         data-oui-component={true}
         data-test-section="filter-query-input"
@@ -764,6 +765,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
       type="search"
     >
       <input
+        autoComplete="on"
         className="oui-text-input oui-text-input--search"
         data-oui-component={true}
         data-test-section="filter-query-input"
@@ -1373,6 +1375,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
       type="search"
     >
       <input
+        autoComplete="on"
         className="oui-text-input oui-text-input--search"
         data-oui-component={true}
         data-test-section="filter-query-input"
@@ -1983,6 +1986,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
       type="search"
     >
       <input
+        autoComplete="on"
         className="oui-text-input oui-text-input--search"
         data-oui-component={true}
         data-test-section="filter-query-input"

@@ -75,6 +75,7 @@ class Dropdown extends React.Component {
       buttonContent,
       children,
       isDisabled,
+      isLabelTight,
       isOpen,
       displayError,
       fullWidth,
@@ -95,8 +96,11 @@ class Dropdown extends React.Component {
 
     const buttonClass = classNames(
       'oui-button',
-      { [`oui-button--${style}`]: style },
-      { ['oui-button--full soft--left text--left']: fullWidth }
+      {
+        [`oui-button--${style}`]: style,
+        ['oui-button--full soft--left text--left']: fullWidth,
+        ['oui-button--tight']: isLabelTight,
+      }
     );
 
     const iconClass = classNames('push-half--left', {
@@ -239,6 +243,8 @@ Dropdown.propTypes = {
   hide: PropTypes.func,
   /** Disable button. */
   isDisabled: PropTypes.bool,
+  /** Whether button width is narrow or full. Defaults to false. */
+  isLabelTight: PropTypes.bool,
   /**
    * Provided by @withToggle HOC
    * Defaults to false but Dropdown can be open by default if true
@@ -299,6 +305,7 @@ Dropdown.defaultProps = {
   displayError: false,
   fullWidth: false,
   isDisabled: false,
+  isLabelTight: false,
   isOpen: false,
   overChildren: false,
   placement: 'bottom-start',

@@ -45,6 +45,7 @@ exports[`components/ExampleComponent should match the Jest Snapshot 1`] = `
       type="text"
     >
       <input
+        autoComplete="on"
         className="oui-text-input"
         data-oui-component={true}
         data-test-section="nameInput"
