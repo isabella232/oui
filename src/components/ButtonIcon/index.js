@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Icon from 'react-oui-icons';
-import classNames from 'classnames';
 import { FILL_COLOR_MAP } from '../../utils/accessibility';
 
 const ButtonIcon = ({
@@ -28,7 +27,7 @@ const ButtonIcon = ({
 
   return (
     <button
-      className={ classNames('oui-button', 'oui-button-icon', `oui-button-icon__${size}`, `oui-button--${style}`) }
+      className={ `oui-button oui-button-icon oui-button-icon__${size} oui-button--${style}` }
       data-oui-component={ true }
       data-test-section={ testSection }
       disabled={ isDisabled }
@@ -36,7 +35,9 @@ const ButtonIcon = ({
       ref={ buttonRef }
       title={ title }
       type='button'>
-      <Icon name={ iconName } size={ size } fill={ fillColor }/>
+      <div className="flex flex--dead-center ">
+        <Icon name={ iconName } size={ size } fill={ fillColor }/>
+      </div>
     </button>
   );
 };
