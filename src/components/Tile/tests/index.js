@@ -66,7 +66,6 @@ describe('components/Tile', () => {
     const mockDeleteClick = jest.fn();
     const mockCopyClick = jest.fn();
     const mockEditClick = jest.fn();
-    const mockResultsClick = jest.fn();
 
     console.error = jest.fn();
     const component = mount(
@@ -77,7 +76,7 @@ describe('components/Tile', () => {
         onCopy={ mockCopyClick }
         onDismiss={ mockDeleteClick }
         onEdit={ mockEditClick }
-        onResultsLink={ mockResultsClick }
+        resultsLink="http://google.com"
       />
     );
     expect(component.find('.oui-button-icon').length).toBe(4);

@@ -7,6 +7,7 @@ import Popover from "../Popover";
 import Poptip from "../Poptip";
 import Dropdown from "../Dropdown";
 import ButtonIcon from "../ButtonIcon";
+import Link from "../Link";
 import Icon from "react-oui-icons";
 
 import { greyDark, redBase } from "../../tokens/forimport/index.es";
@@ -79,13 +80,6 @@ export type TileProps = {
   onEdit?: (...args: any[]) => any;
 
   /**
-   * Function to call when results button is clicked
-   * Supplying this function adds a results button
-   * to the tile
-   */
-  onResultsLink?: (...args: any[]) => any;
-
-  /**
    * Function to call when the main area of the Tile is clicked
    * If function is not supplied, main content of the Tile
    * will not be clickable (div instead of a button)
@@ -96,6 +90,12 @@ export type TileProps = {
    * Optional number used to indicate the order of Tiles
    */
   order?: number;
+
+  /**
+   * Link to open in a new tab when results button is clicked
+   * Supplying this link adds a results button to the tile
+   */
+  resultsLink?: string;
 
   /**
    * Optional string used to indicate status before action items
@@ -139,9 +139,9 @@ const Tile = ({
   onCopy,
   onDismiss,
   onEdit,
-  onResultsLink,
   onTileClick,
   order,
+  resultsLink,
   status,
   testSection,
   usesMonospaceName = false,
@@ -163,9 +163,10 @@ const Tile = ({
     </>
   );
   const hasExtraContent =
-    status || onCopy || onEdit || onDismiss || onResultsLink || dropdownItems;
+    status || onCopy || onEdit || onDismiss || resultsLink || dropdownItems;
 
   const hasWarning = !!warningTitleAndBodyContent.length;
+
   return (
     <div
       className={classNames("oui-tile flex flex-align--center soft--sides", {
@@ -275,14 +276,15 @@ const Tile = ({
               onClick={onDismiss}
             />
           )}
-          {onResultsLink && (
-            <ButtonIcon
-              iconName="winner"
-              size="medium"
-              style="plain"
-              iconFill="default"
-              onClick={onResultsLink}
-            />
+          {resultsLink && (
+            <Link href={resultsLink}>
+              <ButtonIcon
+                iconName="winner"
+                size="medium"
+                style="plain"
+                iconFill="default"
+              />
+            </Link>
           )}
           {dropdownItems && (
             <Dropdown

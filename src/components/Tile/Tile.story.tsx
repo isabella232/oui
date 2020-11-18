@@ -321,8 +321,8 @@ stories
               onCopy={action("onCopy called")}
               onDismiss={action("onDismiss called")}
               onEdit={action("onEdit called")}
-              onResultsLink={action("onResultsLink called")}
               dropdownItems={dropdownItems}
+              resultsLink={text("resultsLink", "http://google.com")}
             />
           </Col>
         </Row>

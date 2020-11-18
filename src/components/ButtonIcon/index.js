@@ -63,7 +63,7 @@ ButtonIcon.propTypes = {
   /**
    *  Function to perform when the close button is clicked.
    */
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   /**
    *  Size of the button, medium by default
    */

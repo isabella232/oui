@@ -560,7 +560,7 @@ declare module "components/ButtonIcon/index" {
             /**
              *  Function to perform when the close button is clicked.
              */
-            onClick: PropTypes.Validator<(...args: any[]) => any>;
+            onClick: PropTypes.Requireable<(...args: any[]) => any>;
             /**
              *  Size of the button, medium by default
              */
@@ -2244,12 +2244,6 @@ declare module "components/Tile/index" {
          */
         onEdit?: (...args: any[]) => any;
         /**
-         * Function to call when results button is clicked
-         * Supplying this function adds a results button
-         * to the tile
-         */
-        onResultsLink?: (...args: any[]) => any;
-        /**
          * Function to call when the main area of the Tile is clicked
          * If function is not supplied, main content of the Tile
          * will not be clickable (div instead of a button)
@@ -2259,6 +2253,11 @@ declare module "components/Tile/index" {
          * Optional number used to indicate the order of Tiles
          */
         order?: number;
+        /**
+         * Link to open in a new tab when results button is clicked
+         * Supplying this link adds a results button to the tile
+         */
+        resultsLink?: string;
         /**
          * Optional string used to indicate status before action items
          */
@@ -2284,7 +2283,7 @@ declare module "components/Tile/index" {
          */
         warningTitleAndBodyContent?: [] | [string, React.ReactNode];
     };
-    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onResultsLink, onTileClick, order, status, testSection, usesMonospaceName, unsavedChangesText, warningTitleAndBodyContent, }: TileProps) => JSX.Element;
+    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onTileClick, order, resultsLink, status, testSection, usesMonospaceName, unsavedChangesText, warningTitleAndBodyContent, }: TileProps) => JSX.Element;
     export default Tile;
 }
 declare module "components/DragAndDrop/DragAndDrop.story" {
