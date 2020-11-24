@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Updated **Tile** css to not include overflow:hidden but wrap button in div which prevents border overlap ([#1442](https://github.com/optimizely/oui/pull/1442))
 
 ## 48.8.0 - 2020-11-18
 - [Feature] Updated **Tile**, removing `onResultsLink` and adding `resultsLink` which helps with accessibility and user experience ([#1441](https://github.com/optimizely/oui/pull/1441))

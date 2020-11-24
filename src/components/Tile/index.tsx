@@ -231,14 +231,16 @@ const Tile = ({
         </div>
       )}
       {onTileClick ? (
-        <Button
-          testSection={`${testSection}-main-tile-button`}
-          style="unstyled"
-          width="full"
-          onClick={onTileClick}
-        >
-          {tileContent}
-        </Button>
+        <div>
+          <Button
+            testSection={`${testSection}-main-tile-button`}
+            style="unstyled"
+            width="full"
+            onClick={onTileClick}
+          >
+            {tileContent}
+          </Button>
+        </div>
       ) : (
         <div className="width--1-1 line--1 soft--ends">{tileContent}</div>
       )}

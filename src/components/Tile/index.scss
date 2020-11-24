@@ -3,7 +3,6 @@
   background-color: white;
   border-radius: map-fetch($border, radius, base);
   border: 1px solid map-fetch($border, color, base);
-  overflow-y: hidden;
 
   &:hover {
     border: solid 1px map-fetch($color, ui, brand);
