@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Fixed layout issue in **Tile** ([#1446](https://github.com/optimizely/oui/pull/1446))
+
+## 48.8.2 - 2020-11-24
+- [Patch] No-op release caused by unintentional double deploy. See https://github.com/optimizely/oui/releases/tag/v48.8.1 for more info.
 
 ## 48.8.2 - 2020-11-24
 - [Patch] No-op release caused by unintentional double deploy. See https://github.com/optimizely/oui/releases/tag/v48.8.1 for more info.
