@@ -231,7 +231,7 @@ const Tile = ({
         </div>
       )}
       {onTileClick ? (
-        <div>
+        <div className="width--1-1">
           <Button
             testSection={`${testSection}-main-tile-button`}
             style="unstyled"
