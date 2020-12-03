@@ -12,7 +12,7 @@
     "classnames": "^2.2.5",
     "clipboard": "^1.5.12",
     "core-js": "^2",
-    "highlight.js": "9.5.0",
+    "highlight.js": "10.1.2",
     "immutable": "3.x.x",
     "lodash": ">=4.17.13",
     "lodash.debounce": "^4.0.8",
